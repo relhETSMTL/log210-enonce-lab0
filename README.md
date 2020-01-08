@@ -131,7 +131,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   ```
 La partie de l'URL `src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/dcu.puml` doit pointer sur le fichier dans *votre* dépôt plutôt que sur celui duquel ce projet a été copié. 
 
-Pour obtenir l'URL "raw" d'un fichier sur GitHub, navigez vers le fichier, cliquez sur le bouton **Raw**, puis copiez l'URL du browser. Finalement, cela doit être fait une seule fois pour chaque diagramme `.puml` et les changements vont suivre automatiquement dans la documentation. Cependant, il peut prendre quelques minutes avant que le cache du browser se rafraichissent. Pour en savoir plus, lire [la question sur StackOverflow](https://stackoverflow.com/questions/32203610/how-to-integrate-uml-diagrams-into-gitlab-or-github).
+Pour obtenir l'URL "raw" d'un fichier sur GitHub, navigez vers le fichier, cliquez sur le bouton **Raw**, puis copiez l'URL du browser. Finalement, cela doit être fait une seule fois pour chaque diagramme `.puml` et les changements vont suivre automatiquement dans la documentation. Cependant, il peut prendre quelques minutes avant que le cache du browser se rafraichisse. Pour en savoir plus, lire [la question sur StackOverflow](https://stackoverflow.com/questions/32203610/how-to-integrate-uml-diagrams-into-gitlab-or-github).
 
 </p></details>
 
