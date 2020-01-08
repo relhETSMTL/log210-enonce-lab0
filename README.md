@@ -29,14 +29,15 @@ Cet exercice permet de comprendre de manière basique les technologies suivantes
   - TypeScript
   - Express
   - Mocha/Chai
+- PUG (anciennement Jade)
 - VisualStudio Code
 - PlantUML
 - GitHub
 
 ## Objectif de l'exercice
 
-Cet exercice va vous amener à traver les étapes pour ajouter une nouvelle fonctionnalité au **Jeu de Dés** : le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu. 
-Pour respecter le processus enseigné dans LOG210, il faudra passer par les étapes suivantes:
+Cet exercice va vous amener à travers des étapes pour ajouter une nouvelle fonctionnalité au **Jeu de Dés** : le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
+Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra passer par les étapes suivantes:
 
 - actualiser la documentation de la fonctionnalité (cas d'utilisation)
 - actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation);
