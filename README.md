@@ -152,6 +152,33 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 - [ ] coder la RDCU dans `src/core/JeuDeDes.ts` (TypeScript)
 - [ ] faire un build (Node.js)
 - [ ] vérifier que les tests passent (Node.js)
+- [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
+
+  > Facultatif : pour une explication de PUG (anciennement Jade) avec Express, il y a [cette vidéo](https://www.youtube.com/watch?v=DSp9ExFw3Ig).
+
+  Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrer Redémarrer` (*attention au niveau d'indentation*):
+  ```PUG
+      form#formNouveauJoueur.form-group(action='javascript:void(0);')
+        dl
+          dt Nom du nouveau joueur
+          dd
+            input.form-control.col-sm-4(name='nom' type='text')
+        button.demarrer Démarrer
+
+      button.redemarrer Redémarrer
+  ```
+- [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
+
+  Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clique sur le bouton *Démarrer* (`$("button.demarrer").click(function () {...}`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
+
+  ```JavaScript
+      $("button.redemarrer").click(function () {
+          $.get("/api/v1/jeu/redemarrerJeu",
+              function (data, status) {
+                  window.location.reload(true);
+              });
+      });
+  ```
 
 ### 5. remettre (anglais *commit*) les changements.
 
