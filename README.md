@@ -50,15 +50,43 @@ Les chargés de laboratoire seront disponibles pour vous aider si vous avez des 
 
 Vous pouvez cochez chaque étape dans la liste suivante:
 
-### 0. vous familiariser avec le projet actuel;
+### 0. préparer votre machine pour ce tutoriel;
 
 - [ ] jeter un oeil sur la [documentation du squelette](ReadMeSquelette.md)
-- [ ] installer node.js sur votre machine
-- [ ] cloner le code sur votre machine
+- [ ] [installer node.js](https://nodejs.org/en/download/) sur votre machine
+- [ ] [installer VSCode](https://code.visualstudio.com/Download) sur votre machine
+- [ ] [installer GitHub Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop) sur votre machine
+- [ ] [cloner le code de ce squelette](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) sur votre machine
 - [ ] faire un build du code
+  - Ouvrir le projet en VSCode en cliquant sur le bouton **Open in Visual Studio Code**
+  - Dans VSCode, ouvrir un terminal dans le menu **Terminal > New Terminal**
+  - Dans le terminal, taper `npm install` pour installer les bibliothèques node du projet (une fois seulement).
+  - Dans le terminal, taper `npm run-script build` pour compiler le code source.
+    Normalement, on devrait voir les messages comme:
+    ```
+    ...
+    [23:43:06] Finished 'jsonAssets' after 25 ms
+    [23:43:06] Finished 'cssAssets' after 45 ms
+    [23:43:06] Finished 'jsAssets' after 46 ms
+    [23:43:08] Finished 'scripts' after 1.62 s
+    [23:43:08] Finished 'build' after 1.62 s
+    ```
 - [ ] exécuter les tests
+  - Dans le terminal, taper `npm test` pour exécuter les tests.
+   Normalement, on devrait voir les messages comme:
+    ```
+    ...
+    GET /api/v1/jeu/terminerJeu/Jean-Marc 200 0.434 ms - 86
+    √ responds with successful call for player Jean-Marc
+    GET /api/v1/jeu/terminerJeu/Jean-Marc 404 0.288 ms - 51
+    √ Call responds with bad request when player does not exist Jean-Marc
+    
+    
+      27 passing (542ms)    
+    ```  
 - [ ] exécuter le serveur sur localhost
-- [ ] exécuter l'application avec un browser moderne
+  - Dans le terminal, `npm start`
+- [ ] exécuter l'application avec un browser moderne à l'URL [http://localhost:3000](http://localhost:3000)
 
 > Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant.
 
@@ -68,6 +96,8 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] ajouter le cas d'utilisation (texte) 
 - [ ] ajouter le cas d'utilisation [au modèle UML](docs/dcu.puml) (PlantUML)
+  - installer l'extension `` dans VSCode
+  - visionner [cette vidéo](https://www.youtube.com/watch?v=xkwJ9GwgZJU) pour savoir comment créer et modifier un diagramme PlantUML
 
 ### 2. actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
 
