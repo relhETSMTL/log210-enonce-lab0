@@ -96,8 +96,22 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] ajouter le cas d'utilisation (texte) 
 - [ ] ajouter le cas d'utilisation [au modèle UML](docs/dcu.puml) (PlantUML)
-  - installer l'extension `` dans VSCode
-  - visionner [cette vidéo](https://www.youtube.com/watch?v=xkwJ9GwgZJU) pour savoir comment créer et modifier un diagramme PlantUML
+  - installer l'extension [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) dans VSCode
+  - visionner [cette vidéo](https://www.youtube.com/watch?v=xkwJ9GwgZJU) (*activer les sous-titres en français*) pour savoir comment créer et modifier un diagramme PlantUML
+  - modifier `docs/dcu.puml` pour inclure un nouveau cas d'utilisation `(Redémarrer) as R #powderblue` et le lien avec l'acteur `J -- R` comme dans l'exemple partiel suivant:
+  ```
+  ...
+  rectangle "Système" {
+    (Jouer aux dés) as JP #powderblue
+    (Redémarrer) as R #powderblue
+    J -- JP
+    J -- R
+  }
+  ...
+
+  ```
+  Vous devriez voir un diagramme comme ceci:  
+  ![dcu](https://www.plantuml.com/plantuml/svg/0/NOz1YiCm303lVeLeBxk7_g7dd9OKzgxQIjRKbeCiquRI_xJlwCUg19OjUp62cP7HlYgAjfnSea512qWSVnH25F8Q2xjwYZoXO8QgSo9x9Vgr-2CJ-XEET5Y59NnZHsEZbCR1brG4L92h8U9tAz20BUbGM1apmJT9G4Q7NgtfIgCcW1Kwjwn77ksZpM6k-hndsi3L0Nmibadj0k7vg9-h_WNRgPm3oJ4rMgIU36OK8LcD_f_GmMvdsU_KkvlR4mUxzmK0 "dcu")
 
 ### 2. actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
 
