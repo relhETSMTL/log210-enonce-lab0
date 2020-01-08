@@ -3,7 +3,7 @@
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210. 
 Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de Dés** que vous trouverez dans ce dépôt, qui sert de squelette que votre vrai projet de LOG210 doit suivre.
 
-> C'est un travail individuel, pour que chaque personne dans le cours ait la possibilité de collaborer dans son équipe.
+> C'est un travail individuel, dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe.
 
 Cet exercice sera noté selon la grille suivante:
 
@@ -44,11 +44,25 @@ Pour respecter le processus enseigné dans LOG210, il faudra passer par les éta
 - écrire le code source;
 - remettre (anglais *commit*) les changements.
 
-Les chargés de laboratoire seront disponibles pour vous aider avec des questions. 
+Les chargés de laboratoire seront disponibles pour vous aider si vous avez des questions.
 
 ## Étapes
 
-### 1. actualiser la documentation de la fonctionnalité.
+Vous pouvez cochez chaque étape dans la liste suivante:
+
+### 0. vous familiariser avec le projet actuel;
+
+- [ ] jeter un oeil sur la [documentation du squelette](ReadMeSquelette.md)
+- [ ] installer node.js sur votre machine
+- [ ] cloner le code sur votre machine
+- [ ] faire un build du code
+- [ ] exécuter les tests
+- [ ] exécuter le serveur sur localhost
+- [ ] exécuter l'application avec un browser moderne
+
+> Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant.
+
+### 1. actualiser la documentation de la fonctionnalité;
 
 La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans cette étape, vous devez:
 
@@ -74,7 +88,5 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 - [ ] vérifier que les tests passent (Node.js)
 
 ### 5. remettre (anglais *commit*) les changements.
-
-> Note: il est recommandé de faire une remise (au moins) à la fin de chaque étape.
 
 - [ ] faire une remise de la solution du projet (GitHub)
