@@ -119,6 +119,22 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   Vous devriez voir un diagramme comme ceci:  
   ![dcu](https://www.plantuml.com/plantuml/svg/0/NOz1YiCm303lVeLeBxk7_g7dd9OKzgxQIjRKbeCiquRI_xJlwCUg19OjUp62cP7HlYgAjfnSea512qWSVnH25F8Q2xjwYZoXO8QgSo9x9Vgr-2CJ-XEET5Y59NnZHsEZbCR1brG4L92h8U9tAz20BUbGM1apmJT9G4Q7NgtfIgCcW1Kwjwn77ksZpM6k-hndsi3L0Nmibadj0k7vg9-h_WNRgPm3oJ4rMgIU36OK8LcD_f_GmMvdsU_KkvlR4mUxzmK0 "dcu")
 
+   <details>
+     <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.puml`</summary><p>
+
+*Question*: Comment faire en sorte que `ReadMeSquelette.md` affiche la version modifiée du fichier `docs/dcu.puml` après un *push* des fichiers vers GitHub?  
+*Réponse*: Il faut modifier le markdown suivant dans `ReadMeSquelette.md`:
+```markdown
+### Diagramme de cas d’utilisation
+
+![Diagramme de cas d'utilisation](http://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/dcu.puml)
+  ```
+La partie de l'URL `src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/dcu.puml` doit pointer sur le fichier dans *votre* dépôt plutôt que sur celui duquel ce projet a été copié. 
+
+Pour obtenir l'URL "raw" d'un fichier sur GitHub, navigez vers le fichier, cliquez sur le bouton **Raw**, puis copiez l'URL du browser. Finalement, cela doit être fait une seule fois pour chaque diagramme `.puml` et les changements vont suivre automatiquement dans la documentation. Cependant, il peut prendre quelques minutes avant que le cache du browser se rafraichissent.
+
+</p></details>
+
 ### 2. actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
 
 - [ ] ajouter un nouveau DSS pour le cas d'utilisation (PlantUML)
