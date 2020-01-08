@@ -151,26 +151,130 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] ajouter un nouveau test dans `test/jeu.test.ts` (Mocha/Chai)
 
-  L'URL 
+  À la fin du fichier `test/jeu.test.ts` ajouter les tests suivants pour valider la nouvelle fonctionnalité:
+
+  ```TypeScript
+  describe('GET /api/v1/jeu/redemarrerJeu', () => {
+
+    // create a new player
+    it('responds with successful first call for player ' + testNom1, () => {
+      return chai.request(app).get('/api/v1/jeu/demarrerJeu/' + testNom1)
+        .then(response => {
+          expect(response.status).to.equal(201);
+          expect(response).to.be.json;
+          expect(response.body.nom).to.equal(testNom1);
+        });
+    });
+
+    it('responds with successful call', () => {
+      return chai.request(app).get('/api/v1/jeu/redemarrerJeu')
+        .then(response => {
+          expect(response.status).to.equal(200);
+          expect(response).to.be.json;
+        });
+    });
+
+    it('Call responds with bad request because player should no longer exist ' + testNom1, () => {
+      return chai.request(app).get('/api/v1/jeu/terminerJeu/' + testNom1)
+        .then(
+          response => {
+            expect(response).to.have.status(404);
+            expect(response).to.be.json;
+            expect(response.body.error).to.include("n'existe pas");
+            expect(response.body.error).to.include(testNom1);
+          }
+        )
+    });
+
+  });
+  ```
 
 - [ ] valider que les tests ne passent pas (Mocha/Chai)
+
+  `npm test` va indiquer `2 failing`: 
+
+  ```
+  1) GET /api/v1/jeu/redemarrerJeu
+       responds with successful call:
+
+      AssertionError: expected 404 to equal 200
+  ```
+  et
+  ```
+  2) GET /api/v1/jeu/redemarrerJeu
+       Call responds with bad request because player should no longer exist Jean-Marc:
+     AssertionError: expected { Object (domain, _events, ...) } to have status code 404 but got 200
+  ```
+  Cela est normal, car nous avons écrit un test avant d'avoir écrit la fonctionnalité, selon la pratique *Développement piloté par les tests*.
 
 ### 4. écrire le code source;
 
 - [ ] ajouter une nouvelle route dans `src/routes/JeuRouter.ts` (Express)
   
-  `init()`  
-  nouvelle fonction pour appeler l'opération système `redemarrerJeu()` et traiter les erreurs
+  À la fin de la fonction `init()` ajouter la ligne suivante pour faire un bind de l'URI à une fonction TypeScript:
+
+  ```TypeScript
+    init() {
+      ...
+      this.router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));
+    }
+  ```
+  
+  Dans le même fichier, juste avant la fonction `init()`, ajouter la fonction `redemarrerJeu`:
+
+  ```TypeScript
+    /**
+     * redémarrer le jeu
+     */
+    public redemarrerJeu(req: Request, res: Response, next: NextFunction) {
+      try {
+        // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
+        this.jeu.redemarrerJeu();
+        (req as any).flash('Redémarrage de l\'application!');
+        res.status(200)
+          .send({
+            message: 'Success',
+            status: res.status,
+          });
+      } catch (error) {
+        throw error;
+      }
+    }
+  ```
 
 - [ ] ajouter l'opération système dans le contrôleur GRASP `src/core/JeuDeDes.ts` (TypeScript)
+  
+  L'opération système est une méthode dans le contrôleur GRASP: 
+
+  ```TypeScript
+    public redemarrerJeu() {
+    }
+  ```
+
 - [ ] coder la RDCU dans `src/core/JeuDeDes.ts` (TypeScript)
+
+  Selon la RDCU, le contrôleur GRASP (JeuDeDes) va simplement invoquer la méthode `clear()` sur le `Map` des `joeurs`. Ajouter donc la ligne dans l'opération système:
+  
+  ```TypeScript
+    public redemarrerJeu() {
+        this.joueurs.clear();
+    }
+  ```
+
 - [ ] faire un build (Node.js)
+
+  `npm run-script build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un chargé de laboratoire.
+
 - [ ] vérifier que les tests passent (Node.js)
+
+  `npm test` devrait indiquer que tous les tests passent.
+
 - [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
 
   > Facultatif : pour une explication de PUG (anciennement Jade) avec Express, il y a [cette vidéo](https://www.youtube.com/watch?v=DSp9ExFw3Ig).
 
   Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrer Redémarrer` (*attention au niveau d'indentation*):
+
   ```PUG
       form#formNouveauJoueur.form-group(action='javascript:void(0);')
         dl
@@ -181,6 +285,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
       button.redemarrer Redémarrer
   ```
+
 - [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
 
   Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clique sur le bouton *Démarrer* (`$("button.demarrer").click(function () {...}`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
