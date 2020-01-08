@@ -94,8 +94,14 @@ Vous pouvez cochez chaque étape dans la liste suivante:
 
 La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans cette étape, vous devez:
 
-- [ ] ajouter le cas d'utilisation (texte) 
-- [ ] ajouter le cas d'utilisation [au modèle UML](docs/dcu.puml) (PlantUML)
+- [ ] dans le fichier `ReadMeSquelette.md` qui sert de documentation, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](ReadMeSquelette.md#jouer-aux-dés):
+  ```markdown
+  #### Redémarrer
+
+  1. Le Joueur demande à redémarrer l'application.
+  1. Le Système termine tous les jeux en cours et redémarre l'application.
+  ```
+- [ ] ajouter le cas d'utilisation [au diagramme UML](docs/dcu.puml) (PlantUML)
   - installer l'extension [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) dans VSCode
   - visionner [cette vidéo](https://www.youtube.com/watch?v=xkwJ9GwgZJU) (*activer les sous-titres en français*) pour savoir comment créer et modifier un diagramme PlantUML
   - modifier `docs/dcu.puml` pour inclure un nouveau cas d'utilisation `(Redémarrer) as R #powderblue` et le lien avec l'acteur `J -- R` comme dans l'exemple partiel suivant:
