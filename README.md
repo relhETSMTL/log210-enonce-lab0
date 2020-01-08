@@ -137,17 +137,31 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 ### 2. actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
 
-- [ ] ajouter un nouveau DSS pour le cas d'utilisation (PlantUML)
-- [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) (PlantUML)
+- [ ] ajouter un nouveau DSS `docs/dss-redemarrer.puml` pour le cas d'utilisation (PlantUML)
+  
+  Faire un diagramme en PlantUML qui ressemble à ceci:  
+  ![DSS pour le scénario Redémarrer](https://www.plantuml.com/plantuml/svg/0/NOynQWD134NxEOLmvHGXlJ6B0waCQRAGNin-6v4TpKRI52RuFl4vzcAPf4c8Yjyy_d_euC4MhSp9tqGNDYxaSPdHqoJ_8nDEtEOuLGtb0dg5JQpyjult1isWZqJzdk7EPppESbRAq82bQmg9BdWQHrfgC_gMvVMcR59fByCBflLMs0osVv0XSOvgjDaTQqEp3R5JJbqNacLXZOx6YyVwMV03FUNxmMb7zZjqHDlU9Jf0f_xI5m00 "DSS pour le scénario Redémarrer")
+
+- [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/rdcu-redemarrer.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
+
+  Faire un diagramme en PlantUML qui ressemble à ceci:  
+  ![RDCU pour redémarrerJeu](https://www.plantuml.com/plantuml/svg/0/RP31IWD138RlynIX5rkmBx38KkXwANXHzBINE9lMMMSoGoO3-aYz-mRxOiOAWk8bWVny-VzaLnL5MugklWOkA9YWwdiagnBy7sMY8xQenypAc0YUI2PaT1hKYFjX_mWbDm6XQJad524vK7C6Q_2X82kiEfiCD51T0LRmRjjxwBu8-W7M6yTP2IISNjJ4IZ4pxCrLbez8JKPUVszPpXMewiZnAZ_Ff23e0zFcj-MScq6r6_aEoys37SQdwyDbs5zIpCbvsFRMpSr7Gla_mkrR8L6t8vxiCPy0 "RDCU pour redémarrerJeu")
 
 ### 3. écrire des tests pour la fonctionnalité;
 
-- [ ] ajouter un nouveau test dans `test/jeu.test.ts` (Mocha/Chai) 
+- [ ] ajouter un nouveau test dans `test/jeu.test.ts` (Mocha/Chai)
+
+  L'URL 
+
 - [ ] valider que les tests ne passent pas (Mocha/Chai)
 
 ### 4. écrire le code source;
 
 - [ ] ajouter une nouvelle route dans `src/routes/JeuRouter.ts` (Express)
+  
+  `init()`  
+  nouvelle fonction pour appeler l'opération système `redemarrerJeu()` et traiter les erreurs
+
 - [ ] ajouter l'opération système dans le contrôleur GRASP `src/core/JeuDeDes.ts` (TypeScript)
 - [ ] coder la RDCU dans `src/core/JeuDeDes.ts` (TypeScript)
 - [ ] faire un build (Node.js)
