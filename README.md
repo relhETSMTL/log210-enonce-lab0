@@ -25,14 +25,21 @@ Dans les cours préalalbes à LOG210, vous devriez avoir déjà vu:
 
 Cet exercice permet de comprendre de manière basique les technologies suivantes:
 
-- Node.js
-  - TypeScript
-  - Express
-  - Mocha/Chai
-- PUG (anciennement Jade)
-- VisualStudio Code
-- PlantUML
-- GitHub
+- [Node.js](https://nodejs.org/en/docs/guides/)
+  - [TypeScript](https://www.typescriptlang.org/docs/home.html)
+  - [Express](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction)
+  - [Mocha/Chai](https://mochajs.org/api/)
+- [PUG](https://pugjs.org/api/getting-started.html) (anciennement Jade)
+
+Le déploiement de la solution fonctionne comme le diagramme suivant:
+
+![Déploiement](https://www.plantuml.com/plantuml/svg/0/NP0nJyCm48Lt_ufJfoAK0KQc5gcgob15JJir38Tp5AlnsJfV4Yh4VyS9BGCUB3-zzxudUP4KHJlVcdHs757GGz9BI_aMP_yvDlWOc5YhAPBDHsCuD0IpPmb38W6VbJ3DuCj0FdyDE9PueWG3lTKyL_AnHSswFAplQYQ55-onikAYlW8cM1ysvli6hqXwwWIsMTt8ZfNa7It1BdIQsMDhV9AOAN1SnjWwY-e2rxo_HFh5mttDgyyebDAqb6DcdCgBK8WxVMWnluBW2PRb1dQhQW_iUi8E7ipLAfemS36r5yHD_eiV "Déploiement")
+
+Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir comment utiliser les outils suivants:
+
+- [VisualStudio Code](https://code.visualstudio.com/docs/getstarted/introvideos)
+- [PlantUML](http://plantuml.com/fr/guide) (pour les modèles UML)
+- [GitHub Markdown](https://guides.github.com/features/mastering-markdown/) (pour la documentation)
 
 ## Objectif de l'exercice
 
@@ -125,11 +132,13 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   *Question*: Comment faire en sorte que `ReadMeSquelette.md` affiche la version modifiée du fichier `docs/dcu.puml` après un *push* des fichiers vers GitHub?  
   *Réponse*: Il faut modifier le markdown suivant dans `ReadMeSquelette.md`:
+
   ```markdown
   ### Diagramme de cas d’utilisation
 
   ![Diagramme de cas d'utilisation](http://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/dcu.puml)
   ```
+
   La partie de l'URL `src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/dcu.puml` doit pointer sur le fichier dans *votre* dépôt plutôt que sur celui duquel ce projet a été copié. 
 
   Pour obtenir l'URL "raw" d'un fichier sur GitHub, navigez vers le fichier, cliquez sur le bouton **Raw**, puis copiez l'URL du browser. Finalement, cela doit être fait une seule fois pour chaque diagramme `.puml` et les changements vont suivre automatiquement dans la documentation. Cependant, il peut prendre quelques minutes avant que le cache du browser se rafraichisse. Pour en savoir plus, lire [la question sur StackOverflow](https://stackoverflow.com/questions/32203610/how-to-integrate-uml-diagrams-into-gitlab-or-github).
@@ -308,4 +317,4 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre.
 
-  Si vous avez terminé rapidement, pensez à aider vos coéquipiers qui pourraient avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Le mentorat est bénéfique aussi pour vous, car c'est une caractéristique importante du leadership.  
+  Si vous avez terminé rapidement, pensez à aider vos coéquipiers qui pourraient avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Le mentorat est bénéfique aussi pour vous, car c'est une caractéristique importante du leadership.
