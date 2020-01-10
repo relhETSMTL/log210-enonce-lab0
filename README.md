@@ -1,7 +1,7 @@
 # LOG210 - Lab 1 - Tutoriel sur les technologies
 
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210. 
-Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de Dés** que vous trouverez dans ce dépôt, qui sert de squelette que votre vrai projet de LOG210 doit suivre.
+Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de Dés** :game_die: :game_die: que vous trouverez dans ce dépôt, qui sert de squelette que votre vrai projet de LOG210 doit suivre.
 
 > C'est un travail individuel, dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe.
 
@@ -318,3 +318,5 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   :clap: **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre, car il y a des [liens pour la documentation des technologies différentes](#technologies-vues-dans-cet-exercice). 
 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter autant possible le facteur de bus :oncoming_bus: de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. :wink:
+
+  > Facultatif: Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux, et la condition pour gagner est que le *total soit inférieure ou égale à 10*. Il faut passer par toutes les étapes, y compris changer le MDD, les RDCU, les tests, le code, etc. Cependant, cette fois-ci vous devez vous débrouiller sans faire du copier-coller. :warning: Ne pas faire de remise sur GitHub de ces changements, cependant, car les chargés doivent évaluer votre travail sur le premier exercice.
