@@ -115,8 +115,8 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
     J -- R
   }
   ...
-
   ```
+
   Vous devriez voir un diagramme comme ceci:  
   ![dcu](https://www.plantuml.com/plantuml/svg/0/NOz1YiCm303lVeLeBxk7_g7dd9OKzgxQIjRKbeCiquRI_xJlwCUg19OjUp62cP7HlYgAjfnSea512qWSVnH25F8Q2xjwYZoXO8QgSo9x9Vgr-2CJ-XEET5Y59NnZHsEZbCR1brG4L92h8U9tAz20BUbGM1apmJT9G4Q7NgtfIgCcW1Kwjwn77ksZpM6k-hndsi3L0Nmibadj0k7vg9-h_WNRgPm3oJ4rMgIU36OK8LcD_f_GmMvdsU_KkvlR4mUxzmK0 "dcu")
 
@@ -300,12 +300,12 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
       });
   ```
 
-  Refaire le build et relancer le serveur dans le terminal (voir les commandes en haut). Vérifier que le bouton fonctionne comme il le faut en créant une partie pour un joueur et ensuite cliquant sur *Redémarrer*. 
-
-  **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre.
-
-  Si vous avez terminé rapidement, pensez à aider vos coéquipiers qui pourraient avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Le mentorat est bénéfique aussi pour vous, car c'est une caractéristique importante du leadership.  
+  Refaire le build et relancer le serveur dans le terminal (voir les commandes en haut). Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*. 
 
 ### 5. remettre (anglais *commit*) les changements.
 
 - [ ] faire une remise de la solution du projet (GitHub)
+
+  **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre.
+
+  Si vous avez terminé rapidement, pensez à aider vos coéquipiers qui pourraient avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Le mentorat est bénéfique aussi pour vous, car c'est une caractéristique importante du leadership.  
