@@ -283,7 +283,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   > Facultatif : pour une explication de PUG (anciennement Jade) avec Express, il y a [cette vidéo](https://www.youtube.com/watch?v=DSp9ExFw3Ig).
 
-  Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrer Redémarrer` (*attention au niveau d'indentation*):
+  Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrer Redémarrer` (:warning: *attention au niveau d'indentation*):
 
   ```PUG
       form#formNouveauJoueur.form-group(action='javascript:void(0);')
@@ -315,6 +315,6 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] faire une remise de la solution du projet (GitHub)
 
-  **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre.
+  :clap: **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre, car il y a des [liens pour la documentation des technologies différentes](#technologies-vues-dans-cet-exercice). 
 
-  Si vous avez terminé rapidement, pensez à aider vos coéquipiers qui pourraient avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Le mentorat est bénéfique aussi pour vous, car c'est une caractéristique importante du leadership.
+  > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. En plus, cela augmente le facteur de bus :oncoming_bus: ! Le mentorat est bénéfique aussi pour vous, car c'est une caractéristique importante du leadership. :wink:
