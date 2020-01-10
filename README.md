@@ -33,7 +33,7 @@ Cet exercice permet de comprendre de manière basique les technologies suivantes
 
 Le déploiement de la solution fonctionne comme le diagramme suivant:
 
-![Déploiement](https://www.plantuml.com/plantuml/svg/0/NP0nJyCm48Lt_ufJfoAK0KQc5gcgob15JJir38Tp5AlnsJfV4Yh4VyS9BGCUB3-zzxudUP4KHJlVcdHs757GGz9BI_aMP_yvDlWOc5YhAPBDHsCuD0IpPmb38W6VbJ3DuCj0FdyDE9PueWG3lTKyL_AnHSswFAplQYQ55-onikAYlW8cM1ysvli6hqXwwWIsMTt8ZfNa7It1BdIQsMDhV9AOAN1SnjWwY-e2rxo_HFh5mttDgyyebDAqb6DcdCgBK8WxVMWnluBW2PRb1dQhQW_iUi8E7ipLAfemS36r5yHD_eiV "Déploiement")
+![Déploiement](https://www.plantuml.com/plantuml/svg/0/NP0nJyD038Nt-nLMftO84enCBL9LbG5LJIk6Xi4aRZb8V2UVar0X_ZjEQ1dmOFdytlCdtJmfYhPDxTA7vuY23IGzrsHTVFbFAKCJ0nDhFbfCl7EEGqKmUP3G9n9ex2LC4_XoOFMNWCC6JvIWfrUOHWaTCR8MNDbEgOargasR_MfMC2ayOeTvAJxg2s22rNxjlg-edAIZLk3PJZtPvkOzNN6UbUI89S4sj6h08JoC96uq71Onrhv4zO4BNdv6ePGAdkxEaNvvin5eDZSG3GoP-DERPjFB8RY7nMODssM-0_OTOGktxY9bLUWv6zDpuie-w0S0 "Déploiement")
 
 Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir comment utiliser les outils suivants:
 
