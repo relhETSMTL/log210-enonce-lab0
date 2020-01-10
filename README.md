@@ -254,7 +254,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] coder la RDCU dans `src/core/JeuDeDes.ts` (TypeScript)
 
-  Selon la RDCU, le contrôleur GRASP (JeuDeDes) va simplement invoquer la méthode `clear()` sur le `Map` des `joeurs`. Ajouter donc la ligne dans l'opération système:
+  Selon la RDCU, le contrôleur GRASP (JeuDeDes) va simplement invoquer la méthode `clear()` sur le `Map` des `joueurs`. Ajouter donc la ligne dans l'opération système:
   
   ```TypeScript
     public redemarrerJeu() {
@@ -299,6 +299,12 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
               });
       });
   ```
+
+  Refaire le build et relancer le serveur dans le terminal (voir les commandes en haut). Vérifier que le bouton fonctionne comme il le faut en créant une partie pour un joueur et ensuite cliquant sur *Redémarrer*. 
+
+  **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre.
+
+  Si vous avez terminé rapidement, pensez à aider vos coéquipiers qui pourraient avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Le mentorat est bénéfique aussi pour vous, car c'est une caractéristique importante du leadership.  
 
 ### 5. remettre (anglais *commit*) les changements.
 
