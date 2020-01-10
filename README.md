@@ -15,7 +15,7 @@ Cet exercice sera noté selon la grille suivante:
 
 ## Préalables
 
-Dans les cours préalalbes à LOG210, vous devriez avoir déjà vu:
+Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 
 - Les dépôts de code source en git (ici, c'est GitHub)
 - La programmation orientée objet (ici, c'est TypeScript)
@@ -28,7 +28,7 @@ Cet exercice permet de comprendre de manière basique les technologies suivantes
 - [Node.js](https://nodejs.org/en/docs/guides/)
   - [TypeScript](https://www.typescriptlang.org/docs/home.html)
   - [Express](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction)
-  - [Mocha/Chai](https://mochajs.org/api/)
+  - [Mocha/Chai](https://mochajs.org/api/), [excellente vidéo pour commencer](https://youtu.be/MLTRHc5dk6s?t=70)
 - [PUG](https://pugjs.org/api/getting-started.html) (anciennement Jade)
 
 Le déploiement de la solution fonctionne comme le diagramme suivant:
@@ -80,7 +80,7 @@ Vous pouvez cochez chaque étape dans la liste suivante:
     [23:43:08] Finished 'build' after 1.62 s
     ```
 - [ ] exécuter les tests
-  - Dans le terminal, taper `npm test` pour exécuter les tests.
+  - Dans le terminal, taper `npm test -s` pour exécuter les tests.
    Normalement, on devrait voir les messages comme:
     ```
     ...
@@ -201,7 +201,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] valider que les tests ne passent pas (Mocha/Chai)
 
-  `npm test` va indiquer `2 failing`: 
+  `npm test -s` va indiquer `2 failing`: 
 
   ```
   1) GET /api/v1/jeu/redemarrerJeu
@@ -277,7 +277,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] vérifier que les tests passent (Node.js)
 
-  `npm test` devrait indiquer que tous les tests passent.
+  `npm test -s` devrait indiquer que tous les tests passent.
 
 - [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
 
