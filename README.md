@@ -229,6 +229,8 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
       this.router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));
     }
   ```
+
+  > Il s'agit d'une *définition de [route](http://expressjs.com/en/guide/routing.html)* dans *Express*. Lorsqu'il y aura une requête HTTP `GET` avec `/redemarrerJeu`, la fonction `redemarrerJeu` dans la même classe sera appelée (*callback*). Cette fonction est aussi appelée un *route handler* en anglais.
   
   Dans le même fichier, juste avant la fonction `init()`, ajouter la fonction `redemarrerJeu`:
 
@@ -252,6 +254,8 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
     }
   ```
 
+  > Selon la méthodologie de LOG210 on ne met pas la logique d'application dans les *route handlers*. On appelle simplement une opération système qui, elle, se trouve dans `jeu.redemarrerJeu()` et sera le point de départ pour la logique d'application. 
+
 - [ ] ajouter l'opération système dans le contrôleur GRASP `src/core/JeuDeDes.ts` (TypeScript)
   
   L'opération système est une méthode dans le contrôleur GRASP: 
@@ -261,9 +265,11 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
     }
   ```
 
+> Cette méthode correspond à l'opération système (unique) défini dans le diagramme de séquence système (DSS).
+
 - [ ] coder la RDCU dans `src/core/JeuDeDes.ts` (TypeScript)
 
-  Selon la RDCU, le contrôleur GRASP (JeuDeDes) va simplement invoquer la méthode `clear()` sur le `Map` des `joueurs`. Ajouter donc la ligne dans l'opération système:
+  Selon la RDCU (qui est très simple), le contrôleur GRASP (`JeuDeDes`) va simplement invoquer la méthode `clear()` sur le `Map` des `joueurs`. Ajouter donc la logique dans l'opération système:
   
   ```TypeScript
     public redemarrerJeu() {
