@@ -101,7 +101,7 @@ Vous pouvez cochez chaque étape dans la liste suivante:
     ```  
 - [ ] exécuter le serveur sur localhost
   - Dans le terminal, `npm start`
-- [ ] exécuter l'application avec un browser moderne à l'URL [http://localhost:3000](http://localhost:3000)
+- [ ] exécuter l'application avec un navigateur moderne à l'URL [http://localhost:3000](http://localhost:3000)
 
 > Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant.
 
@@ -148,7 +148,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   La partie de l'URL `src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/dcu.puml` doit pointer sur le fichier dans *votre* dépôt plutôt que sur celui duquel ce projet a été copié. 
 
-  Pour obtenir l'URL "raw" d'un fichier sur GitHub, navigez vers le fichier, cliquez sur le bouton **Raw**, puis copiez l'URL du browser. Finalement, cela doit être fait une seule fois pour chaque diagramme `.puml` et les changements vont suivre automatiquement dans la documentation. Cependant, il peut prendre quelques minutes avant que le cache du browser se rafraichisse. Pour en savoir plus, lire [la question sur StackOverflow](https://stackoverflow.com/questions/32203610/how-to-integrate-uml-diagrams-into-gitlab-or-github).
+  Pour obtenir l'URL "raw" d'un fichier sur GitHub, navigez vers le fichier, cliquez sur le bouton **Raw**, puis copiez l'URL du navigateur. Finalement, cela doit être fait une seule fois pour chaque diagramme `.puml` et les changements vont suivre automatiquement dans la documentation. Cependant, il peut prendre quelques minutes avant que le cache du navigateur se rafraichisse. Pour en savoir plus, lire [la question sur StackOverflow](https://stackoverflow.com/questions/32203610/how-to-integrate-uml-diagrams-into-gitlab-or-github).
 
 </p></details>
 
@@ -228,7 +228,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] ajouter une nouvelle route dans `src/routes/JeuRouter.ts` (Express)
   
-  À la fin de la fonction `init()` ajouter la ligne suivante pour faire un bind de l'URI à une fonction TypeScript:
+  À la fin de la fonction `init()` ajouter la ligne suivante pour lier l'URI à une fonction TypeScript:
 
   ```TypeScript
     init() {
@@ -236,6 +236,8 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
       this.router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));
     }
   ```
+
+  > Il s'agit d'une *définition de [route](http://expressjs.com/en/guide/routing.html)* dans *Express*. Lorsqu'il y aura une requête HTTP `GET` avec `/redemarrerJeu`, la fonction `redemarrerJeu` dans la même classe sera appelée (*callback*). Cette fonction est aussi appelée un *route handler* en anglais.
   
   Dans le même fichier, juste avant la fonction `init()`, ajouter la fonction `redemarrerJeu`:
 
@@ -259,6 +261,8 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
     }
   ```
 
+  > Selon la méthodologie de LOG210 on ne met pas la logique d'application dans les *route handlers*. On appelle simplement une opération système qui, elle, se trouve dans `jeu.redemarrerJeu()` et sera le point de départ pour la logique d'application. 
+
 - [ ] ajouter l'opération système dans le contrôleur GRASP `src/core/JeuDeDes.ts` (TypeScript)
   
   L'opération système est une méthode dans le contrôleur GRASP: 
@@ -268,9 +272,11 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
     }
   ```
 
+> Cette méthode correspond à l'opération système (unique) défini dans le diagramme de séquence système (DSS).
+
 - [ ] coder la RDCU dans `src/core/JeuDeDes.ts` (TypeScript)
 
-  Selon la RDCU, le contrôleur GRASP (JeuDeDes) va simplement invoquer la méthode `clear()` sur le `Map` des `joueurs`. Ajouter donc la ligne dans l'opération système:
+  Selon la RDCU (qui est très simple), le contrôleur GRASP (`JeuDeDes`) va simplement invoquer la méthode `clear()` sur le `Map` des `joueurs`. Ajouter donc la logique dans l'opération système:
   
   ```TypeScript
     public redemarrerJeu() {
@@ -326,4 +332,4 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter autant possible le facteur de bus :oncoming_bus: de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. :wink:
 
-  > Facultatif: Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux, et la condition pour gagner est que le *total soit inférieure ou égale à 10*. Il faut passer par toutes les étapes, y compris changer le MDD, les RDCU, les tests, le code, etc. Cependant, cette fois-ci vous devez vous débrouiller sans faire du copier-coller. :warning: Ne pas faire de remise sur GitHub de ces changements, cependant, car les chargés doivent évaluer votre travail sur le premier exercice.
+  > Facultatif mais à ne pas remettre: Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux, et la condition pour gagner est que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris changer le MDD, les RDCU, les tests, le code, etc. Cependant, cette fois-ci vous devez vous débrouiller sans faire du copier-coller. :warning: Ne pas faire de remise sur GitHub de ces changements, cependant, car les chargés doivent évaluer votre travail sur le premier exercice.
