@@ -63,6 +63,13 @@ Vous pouvez cochez chaque étape dans la liste suivante:
 - [ ] jeter un oeil sur la [documentation du squelette](ReadMeSquelette.md)
 - [ ] [installer node.js](https://nodejs.org/en/download/) sur votre machine
 - [ ] [installer VSCode](https://code.visualstudio.com/Download) sur votre machine
+- [ ] [installer l'extension PlantUML dans VSCode](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
+- [ ] configurer l'extension PlantUML pour utiliser plantuml.com comme serveur en ajoutant/modifiant les "User settings" en VSCode:  
+  ```json
+        "plantuml.server": "https://www.plantuml.com/plantuml",
+        "plantuml.render": "PlantUMLServer",
+  ```
+  (Si on a les droits d'adminstrateur Windows) installer [GraphViz](http://www.graphviz.org/download/) pour utiliser une copie locale de PlantUML plutôt que le serveur et configurer `"plantuml.render": "Local"` selon la [documentation](https://github.com/qjebbs/vscode-plantuml#about-render).
 - [ ] [installer GitHub Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop) sur votre machine
 - [ ] [cloner le code de ce squelette](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) sur votre machine
 - [ ] faire un build du code
