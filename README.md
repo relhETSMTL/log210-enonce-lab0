@@ -328,7 +328,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] faire une remise de la solution du projet (GitHub)
 
-### 6. à vous de jouer!
+### 6. mettre en pratique ce que vous avez appris!
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux, et la condition pour gagner est que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris changer le MDD, les RDCU, les tests, le code, etc. Cependant, cette fois-ci vous devez vous débrouiller sans faire du copier-coller.
 
