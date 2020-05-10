@@ -166,7 +166,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 ### 3. écrire des tests pour la fonctionnalité;
 
-- [ ] ajouter un nouveau test dans `test/jeu.test.ts` (Mocha/Chai)
+- [ ] ajouter de nouveaux tests dans `test/jeu.test.ts` (Mocha/Chai)
 
   À la fin du fichier `test/jeu.test.ts` ajouter les tests suivants pour valider la nouvelle fonctionnalité:
 
@@ -205,6 +205,8 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   });
   ```
+  > Avec Mocha, les tests sont représentés par la fonction `it`. Ils peuvent être séparés en suites avec la fonction `describe`. Dans l'application, il y a une suite de tests par cas d'utilisation. Les suites de tests peuvent être exécutées indépendament les unes des autres:\
+  `npm test -- -f "GET /api/v1/jeu/redemarrerJeu"`
 
 - [ ] valider que les tests ne passent pas (Mocha/Chai)
 
@@ -328,7 +330,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] faire une remise de la solution du projet (GitHub)
 
-### 6. mettre en pratique ce que vous avez appris!
+### 6. pratiquez ce que vous avez appris!
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux, et la condition pour gagner est que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris changer le MDD, les RDCU, les tests, le code, etc. Cependant, cette fois-ci vous devez vous débrouiller sans faire du copier-coller.
 
