@@ -205,7 +205,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   });
   ```
-  > Avec Mocha, les tests sont représentés par la fonction `it`. Ils peuvent être séparés en suites avec la fonction `describe`. Dans l'application, il y a une suite de tests par cas d'utilisation. Les suites de tests peuvent être exécutées indépendament les unes des autres:\
+  > Avec Mocha, les tests sont représentés par la fonction `it`. Ils peuvent être séparés en suites avec la fonction `describe`. Dans l'application, il y a une suite de tests par cas d'utilisation. Les suites de tests peuvent être exécutées indépendamment les unes des autres:\
   `npm test -- -f "GET /api/v1/jeu/redemarrerJeu"`
 
 - [ ] valider que les tests ne passent pas (Mocha/Chai)
