@@ -328,6 +328,8 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 ### 5. remettre (anglais *commit*) les changements.
 
+- [ ] Ajouter votre nom ici tel qu'il apparait sur votre carte étudiante: <studentName> _________________________</studentName>
+- [ ] A l'aide de Zoom ou de tout autre outils d'enregistrement vidéo enregister une démonstration du fonctionnement de l'interface usager avec au moins 2 jouteurs.  Sauvegarder le résultats dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
 - [ ] faire une remise de la solution du projet (GitHub)
 
 ### 6. pratiquez ce que vous avez appris!
