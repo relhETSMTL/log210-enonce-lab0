@@ -1,31 +1,31 @@
 export class Joueur {
     // classe inspirée de la classe conceptuelle (du MDD)
-    nom : string;
-    nbLancers : number;
-    nbLancersGagnes : number;
+    private _nom : string;
+    private _nbLancers : number;
+    private _nbLancersGagnes : number;
     constructor(nom : string) {
-        this.nom = nom;
-        this.nbLancers = 0;
-        this.nbLancersGagnes = 0;
+        this._nom = nom;
+        this._nbLancers = 0; 
+        this._nbLancersGagnes = 0;
     }
 
-    public getNom() {
-        return this.nom;
+    get nom() {
+        return this._nom;
     }
 
-    public getLancers() {
-        return this.nbLancers;
+    get lancers() {
+        return this._nbLancers;
     }
 
-    public getLancersGagnes() {
-        return this.nbLancersGagnes;
+    get lancersGagnes() {
+        return this._nbLancersGagnes;
     }
 
     public lancer() {
-        this.nbLancers++;
+        this._nbLancers++;
     }
 
     public gagner() {
-        this.nbLancersGagnes++;
+        this._nbLancersGagnes++;
     }
 }
