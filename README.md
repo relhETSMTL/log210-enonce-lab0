@@ -210,7 +210,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   - y utiliser `beforeAll` pour créer deux joueurs avant l'exécution des tests
 
-    Cette méthode s'exécutera avant tout les tests, pour satisfaire la préconditions du cas d'utilisation (un joueur doit exister)
+    Cette méthode s'exécutera avant tout les tests, pour satisfaire la précondition du cas d'utilisation (un joueur doit exister)
 
   - y créer un test afin de tester le scénario principal (succès) avec `it` et le nommer adéquatement
 
