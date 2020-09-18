@@ -272,7 +272,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
             input.form-control.col-sm-4(name='nom' type='text')
         button.demarrer Démarrer
 
-      button.redemarrer Redémarrer
+      button#redemarrer Redémarrer
   ```
 
 - [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
@@ -280,11 +280,13 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clique sur le bouton *Démarrer* (`$("button.demarrer").click(function () {...}`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
 
   ```JavaScript
-      $("button.redemarrer").click(function () {
-          $.get("/api/v1/jeu/redemarrerJeu",
-              function (data, status) {
-                  window.location.reload(true);
-              });
+      redemarrer.addEventListener("click", function ()
+      {
+          fetch("/api/v1/jeu/redemarrerJeu")
+          .then(function()
+          {
+              location.reload();
+          });
       });
   ```
 
