@@ -265,14 +265,14 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrer Redémarrer` (:warning: *attention au niveau d'indentation*):
 
   ```PUG
-      form#formNouveauJoueur.form-group(action='javascript:void(0);')
-        dl
-          dt Nom du nouveau joueur
-          dd
-            input.form-control.col-sm-4(name='nom' type='text')
-        button.demarrer Démarrer
+  form#formNouveauJoueur.form-group(action='javascript:void(0);')
+    dl
+      dt Nom du nouveau joueur
+      dd
+        input.form-control.col-sm-4(name='nom' type='text')
+    button.demarrer Démarrer
 
-      button#redemarrer Redémarrer
+  button#redemarrer Redémarrer
   ```
 
 - [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
@@ -280,14 +280,14 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clique sur le bouton *Démarrer* (`$("button.demarrer").click(function () {...}`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
 
   ```JavaScript
-      redemarrer.addEventListener("click", function ()
+  redemarrer.addEventListener("click", function ()
+  {
+      fetch("/api/v1/jeu/redemarrerJeu")
+      .then(function()
       {
-          fetch("/api/v1/jeu/redemarrerJeu")
-          .then(function()
-          {
-              location.reload();
-          });
+          location.reload();
       });
+  });
   ```
 
   Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*. 
