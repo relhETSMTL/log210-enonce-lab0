@@ -12,24 +12,75 @@ jobs:
         node-version: [8.x]
 
     steps:
-    - name: Checkout sources
-      uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: npm install
-    - name: build
-      run: npm run build --if-present
-    - name: run test
-      run: npm run test
-    - name: actions/upload-artifact@v2
-      run: echo hello > world.txt
-    - name: upload word.txt
-      uses: actions/upload-artifact@v2
-      with: 
-        name: my-artifact
-        path: world.txt
+    
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "ReadMeSquelette.md"
+    
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'true'
+        # Only runs if all of the files exists
+        run: echo All files exists!
+
+      - name: Check text
+        id: text_1_exist
+        run: echo ::set-env name=GHA_COUNTER::$(grep -F "Le Joueur demande à démarrer le jeu en s'identifian"  ReadMeSquelette.md | wc -w)
+     
+        
+      - name: Check text validate output
+        run: echo "allo mon coco"
+        if: env.GHA_COUNTER == '9'
+
+
+
+      - name: Check allo
+        id: text_2_exist
+        run: echo ::set-output name=things::$(grep -F "Le Joueur demande à démarrer le jeu en s'identifian"  ReadMeSquelette.md | wc -w)
+      
+      - name: test2
+        run: echo "allo mon coco output is used"
+        if: steps.text_2_exist.outputs.things == '9'
+
+
+      - name: display error
+        run: echo "::error file=app.js,line=10,col=15::Something went wrong"
+
+      - name: Hello world
+        run: echo Hello world $FIRST_NAME $middle_name $Last_Name!
+        env:
+          FIRST_NAME: Mona
+          middle_name: The
+          Last_Name: Octocat
+
+      - name: environement variable
+        run:  echo GITHUB_REPOSITORY=$GITHUB_REPOSITORY
+   
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
+      - name: build
+        run: npm run build --if-present
+      - name: run test
+        run: npm run test
+      - name: actions/upload-artifact@v2
+        run: echo hello > world.txt
+      - name: upload word.txt
+        uses: actions/upload-artifact@v2
+        with: 
+          name: my-artifact
+          path: world.txt
+      - name: Verify presence of Le Joueur demande à redémarrer l'application.
+
+
+
+
     env:
         CI: true
