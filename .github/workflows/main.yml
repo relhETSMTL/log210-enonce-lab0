@@ -26,7 +26,7 @@ jobs:
       run: npm run test
     - name: actions/upload-artifact@v2
       run: echo hello > world.txt
-    -name: upload word.txt
+    - name: upload word.txt
       uses: actions/upload-artifact@v2
       with: 
         name: my-artifact
