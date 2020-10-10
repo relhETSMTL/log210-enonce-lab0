@@ -14,66 +14,106 @@ jobs:
     steps:
     
       - uses: actions/checkout@v2
-      - run: echo ::set-env name=FILENAME::"ReadMeSquelette.md" 
+      # - run: echo ::set-env name=FILENAME::ReadMeSquelette.md
+
+      - run:  echo GITHUB_REPOSITORY=$GITHUB_REPOSITORY > report_correction.txt
    
-      - name: Check file ReadMeSquelette
-        id: check_files
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "ReadMeSquelette.md" 
 
-        
-      - run: echo "SUCCESS => $FILENAME exits" >> report_correction.txt
-        if: steps.check_files.outputs.files_exists == 'true'
-      - run: echo "ERROR => $FILENAME do not exits" >> report_correction.txt
-        if: steps.check_files.outputs.files_exists == 'false'
-        
-      - run: echo ::set-env name=TEXT_TO_VERIFY::"Le Joueur demande à démarrer le jeu en s" 
-      - run: echo ::set-env name=NB_LINES::$(grep -F "$TEXT_TO_VERIFY"  $FILENAME | wc -l)
-      - run: echo "SUCCESS => $TEXT_TO_VERIFY" >> report_correction.txt
-        if: env.NB_LINES == '1'
-      - run: echo "ERRPR => $TEXT_TO_VERIFY" >> report_correction.txt
-        if: env.NB_LINES == '0'
-       
-
-      - run: echo "XXXXXXXXXX"
-      - uses: yvanross/github-actions@v1
+      - name: text exist
+        uses: ./.github/actions/text-exist
         with:
-          who-to-greet: 'Mona the Octocat'
-      - run: echo $NB_TEST
+         filename: ReadMeSquelette.md
+         text: "D'où vient l'idée de base pour ce squelette?;Le Joueur demande à redémarrer l'application;Le Système termine tous les jeux en cours et redémarre l'application;(Redémarrer) as R #powderblue;J -- R;- d3.valeur est devenue un nombre entier aléatoire entre 1 et 6;- j.nbLancersGagnés a été incrémenté si la totale de d1.valeur, d2.valeur, d3.valeur est plus petit ou égal à 10"
+         report: "report_correction.txt"
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "test/redemarrer.test.txt"
+         text: "GET /api/v1/jeu/redemarrerJeu;Call responds with bad request when players do not exist"
+         report: "report_correction.txt"
+   
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "src/routes/jeuRouter.ts"
+         text: "this.router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));public redemarrerJeu(req: Request, res: Response, next: NextFunction) {"
+         report: "report_correction.txt"
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "src/core/jeuDeDes.ts"
+         text: "public redemarrerJeu() {;this.joueurs.clear()"
+         report: "report_correction.txt"
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "views/index.pug"
+         text: "button.redemarrer Redémarrer"
+         report: "report_correction.txt"
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "public/lib/main.js"
+         text: '$("button.redemarrer").click(function () {;$.get("/api/v1/jeu/redemarrerJeu"'
+         report: "report_correction.txt"
+
+      
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "docs/mdd.puml"
+         text: 'JeuDeDés "1" -- "3" Dé : inclut >'
+         report: "report_correction.txt"
+      
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "ReadMeSuqelette.md"
+         text: ''
+         report: "report_correction.txt"
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "docs/rdcu-jouer.puml"
+         text: 'participant "d3:De" as d3;participant "d3:De" as d3'
+         report: "report_correction.txt"
+
+
+
+      
+      
+      
+      
       - run: cat report_correction.txt
 
-      - name: Hello world
-        run: echo Hello world $FIRST_NAME $middle_name $Last_Name!
-        env:
-          FIRST_NAME: Mona
-          middle_name: The
-          Last_Name: Octocat
-
-      - name: environement variable
-        run:  echo GITHUB_REPOSITORY=$GITHUB_REPOSITORY
-   
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: npm install
-      - name: build
-        run: npm run build --if-present
-      - name: run test
-        run: npm run test
-      - name: actions/upload-artifact@v2
-        run: echo hello > world.txt
-      - name: upload word.txt
+      - name: upload report_correction.txt
         uses: actions/upload-artifact@v2
         with: 
-          name: my-artifact
-          path: world.txt
-      - name: Verify presence of Le Joueur demande à redémarrer l'application.
+          name: report_correction
+          path: report_correction.txt
+      
 
+    
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
 
-
+      # - name: Install dependencies
+      #   run: npm install
+      
+      # - name: build
+      #   run: npm run build --if-present
+      
+      #   - name: run test
+      #   run: npm run test >> report_test.txt
+      
 
     env:
         CI: true

@@ -1,0 +1,26 @@
+# action.yml
+name: 'text-exist'
+description: 'Verify presence of text in a file'
+inputs:
+  filename:  # id of input
+    description: 'filename to use'
+    required: true
+    default: 'World'
+  text:  # id of input
+    description: 'text to search in filname'
+    required: true
+    default: 'World'
+  report:
+    description: 'report filename'
+    required: true
+
+outputs:
+  present: 
+    description: 'true is text is present in file'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filename }} 
+    - ${{ inputs.text }}
+    - ${{ inputs.report }}
