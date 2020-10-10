@@ -1,54 +1,47 @@
 name: Node.js CI
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [8.x]
+    # strategy:
+    #   matrix:
+    #     node-version: [12.x]
 
     steps:
     
-      - name: Checkout sources
-        uses: actions/checkout@v2
-
-      - name: Check file existence
+      - uses: actions/checkout@v2
+      - run: echo ::set-env name=FILENAME::"ReadMeSquelette.md" 
+   
+      - name: Check file ReadMeSquelette
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
-          files: "ReadMeSquelette.md"
-    
-      - name: File exists
-        if: steps.check_files.outputs.files_exists == 'true'
-        # Only runs if all of the files exists
-        run: echo All files exists!
+          files: "ReadMeSquelette.md" 
 
-      - name: Check text
-        id: text_1_exist
-        run: echo ::set-env name=GHA_COUNTER::$(grep -F "Le Joueur demande à démarrer le jeu en s'identifian"  ReadMeSquelette.md | wc -w)
-     
         
-      - name: Check text validate output
-        run: echo "allo mon coco"
-        if: env.GHA_COUNTER == '9'
+      - run: echo "SUCCESS => $FILENAME exits" >> report_correction.txt
+        if: steps.check_files.outputs.files_exists == 'true'
+      - run: echo "ERROR => $FILENAME do not exits" >> report_correction.txt
+        if: steps.check_files.outputs.files_exists == 'false'
+        
+      - run: echo ::set-env name=TEXT_TO_VERIFY::"Le Joueur demande à démarrer le jeu en s" 
+      - run: echo ::set-env name=NB_LINES::$(grep -F "$TEXT_TO_VERIFY"  $FILENAME | wc -l)
+      - run: echo "SUCCESS => $TEXT_TO_VERIFY" >> report_correction.txt
+        if: env.NB_LINES == '1'
+      - run: echo "ERRPR => $TEXT_TO_VERIFY" >> report_correction.txt
+        if: env.NB_LINES == '0'
+       
 
-
-
-      - name: Check allo
-        id: text_2_exist
-        run: echo ::set-output name=things::$(grep -F "Le Joueur demande à démarrer le jeu en s'identifian"  ReadMeSquelette.md | wc -w)
-      
-      - name: test2
-        run: echo "allo mon coco output is used"
-        if: steps.text_2_exist.outputs.things == '9'
-
-
-      - name: display error
-        run: echo "::error file=app.js,line=10,col=15::Something went wrong"
+      - run: echo "XXXXXXXXXX"
+      - uses: yvanross/github-actions@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo $NB_TEST
+      - run: cat report_correction.txt
 
       - name: Hello world
         run: echo Hello world $FIRST_NAME $middle_name $Last_Name!
