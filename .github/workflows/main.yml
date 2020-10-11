@@ -111,10 +111,6 @@ jobs:
           echo "::set-output name=file_missing::$(cat report_correction.txt | grep EXIST | grep false | wc -l)"
           echo "::set-output name=nb_error::$(cat report_correction.txt | grep ERROR |  wc -l)"
           echo "::set-output name=nb_success::$(cat report_correction.txt | grep SUCCES | wc -l)"
-          # echo "::set-output name=total::$((${{steps.statistics.outputs.nb_error}}+${{steps.statistics.outputs.nb_success}}))"
-          # echo "::set-output name=percent_success::$((${{steps.statistics.outputs.nb_succes}}+${{steps.statistics.outputs.total}}))"
-          
-
        
       - name: total
         id: total
@@ -125,7 +121,7 @@ jobs:
         id: percent_success
         run:  echo "::set-output name=percent_success::$(( ${{steps.statistics.outputs.nb_success}}  / ${{steps.total.outputs.total}} )).$(( (${{steps.statistics.outputs.nb_success}}  * 100 / ${{steps.total.outputs.total}}) % 100 ))"
 
-      - run: echo "file_missing=${{steps.statistics.outputs.file_missing}}, nb_error=${{steps.statistics.outputs.nb_error}}, nb_success=${{steps.statistics.outputs.nb_success}}, percent_success=${{steps.percent_success.outputs.percent_success}}"
+      # - run: echo "file_missing=${{steps.statistics.outputs.file_missing}}, nb_error=${{steps.statistics.outputs.nb_error}}, nb_success=${{steps.statistics.outputs.nb_success}}, percent_success=${{steps.percent_success.outputs.percent_success}}"
 
       - run: |
           echo " " >> report_correction.txt
@@ -154,7 +150,6 @@ jobs:
           nb_total_test=$(( $numPassedTests + $numFailedTests ))
           echo "::set-output name=nb_total_test::$nb_total_test"
           echo "::set-output name=num_passed_tests::$numPassedTests"
-          
     
           percent_test=$(( $numPassedTests / $nb_total_test ))     
 
@@ -190,12 +185,11 @@ jobs:
           # echo "nb_success=$nb_success, total_exist_test=$total_exist_test, num_passed_tests=$num_passed_tests, nb_total_test=$nb_total_test, uncovered_lines=$uncovered_lines, uncovered_lines_total=$uncovered_lines_total " >> report_correction.txt
           total=$(( $total_exist_test + $nb_total_test + $uncovered_lines_total ))
           pass=$(( $nb_success + $num_passed_tests + $uncovered_lines))
-          echo "total=$total, pass=$pass >> report_correction.txt
+          echo "total=$total, pass=$pass" >> report_correction.txt
 
-          note=$(( $pass  / $total )).$(( ($pass  * 100 / $total) % 100 ))
-
-          echo "total=$total, pass=$pass, note=$note"  >> report_correction.txt
-          
+          note=$(( $pass  / $total )).$(( ($pass  * 100 / $total ) % 100 ))
+          echo " "  >> report_correction.txt
+          echo "note finale=$note"  >> report_correction.txt
           
       - run: cat report_correction.txt
 
