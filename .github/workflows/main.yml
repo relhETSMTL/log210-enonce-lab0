@@ -193,10 +193,12 @@ jobs:
           
       - run: cat report_correction.txt
 
+# https://github.com/ad-m/github-push-action
       - name: Commit report
         run: |
           git config --global user.name 'Yvan Ross'
           git config --global user.email 'yvan.ross@gmail.com'
+          git add report_correction.txt
           git commit -am "Automated report"
           git push
 
