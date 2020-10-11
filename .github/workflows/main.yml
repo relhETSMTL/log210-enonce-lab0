@@ -194,7 +194,7 @@ jobs:
 
           note=$(( $pass  / $total )).$(( ($pass  * 100 / $total) % 100 ))
 
-          echo "total=$total, pass=$pass, note=$note  >> report_correction.txt
+          echo "total=$total, pass=$pass, note=$note"  >> report_correction.txt
           
           
       - run: cat report_correction.txt
