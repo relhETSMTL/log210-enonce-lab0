@@ -193,6 +193,13 @@ jobs:
           
       - run: cat report_correction.txt
 
+      - name: Commit report
+        run: |
+          git config --global user.name 'Yvan Ross'
+          git config --global user.email 'yvan.ross@gmail.com'
+          git commit -am "Automated report"
+          git push
+
       - name: upload report_correction.txt
         uses: actions/upload-artifact@v2
         with: 
