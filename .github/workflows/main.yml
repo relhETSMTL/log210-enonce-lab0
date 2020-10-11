@@ -17,34 +17,54 @@ jobs:
       # - run: echo ::set-env name=FILENAME::ReadMeSquelette.md
 
       - run:  echo GITHUB_REPOSITORY=$GITHUB_REPOSITORY > report_correction.txt
-   
 
       - name: text exist
         uses: ./.github/actions/text-exist
         with:
          filename: ReadMeSquelette.md
-         text: "D'où vient l'idée de base pour ce squelette?;Le Joueur demande à redémarrer l'application;Le Système termine tous les jeux en cours et redémarre l'application;(Redémarrer) as R #powderblue;J -- R;- d3.valeur est devenue un nombre entier aléatoire entre 1 et 6;- j.nbLancersGagnés a été incrémenté si la totale de d1.valeur, d2.valeur, d3.valeur est plus petit ou égal à 10"
+         text: "D'où vient l'idée de base pour ce squelette?;Le Joueur demande à redémarrer l'application;Le Système termine tous les jeux en cours et redémarre l'application;- d3.valeur est devenue un nombre entier aléatoire entre 1 et 6;- j.nbLancersGagnés a été incrémenté si la totale de d1.valeur, d2.valeur, d3.valeur est plus petit ou égal à 10"
          report: "report_correction.txt"
 
       - name: text exist
         uses: ./.github/actions/text-exist
         with:
-         filename: "test/redemarrer.test.txt"
+         filename: docs/modeles/dcu.puml
+         text: "(Redémarrer) as R #powderblue;J -- R"
+         report: "report_correction.txt"
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: docs/modeles/dss-redemarrer.puml
+         text: ":Joueur;:Système;redémarrerJeu();->"
+         report: "report_correction.txt"
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: docs/modeles/rdcu-redemarrer.puml
+         text: ":JeuDeDes;joueurs:;Map<String,Joueur>;redemarrerJeu();clear(); Contrôleur;Expert"
+         report: "report_correction.txt"
+
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "test/redemarrer.test.ts"
          text: "GET /api/v1/jeu/redemarrerJeu;Call responds with bad request when players do not exist"
          report: "report_correction.txt"
    
       - name: text exist
         uses: ./.github/actions/text-exist
         with:
-         filename: "src/routes/jeuRouter.ts"
-         text: "this.router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));public redemarrerJeu(req: Request, res: Response, next: NextFunction) {"
+         filename: "src/routes/JeuRouter.ts"
+         text: "this.router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));public redemarrerJeu(req: Request, res: Response, next: NextFunction) {;this.jeu.redemarrerJeu();résultat.v3"
          report: "report_correction.txt"
 
       - name: text exist
         uses: ./.github/actions/text-exist
         with:
-         filename: "src/core/jeuDeDes.ts"
-         text: "public redemarrerJeu() {;this.joueurs.clear()"
+         filename: "src/core/JeuDeDes.ts"
+         text: "public redemarrerJeu() {;this.joueurs.clear();private d3 : De;this.d3 = new De();this.d3.brasser();let v3 = this.d3.getValeur(); let somme = v1 + v2 + v3;<= 10; v3: v3,"
          report: "report_correction.txt"
 
       - name: text exist
@@ -60,60 +80,131 @@ jobs:
          filename: "public/lib/main.js"
          text: '$("button.redemarrer").click(function () {;$.get("/api/v1/jeu/redemarrerJeu"'
          report: "report_correction.txt"
-
       
       - name: text exist
         uses: ./.github/actions/text-exist
         with:
-         filename: "docs/mdd.puml"
+         filename: "docs/modeles/mdd.puml"
          text: 'JeuDeDés "1" -- "3" Dé : inclut >'
-         report: "report_correction.txt"
-      
-
-      - name: text exist
-        uses: ./.github/actions/text-exist
-        with:
-         filename: "ReadMeSuqelette.md"
-         text: ''
          report: "report_correction.txt"
 
       - name: text exist
         uses: ./.github/actions/text-exist
         with:
          filename: "docs/rdcu-jouer.puml"
-         text: 'participant "d3:De" as d3;participant "d3:De" as d3'
+         text: 'participant "d3:De" as d3;participant "d3:De" as d3;c->d3 : brasser();note right : selon Expert;c->d3 : v3 = getValeur();note right : selon Expert;opt v1 + v2 + v3 <= 10'
          report: "report_correction.txt"
 
+      - name: text exist
+        uses: ./.github/actions/text-exist
+        with:
+         filename: "test/jeu.test.ts"
+         text: 'expect(response.body.résultat.v3).toBeWithin(1, 7);'
+         report: "report_correction.txt"
+
+      - run: cat report_correction.txt
+
+    
+      - name: Verify missing files
+        id: statistics
+        run: |
+          echo "::set-output name=file_missing::$(cat report_correction.txt | grep EXIST | grep false | wc -l)"
+          echo "::set-output name=nb_error::$(cat report_correction.txt | grep ERROR |  wc -l)"
+          echo "::set-output name=nb_success::$(cat report_correction.txt | grep SUCCES | wc -l)"
+          # echo "::set-output name=total::$((${{steps.statistics.outputs.nb_error}}+${{steps.statistics.outputs.nb_success}}))"
+          # echo "::set-output name=percent_success::$((${{steps.statistics.outputs.nb_succes}}+${{steps.statistics.outputs.total}}))"
+          
+
+       
+      - name: total
+        id: total
+        run:  echo "::set-output name=total::$((${{steps.statistics.outputs.nb_error}}+${{steps.statistics.outputs.nb_success}}))"
+     
+
+      - name: percent success
+        id: percent_success
+        run:  echo "::set-output name=percent_success::$(( ${{steps.statistics.outputs.nb_success}}  / ${{steps.total.outputs.total}} )).$(( (${{steps.statistics.outputs.nb_success}}  * 100 / ${{steps.total.outputs.total}}) % 100 ))"
+
+      - run: echo "file_missing=${{steps.statistics.outputs.file_missing}}, nb_error=${{steps.statistics.outputs.nb_error}}, nb_success=${{steps.statistics.outputs.nb_success}}, percent_success=${{steps.percent_success.outputs.percent_success}}"
+
+      - run: |
+          echo " " >> report_correction.txt
+          echo "file_missing=${{steps.statistics.outputs.file_missing}}, nb_error=${{steps.statistics.outputs.nb_error}}, nb_success=${{steps.statistics.outputs.nb_success}}, percent_success=${{steps.percent_success.outputs.percent_success}}" >> report_correction.txt
+      # - run: echo "percent_success=${{steps.statistics.outputs.total}}"
 
 
-      
-      
-      
-      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: |
+          npm install
+          npm run build --if-present
+          npm run testj > jest.json
+
+      - name: test stats
+        id: test_stats
+        run: |
+          # cat jest.json
+          numPassedTests=$(grep -o '"numPassedTests":[0-9][0-9,\"][0-9,\"]' jest.json | tr -d ',' | tr -d '"') 
+          numPassedTests=${numPassedTests//'numPassedTests:'/}
+          numFailedTests=$(grep -o '"numFailedTests":[0-9][0-9,\"][0-9,\"]' jest.json | tr -d ',' | tr -d '"') 
+          numFailedTests=${numFailedTests//'numFailedTests:'/}
+          nb_total_test=$(( $numPassedTests + $numFailedTests ))
+          echo "::set-output name=nb_total_test::$nb_total_test"
+          echo "::set-output name=num_passed_tests::$numPassedTests"
+          
+    
+          percent_test=$(( $numPassedTests / $nb_total_test ))     
+
+          echo " " >> report_correction.txt
+          echo "numPassedTests=$numPassedTests, numFailedTests=$numFailedTests, percent_test=$percent_test" >> report_correction.txt
+          echo "numPassedTests=$numPassedTests, numFailedTests=$numFailedTests, percent_test=$percent_test" 
+
+
+      - name: Uncovered files
+        id: uncovered
+        run: |
+            uncovered_lines=$(sed -n "/<span class=\"strong\">/p" coverage/lcov-report/index.html | grep "100%" | wc -l)
+            echo "uncovered_lines=$uncovered_lines"
+            echo "::set-output name=lines::$uncovered_lines"
+            echo "::set-output name=total::4"
+            sed -n "/<span class=\"strong\">/p" coverage/lcov-report/index.html 
+
+            echo " " >> report_correction.txt
+            echo "uncovered_lines=$uncovered_lines" >> report_correction.txt
+            sed -n "/<span class=\"strong\">/p" coverage/lcov-report/index.html  >> report_correction.txt
+
+             
+      - run: |
+          nb_success=${{steps.statistics.outputs.nb_success}}
+          total_exist_test=${{steps.total.outputs.total}}
+
+          num_passed_tests=${{steps.test_stats.outputs.num_passed_tests}}
+          nb_total_test=${{steps.test_stats.outputs.nb_total_test}}
+        
+          uncovered_lines=${{steps.uncovered.outputs.lines}}
+          uncovered_lines_total=${{steps.uncovered.outputs.total}}
+          
+          # echo "nb_success=$nb_success, total_exist_test=$total_exist_test, num_passed_tests=$num_passed_tests, nb_total_test=$nb_total_test, uncovered_lines=$uncovered_lines, uncovered_lines_total=$uncovered_lines_total " >> report_correction.txt
+          total=$(( $total_exist_test + $nb_total_test + $uncovered_lines_total ))
+          pass=$(( $nb_success + $num_passed_tests + $uncovered_lines))
+          echo "total=$total, pass=$pass >> report_correction.txt
+
+          note=$(( $pass  / $total )).$(( ($pass  * 100 / $total) % 100 ))
+
+          echo "total=$total, pass=$pass, note=$note  >> report_correction.txt
+          
+          
       - run: cat report_correction.txt
 
       - name: upload report_correction.txt
         uses: actions/upload-artifact@v2
         with: 
-          name: report_correction
-          path: report_correction.txt
-      
+          name: reports
+          path: report_*.txt
 
-    
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
-
-      # - name: Install dependencies
-      #   run: npm install
-      
-      # - name: build
-      #   run: npm run build --if-present
-      
-      #   - name: run test
-      #   run: npm run test >> report_test.txt
-      
 
     env:
         CI: true

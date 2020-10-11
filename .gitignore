@@ -2,6 +2,5 @@
 node_modules
 dist
 .nyc_output
-coverage
 typings-custom/flash.ts.broken
 secrets/
