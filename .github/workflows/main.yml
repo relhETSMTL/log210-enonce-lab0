@@ -57,14 +57,14 @@ jobs:
         uses: ./.github/actions/text-exist
         with:
          filename: "src/routes/JeuRouter.ts"
-         text: "this.router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));public redemarrerJeu(req: Request, res: Response, next: NextFunction) {;this.jeu.redemarrerJeu();résultat.v3"
+         text: "this.router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));redemarrerJeu(req: Request, res: Response, next: NextFunction) {;this.jeu.redemarrerJeu();résultat.v3"
          report: "report_correction.txt"
 
       - name: text exist
         uses: ./.github/actions/text-exist
         with:
          filename: "src/core/JeuDeDes.ts"
-         text: "public redemarrerJeu() {;this.joueurs.clear();private d3 : De;this.d3 = new De();this.d3.brasser();let v3 = this.d3.getValeur(); let somme = v1 + v2 + v3;<= 10; v3: v3,"
+         text: "redemarrerJeu() {;this.joueurs.clear();private d3 : De;this.d3 = new De();this.d3.brasser();let v3 = this.d3.valeur; let somme = v1 + v2 + v3;<= 10; v3: v3,"
          report: "report_correction.txt"
 
       - name: text exist
@@ -92,7 +92,7 @@ jobs:
         uses: ./.github/actions/text-exist
         with:
          filename: "docs/modeles/rdcu-jouer.puml"
-         text: 'participant "d3:De" as d3;participant "d3:De" as d3;c->d3 : brasser();note right : selon Expert;c->d3 : v3 = getValeur();note right : selon Expert;opt v1 + v2 + v3 <= 10'
+         text: 'participant "d3:De" as d3;participant "d3:De" as d3;c->d3 : brasser();note right : selon Expert;c->d3 : v3 = valeur;note right : selon Expert;opt v1 + v2 + v3 <= 10'
          report: "report_correction.txt"
 
       - name: text exist
