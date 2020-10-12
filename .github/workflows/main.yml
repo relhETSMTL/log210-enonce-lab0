@@ -91,7 +91,7 @@ jobs:
       - name: text exist
         uses: ./.github/actions/text-exist
         with:
-         filename: "docs/rdcu-jouer.puml"
+         filename: "docs/modeles/rdcu-jouer.puml"
          text: 'participant "d3:De" as d3;participant "d3:De" as d3;c->d3 : brasser();note right : selon Expert;c->d3 : v3 = getValeur();note right : selon Expert;opt v1 + v2 + v3 <= 10'
          report: "report_correction.txt"
 
