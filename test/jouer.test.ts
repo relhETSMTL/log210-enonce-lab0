@@ -19,11 +19,11 @@ describe('GET /api/v1/jeu/jouer/:id', () => {
   
           expect(response.status).toBe(200);
           expect(response.type).toBe("application/json");
-          expect(response.body.résultat.lancers).toBe(i + 1);
-          expect(response.body.résultat.v1).toBeWithin(1, 7);
-          expect(response.body.résultat.v2).toBeWithin(1, 7);
-          expect(response.body.résultat.somme).toBe(response.body.résultat.v1 + response.body.résultat.v2);
-          expect(response.body.résultat.nom).toBe(testNom1);
+          expect(response.body.resultat.lancers).toBe(i + 1);
+          expect(response.body.resultat.v1).toBeWithin(1, 7);
+          expect(response.body.resultat.v2).toBeWithin(1, 7);
+          expect(response.body.resultat.somme).toBe(response.body.resultat.v1 + response.body.resultat.v2);
+          expect(response.body.resultat.nom).toBe(testNom1);
         });
     }
 

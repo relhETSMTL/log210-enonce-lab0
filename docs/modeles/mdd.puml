@@ -13,9 +13,9 @@ class Joueur {
 class Dé {
   valeur : int
 }
-class JeuDeDés
+class JeuDeDes
 
-JeuDeDés "1" -- "2" Dé : inclut > 
-Joueur "*" -l- "1" JeuDeDés : joue > 
+JeuDeDes "1" -- "2" Dé : inclut > 
+Joueur "*" -l- "1" JeuDeDes : joue > 
 'Joueur "1" -- "2" Dé : lance > 
 @enduml

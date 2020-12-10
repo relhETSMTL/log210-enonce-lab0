@@ -55,7 +55,7 @@ export class JeuDeDes {
         let somme = v1 + v2;
         joueur.lancer();
         if (somme == 7) joueur.gagner();
-        let résultat = {
+        let resultat = {
             nom: nom,
             somme: somme,
             lancers: joueur.lancers,
@@ -64,7 +64,7 @@ export class JeuDeDes {
             v2: v2,
             message: "Vous avez " + (somme == 7 ? "gagné!!!" : "perdu.")
         };
-        return résultat;
+        return resultat;
     }
 
     public terminerJeu(nom: string) {
@@ -73,11 +73,11 @@ export class JeuDeDes {
             throw new NotFoundError("Joueur '" + nom + "' n'existe pas.");
         }
         this.joueurs.delete(nom);
-        let résultat = {
+        let resultat = {
             nom: nom,
             message: "Merci d'avoir joué."
         };
-        return résultat;
+        return resultat;
     }
 
 

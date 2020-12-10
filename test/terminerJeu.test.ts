@@ -17,7 +17,7 @@ describe('GET /api/v1/jeu/terminerJeu/:id', () => {
 
         expect(response.status).toBe(200);
         expect(response.type).toBe("application/json");
-        expect(response.body.résultat.nom).toBe(testNom1);
+        expect(response.body.resultat.nom).toBe(testNom1);
     });
   
     it('Call responds with bad request when player does not exist ' + testNom1, async () => {

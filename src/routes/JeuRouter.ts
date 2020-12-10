@@ -68,13 +68,13 @@ export class JeuRouter {
 
     try {
       // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
-      let résultat = this.jeu.jouer(nom);
-      (req as any).flash('Résultat pour ' + nom + ': ' + résultat.v1 + ' + ' + résultat.v2 + ' = ' + résultat.somme);
+      let resultat = this.jeu.jouer(nom);
+      (req as any).flash('Résultat pour ' + nom + ': ' + resultat.v1 + ' + ' + resultat.v2 + ' = ' + resultat.somme);
       res.status(200)
         .send({
           message: 'Success',
           status: res.status,
-          résultat
+          resultat
         });
 
     } catch (error) {
@@ -100,13 +100,13 @@ export class JeuRouter {
 
     try {
       // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
-      let résultat = this.jeu.terminerJeu(nom);
+      let resultat = this.jeu.terminerJeu(nom);
       (req as any).flash('Jeu terminé pour ' + nom);      
       res.status(200)
         .send({
           message: 'Success',
           status: res.status,
-          résultat
+          resultat
         });
 
     } catch (error) {

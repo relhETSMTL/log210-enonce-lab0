@@ -11,7 +11,7 @@ participant ":Button" as b <<NavigateurWeb>>
 participant ":JeuRouteur" as r <<NodeExpress>>
 end box
 box "Couche domaine" #ddddff
-participant ":JeuDeDés" as c <<ContrôleurGRASP>>
+participant ":JeuDeDes" as c <<ContrôleurGRASP>>
 participant "..." as s
 end box
 j -> b : cliquer
