@@ -5,7 +5,7 @@ Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de
 
 > C'est un travail individuel, dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe.
 
-
+> **La durée de ce laboratoire est de 2 séances.  Vous devez faire votre remise dans github avant le début de la 3iem séance.**
 
 ## Préalables
 
