@@ -130,3 +130,22 @@ total=
 pass=
 note finale=
 student_name= _________________________
+ 
+test statistics
+numPassedTests=29
+numFailedTests=0
+nb_total_test=29
+percent_test=1.0
+ 
+Uncovered info 
+uncovered_lines=3
+                <span class="strong">100% </span>
+                <span class="strong">81.82% </span>
+                <span class="strong">100% </span>
+                <span class="strong">100% </span>
+ 
+Statistiques finales 
+total=
+pass=
+note finale=
+student_name= _________________________
