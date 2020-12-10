@@ -1,17 +1,11 @@
 # LOG210 - Lab 0 - Tutoriel sur les technologies
 
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210. 
-Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de Dés** :game_die: :game_die: que vous trouverez dans ce dépôt, qui sert de squelette que votre vrai projet de LOG210 doit suivre.
+Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de Dés** que vous trouverez dans ce dépôt, qui sert de squelette que votre vrai projet de LOG210 doit suivre.
 
 > C'est un travail individuel, dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe.
 
-Cet exercice sera noté selon la grille suivante:
 
-| Grille de correction  | 2 | 1 | 0 |
-| --------------------- |---|---|---|
-| Complétude            |   |   |   |
-| Correction            |   |   |   |
-| Respect du délai      |   |   |   |
 
 ## Préalables
 
@@ -44,7 +38,7 @@ Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir
 
 ## Objectif de l'exercice
 
-Cet exercice va vous amener à travers des étapes pour ajouter une nouvelle fonctionnalité au **Jeu de Dés** : le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
+Cet exercice va vous amener à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.  Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
 Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra passer par les étapes suivantes:
 
 - actualiser la documentation de la fonctionnalité (cas d'utilisation)
@@ -117,6 +111,8 @@ Vous pouvez cochez chaque étape dans la liste suivante:
     Time:        12.141 s
     Ran all test suites matching /test/i.
     ```  
+    Veuillez noter que vous devez avoir une couverture de test de 100% pour obtenir tout vos points.
+
 - [ ] exécuter le serveur sur localhost
 
   - Dans le terminal, `npm start`
@@ -302,6 +298,25 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 - [ ] A l'aide de Zoom ou de tout autre outils d'enregistrement vidéo, enregister une démonstration du fonctionnement de l'interface usager avec au moins 2 jouteurs.  Sauvegarder le résultats dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
 - [ ] faire une remise de la solution du projet (GitHub)
 
-  :clap: **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre, car il y a des [liens pour la documentation des technologies différentes](#technologies-vues-dans-cet-exercice).
+**Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre, car il y a des [liens pour la documentation des technologies différentes](#technologies-vues-dans-cet-exercice).
 
-  > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter autant possible le facteur de bus :oncoming_bus: de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. :wink:
+  > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter autant possible le facteur de bus de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
+
+
+### 7. Vérifier votre note suite à la correction automatique
+
+Cet exercice sera noté automatiquement lorsque vous pousserai votre code dans github.  Un Github action sera exécuté et chacun des énoncés sera vérifié.  Github générera un fichier nommé report_correction.txt qui vous indiquera la note obtenu.  Attendez que le Github Action soit complété et ensuite vous pourrez récupérer le fichier report_correction.txt à l'aide d'un git pull.
+
+Allez voir le menu **Actions** dans github pour voir l'état de votre push.
+
+Il est aussi possible d'exécuté localement le github action au lieu de faire un push.
+
+  - Dans VSCode, ouvrir un terminal dans le menu **Terminal > New Terminal**
+
+    > Sur Windows, utiliser `Node.js Command Prompt` si les étapes suivantes ne fonctionnent pas
+
+  - Dans le terminal, taper `npm install` pour installer les bibliothèques node du projet (une fois seulement).
+
+  - Dans le terminal, taper `act` pour exécuter le code du github action.
+
+

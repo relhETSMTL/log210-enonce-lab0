@@ -13,8 +13,6 @@ Ce squelette est proposé pour commencer les projets en LOG210. Il possède les 
  - il fait une séparation entre les couches présentation et domaine, selon la méthodologie de conception du cours LOG210 (Larman)
  - il fonctionne sur Windows 10 (et probablement d'autres systèmes d'exploitation avec Node)
 
-> **NB**: Il existe également [une variante de ce squelette pour Python/Flask](https://github.com/profcfuhrmanets/log210-jeu-de-des-python-flask).
-
 ## D'où vient l'idée de base pour ce squelette?
 
 Le code d'origine a été expliqué dans ce [texte de blogue](http://mherman.org/blog/2016/11/05/developing-a-restful-api-with-node-and-typescript/#.WB3zyeErJE4).
