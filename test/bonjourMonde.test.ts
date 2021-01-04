@@ -11,7 +11,6 @@ describe('baseRoute', () => {
 
   it('should be html', async () => {
     const response = await request.get('/');
-    
     expect(response.status).toBe(200);
     expect(response.type).toBe("text/html");
   });

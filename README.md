@@ -1,5 +1,7 @@
 # LOG210 - Lab 0 - Tutoriel sur les technologies
 
+[Identification de l'étudiant](README-identification.md)
+
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210. 
 Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de Dés** que vous trouverez dans ce dépôt, qui sert de squelette que votre vrai projet de LOG210 doit suivre.
 
