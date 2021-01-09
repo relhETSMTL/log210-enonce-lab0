@@ -1,4 +1,4 @@
-@startuml
+@startuml Diagramme de cas d'utilisation
 left to right direction
 skinparam style strictuml
 skinparam packageStyle rect

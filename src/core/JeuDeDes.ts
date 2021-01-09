@@ -12,7 +12,6 @@ export class JeuDeDes {
     private d2 : De;
 
     constructor() {
-        console.log("Initialiser JeuDeDes");
         this.joueurs = new Map<string, Joueur>();
         this.d1 = new De();
         this.d2 = new De();        

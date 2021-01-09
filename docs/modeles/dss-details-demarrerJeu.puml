@@ -1,4 +1,4 @@
-@startuml
+@startuml RDCU
 skinparam style strictuml
 skinparam backgroundcolor transparent
 skinparam SequenceBoxBorderColor transparent

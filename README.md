@@ -316,9 +316,17 @@ Il est aussi possible d'exécuté localement le github action au lieu de faire u
   - Dans VSCode, ouvrir un terminal dans le menu **Terminal > New Terminal**
 
     > Sur Windows, utiliser `Node.js Command Prompt` si les étapes suivantes ne fonctionnent pas
+      - https://www.docker.com/products/docker-desktop
 
   - Dans le terminal, taper `npm install` pour installer les bibliothèques node du projet (une fois seulement).
 
+  - Installer act
+    - windows
+      - https://github.com/nektos/act
+      - https://www.docker.com/products/docker-desktop  Docker pour act
+      - optimisation docker: https://docs.microsoft.com/en-us/windows/wsl/install-win10 Utiliser WSL2
+    - Mac
+      - brew install act
+  
   - Dans le terminal, taper `act` pour exécuter le code du github action.
-
 

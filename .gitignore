@@ -5,3 +5,5 @@ dist
 typings-custom/flash.ts.broken
 secrets/
 coverage/
+report_coverage.json
+
