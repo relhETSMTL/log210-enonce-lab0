@@ -75,7 +75,7 @@ Vous pouvez cochez chaque étape dans la liste suivante:
 
 - [ ] [installer GitHub Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop) sur votre machine
 
-- [ ] [cloner le code de ce squelette](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) sur votre machine
+- [ ] <s>[cloner le code de ce squelette](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) sur votre machine</s>
 
   - :warning: Ne pas installer le squelette dans un dossier qui contient des espaces ou des accents
 
@@ -107,13 +107,13 @@ Vous pouvez cochez chaque étape dans la liste suivante:
     Normalement, on devrait voir les messages comme:
     ```
     ...
-    Test Suites: 4 passed, 4 total
-    Tests:       29 passed, 29 total
+    Test Suites: 13 failed, 6 passed, 19 total
+    Tests:       43 failed, 33 passed, 76 total
     Snapshots:   0 total
-    Time:        12.141 s
-    Ran all test suites matching /test/i.
+    Time:        13.545 s
+    Ran all test suites.
     ```  
-    Veuillez noter que vous devez avoir une couverture de test de 100% pour obtenir tout vos points.
+    Veuillez noter que vous devez avoir une couverture de test de 100% pour obtenir tout vos points. Vous devrez donc fixé les deux issues avec App.ts et JeuRouter.ts
 
 - [ ] exécuter le serveur sur localhost
 
@@ -125,7 +125,10 @@ Vous pouvez cochez chaque étape dans la liste suivante:
 
 ### 1. actualiser la documentation de la fonctionnalité;
 
-La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans cette étape, vous devez:
+La documentation des fonctionnalités se trouve dans le fichier [ReadMeSquelette.md](ReadMeSquelette.md). Dans cette étape, vous devez:
+
+- [ ] dans le fichier `ReadMeSquelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section <b>Identification de l'étudiant</b>.
+
 
 - [ ] dans le fichier `ReadMeSquelette.md` qui sert de documentation, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](ReadMeSquelette.md#jouer-aux-dés):
 
@@ -133,7 +136,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   #### Redémarrer
 
   1. Le Joueur demande à redémarrer l'application.
-  1. Le Système termine tous les jeux en cours et redémarre l'application.
+  2. Le Système termine tous les jeux en cours et redémarre l'application.
   ```
 
 - [ ] ajouter le cas d'utilisation [au diagramme UML](docs/modeles/dcu.puml) (PlantUML)
@@ -158,6 +161,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   Vous devriez voir un diagramme comme ceci:  
   ![dcu](https://www.plantuml.com/plantuml/svg/0/NOz1YiCm303lVeLeBxk7_g7dd9OKzgxQIjRKbeCiquRI_xJlwCUg19OjUp62cP7HlYgAjfnSea512qWSVnH25F8Q2xjwYZoXO8QgSo9x9Vgr-2CJ-XEET5Y59NnZHsEZbCR1brG4L92h8U9tAz20BUbGM1apmJT9G4Q7NgtfIgCcW1Kwjwn77ksZpM6k-hndsi3L0Nmibadj0k7vg9-h_WNRgPm3oJ4rMgIU36OK8LcD_f_GmMvdsU_KkvlR4mUxzmK0 "dcu")
 
+
   <details>
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.puml`</summary><p>
 
@@ -173,6 +177,20 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   La partie de l'URL `src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/modeles/dcu.puml` doit pointer sur le fichier dans *votre* dépôt plutôt que sur celui duquel ce projet a été copié. 
 
   Pour obtenir l'URL "raw" d'un fichier sur GitHub, navigez vers le fichier, cliquez sur le bouton **Raw**, puis copiez l'URL du navigateur. Finalement, cela doit être fait une seule fois pour chaque diagramme `.puml` et les changements vont suivre automatiquement dans la documentation. Cependant, il peut prendre quelques minutes avant que le cache du navigateur se rafraichisse. Pour en savoir plus, lire [la question sur StackOverflow](https://stackoverflow.com/questions/32203610/how-to-integrate-uml-diagrams-into-gitlab-or-github).
+</details>
+<details>
+     <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.svg`</summary><p>
+
+  *Question*: Comment faire en sorte que `ReadMeSquelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
+  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `ReadMeSquelette.md`:
+
+  ```markdown
+  ### Diagramme de cas d’utilisation
+
+  ![Diagramme de cas d'utilisation](docs/modeles/dcu/Diagramme%20de%20cas%20d'utilisation.svg)
+  ```
+
+  L'avantage de cette méthode est que votre documentation local est immédiatement à jour.
 
 </p></details>
 
@@ -187,7 +205,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
 - [ ] prendre connaissance des postconditions du contrat d'opération
 
-  > Les instances de Joueur ont été supprimées
+  > Les tentatives de chaque joueurs sont remise à zéro.
 
 - [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/modeles/rdcu-redemarrer.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
 
@@ -216,7 +234,7 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   - y créer un autre test pour valider la postcondition du contrat d'opération
 
-    Le test doit vérifier que les deux joueurs ont été supprimés du système
+    Le test doit vérifier que les tentatives des deux joueurs ont été remises à zéro
 
 - [ ] valider que les tests ne passent pas (Jest/SuperTest)
   
@@ -290,14 +308,18 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
 
   Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*. 
 
-### 5. pratiquez ce que vous avez appris!
+### 5. Changement de page
+- [ ] Ajouter un second bouton qui se nommera "Redemarrer nouvelle page" et qui utilisera le id "button#redemarrerNouvellePage". Ce boutton devra redémarrer le jeux et afficher le contenu de la page de jeux en utilisant le fichier index2.pug
+- [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page index.puml. Ce boutton devra utiliser le id "button#home"
+- [ ] Ajouter le RDCU (diagramme de séquende) pour démontrer l'opération du controleur "redemarrerJeuxNouvellePage"
+### 6. pratiquez ce que vous avez appris!
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux, et la condition pour gagner est que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris changer le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller sans aide.
 
-### 6. remettre (anglais *commit*) les changements.
+### 7. remettre (anglais *commit*) les changements.
 
-- [ ] Ajouter votre nom ici tel qu'il apparait sur votre carte étudiante: <studentName> _________________________</studentName>
-- [ ] A l'aide de Zoom ou de tout autre outils d'enregistrement vidéo, enregister une démonstration du fonctionnement de l'interface usager avec au moins 2 jouteurs.  Sauvegarder le résultats dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
+
+- [ ] A l'aide de Zoom ou de tout autre outils d'enregistrement vidéo, enregister une démonstration du fonctionnement de l'interface usager avec au moins 2 joueurs.  Sauvegarder le résultats dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
 - [ ] faire une remise de la solution du projet (GitHub)
 
 **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre, car il y a des [liens pour la documentation des technologies différentes](#technologies-vues-dans-cet-exercice).
@@ -305,28 +327,9 @@ La documentation des fonctionnalités se trouve dans le fichier ReadMe.md. Dans 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter autant possible le facteur de bus de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
 
 
-### 7. Vérifier votre note suite à la correction automatique
+### 8. Vérifier la correction automatique
 
-Cet exercice sera noté automatiquement lorsque vous pousserai votre code dans github.  Un Github action sera exécuté et chacun des énoncés sera vérifié.  Github générera un fichier nommé report_correction.txt qui vous indiquera la note obtenu.  Attendez que le Github Action soit complété et ensuite vous pourrez récupérer le fichier report_correction.txt à l'aide d'un git pull.
+Cet exercice sera noté quasi automatiquement lorsque vous pousserai votre code dans github.  Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser sont fait.
 
-Allez voir le menu **Actions** dans github pour voir l'état de votre push.
-
-Il est aussi possible d'exécuté localement le github action au lieu de faire un push.
-
-  - Dans VSCode, ouvrir un terminal dans le menu **Terminal > New Terminal**
-
-    > Sur Windows, utiliser `Node.js Command Prompt` si les étapes suivantes ne fonctionnent pas
-      - https://www.docker.com/products/docker-desktop
-
-  - Dans le terminal, taper `npm install` pour installer les bibliothèques node du projet (une fois seulement).
-
-  - Installer act
-    - windows
-      - https://github.com/nektos/act
-      - https://www.docker.com/products/docker-desktop  Docker pour act
-      - optimisation docker: https://docs.microsoft.com/en-us/windows/wsl/install-win10 Utiliser WSL2
-    - Mac
-      - brew install act
-  
-  - Dans le terminal, taper `act` pour exécuter le code du github action.
-
+Assurez vous qu'aucun test n'est en échec et que la couverture de test est de 100%.
+> npm test

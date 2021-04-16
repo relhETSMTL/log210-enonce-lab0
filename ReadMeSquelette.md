@@ -1,3 +1,11 @@
+
+
+# Identification de l'étudiant
+- <nomComplet1>Entrer votre nom</nomComplet1>
+- <courriel1>Entrer votre courriel</courriel1>
+- <codeMoodle1>Entrer votre code moodle obtenu à partir de Signet, 2 lettres majuscule avec 5 chiffres</codeMoodle1>
+- <githubAccount1>Entrer l'identifiant de votre compte github</githubAccount1>
+
 # Squelette pour un API simple dans Node, Express et TypeScript
 
 [![Build Status](https://travis-ci.org/profcfuhrmanets/log210-jeu-de-des-node-express-ts.svg?branch=master)](https://travis-ci.org/profcfuhrmanets/log210-jeu-de-des-node-express-ts)
@@ -90,7 +98,7 @@ Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. 
 *Le Joueur répète l’étape 3 jusqu’à ce qu’il ait fini.*
 
 4. Le Joueur demande à terminer le jeu.
-1. ~~Le Système affiche un tableau de bord avec les noms des joueurs et le ratio des parties gagnées (nombre de fois gagné / nombre de lancers).~~
+1. Le Système affiche un tableau de bord avec les noms des joueurs et le ratio des parties gagnées (nombre de fois gagné / nombre de lancers).
 
 ### Diagramme de cas d’utilisation
 
