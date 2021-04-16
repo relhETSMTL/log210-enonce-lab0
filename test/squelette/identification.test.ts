@@ -5,10 +5,10 @@ var path = require('path');
 
 let content = ""
 beforeAll(async () => {
-  content = readFileSync('README-identification.md', 'utf-8');
+  content = readFileSync('Squelette.md', 'utf-8');
 });
 
-describe('README-identification', () => {
+describe('README identification', () => {
     it('should replace Entrer votre nom', async () => {
         expect(content).not.toInclude("Entrer votre nom");
     }); 

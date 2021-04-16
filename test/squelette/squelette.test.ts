@@ -4,7 +4,7 @@ import { readFileSync } from 'fs';
 
 let content = ""
 beforeAll(async () => {
-  content = readFileSync('ReadMeSquelette.md', 'utf-8');
+  content = readFileSync('Squelette.md', 'utf-8');
 });
 
 describe('ReadmeSuqelette', () => {

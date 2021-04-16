@@ -1,7 +1,5 @@
 # LOG210 - Lab 0 - Tutoriel sur les technologies
 
-[Identification de l'étudiant](README-identification.md)
-
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210. 
 Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de Dés** que vous trouverez dans ce dépôt, qui sert de squelette que votre vrai projet de LOG210 doit suivre.
 
@@ -57,7 +55,7 @@ Vous pouvez cochez chaque étape dans la liste suivante:
 
 ### 0. préparer votre machine pour ce tutoriel;
 
-- [ ] jeter un oeil sur la [documentation du squelette](ReadMeSquelette.md)
+- [ ] jeter un oeil sur la [documentation du squelette](Squelette.md)
 
 - [ ] [installer node.js](https://nodejs.org/en/download/) sur votre machine
 
@@ -125,12 +123,12 @@ Vous pouvez cochez chaque étape dans la liste suivante:
 
 ### 1. actualiser la documentation de la fonctionnalité;
 
-La documentation des fonctionnalités se trouve dans le fichier [ReadMeSquelette.md](ReadMeSquelette.md). Dans cette étape, vous devez:
+La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](Squelette.md). Dans cette étape, vous devez:
 
-- [ ] dans le fichier `ReadMeSquelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section <b>Identification de l'étudiant</b>.
+- [ ] dans le fichier `Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section <b>Identification de l'étudiant</b>.
 
 
-- [ ] dans le fichier `ReadMeSquelette.md` qui sert de documentation, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](ReadMeSquelette.md#jouer-aux-dés):
+- [ ] dans le fichier `Squelette.md` qui sert de documentation, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](Squelette.md#jouer-aux-dés):
 
   ```markdown
   #### Redémarrer
@@ -165,8 +163,8 @@ La documentation des fonctionnalités se trouve dans le fichier [ReadMeSquelette
   <details>
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.puml`</summary><p>
 
-  *Question*: Comment faire en sorte que `ReadMeSquelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
-  *Réponse*: Il faut modifier le markdown suivant dans `ReadMeSquelette.md`:
+  *Question*: Comment faire en sorte que `Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
+  *Réponse*: Il faut modifier le markdown suivant dans `Squelette.md`:
 
   ```markdown
   ### Diagramme de cas d’utilisation
@@ -181,8 +179,8 @@ La documentation des fonctionnalités se trouve dans le fichier [ReadMeSquelette
 <details>
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.svg`</summary><p>
 
-  *Question*: Comment faire en sorte que `ReadMeSquelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
-  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `ReadMeSquelette.md`:
+  *Question*: Comment faire en sorte que `Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
+  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `Squelette.md`:
 
   ```markdown
   ### Diagramme de cas d’utilisation
@@ -238,9 +236,9 @@ La documentation des fonctionnalités se trouve dans le fichier [ReadMeSquelette
 
 - [ ] valider que les tests ne passent pas (Jest/SuperTest)
   
-  `npm test` va indiquer `2 failing`
+  `npm test` va indiquer `XX failing`
 
-  Cela est normal, car nous avons écrit un test avant d'avoir écrit la fonctionnalité, selon la pratique *Développement piloté par les tests*.
+  Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.
 
 ### 4. écrire le code source;
 
@@ -311,12 +309,25 @@ La documentation des fonctionnalités se trouve dans le fichier [ReadMeSquelette
 ### 5. Changement de page
 - [ ] Ajouter un second bouton qui se nommera "Redemarrer nouvelle page" et qui utilisera le id "button#redemarrerNouvellePage". Ce boutton devra redémarrer le jeux et afficher le contenu de la page de jeux en utilisant le fichier index2.pug
 - [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page index.puml. Ce boutton devra utiliser le id "button#home"
-- [ ] Ajouter le RDCU (diagramme de séquende) pour démontrer l'opération du controleur "redemarrerJeuxNouvellePage"
+- [ ] Ajouter le RDCU (diagramme de séquence) pour démontrer l'opération du controleur "redemarrerJeuxNouvellePage"
 ### 6. pratiquez ce que vous avez appris!
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux, et la condition pour gagner est que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris changer le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller sans aide.
 
-### 7. remettre (anglais *commit*) les changements.
+
+### 7. Vérifier la correction automatique
+
+Cet exercice sera noté quasi automatiquement lorsque vous pousserai votre code dans github.  Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser sont fait.
+
+Assurez vous qu'aucun test n'est en échec et que la couverture de test est de 100%.
+> npm test
+
+### 8. Remise du rapport en format PDF
+- [ ] Assurez vous de générer une version PDF de votre fichier `Squelette.md`
+  > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé le bon extension.
+
+
+### 9. Remettre (anglais *commit*) les changements.
 
 
 - [ ] A l'aide de Zoom ou de tout autre outils d'enregistrement vidéo, enregister une démonstration du fonctionnement de l'interface usager avec au moins 2 joueurs.  Sauvegarder le résultats dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
@@ -326,10 +337,3 @@ La documentation des fonctionnalités se trouve dans le fichier [ReadMeSquelette
 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter autant possible le facteur de bus de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
 
-
-### 8. Vérifier la correction automatique
-
-Cet exercice sera noté quasi automatiquement lorsque vous pousserai votre code dans github.  Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser sont fait.
-
-Assurez vous qu'aucun test n'est en échec et que la couverture de test est de 100%.
-> npm test
