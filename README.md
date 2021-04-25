@@ -196,7 +196,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
 
 > Les modèles de conception guident l'implémentation. Vous aurez à revenir à cette section durant ce tutoriel
 
-- [ ] ajouter un nouveau DSS `docs/modeles/dss-redemarrer.puml` pour le cas d'utilisation (PlantUML)
+- [ ] ajouter un nouveau DSS `docs/modeles/dss-redemarrerJeu.puml` pour le cas d'utilisation (PlantUML)
   
   Faire un diagramme en PlantUML qui ressemble à ceci:  
   ![DSS pour le scénario Redémarrer](https://www.plantuml.com/plantuml/svg/0/NOynQWD134NxEOLmvHGXlJ6B0waCQRAGNin-6v4TpKRI52RuFl4vzcAPf4c8Yjyy_d_euC4MhSp9tqGNDYxaSPdHqoJ_8nDEtEOuLGtb0dg5JQpyjult1isWZqJzdk7EPppESbRAq82bQmg9BdWQHrfgC_gMvVMcR59fByCBflLMs0osVv0XSOvgjDaTQqEp3R5JJbqNacLXZOx6YyVwMV03FUNxmMb7zZjqHDlU9Jf0f_xI5m00 "DSS pour le scénario Redémarrer")
@@ -205,7 +205,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
 
   > Les tentatives de chaque joueurs sont remise à zéro.
 
-- [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/modeles/rdcu-redemarrer.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
+- [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/modeles/rdcu-Jeu.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
 
   Faire un diagramme en PlantUML qui ressemble à ceci:  
   ![RDCU pour redémarrerJeu](https://www.plantuml.com/plantuml/svg/0/RP31IWD138RlynIX5rkmBx38KkXwANXHzBINE9lMMMSoGoO3-aYz-mRxOiOAWk8bWVny-VzaLnL5MugklWOkA9YWwdiagnBy7sMY8xQenypAc0YUI2PaT1hKYFjX_mWbDm6XQJad524vK7C6Q_2X82kiEfiCD51T0LRmRjjxwBu8-W7M6yTP2IISNjJ4IZ4pxCrLbez8JKPUVszPpXMewiZnAZ_Ff23e0zFcj-MScq6r6_aEoys37SQdwyDbs5zIpCbvsFRMpSr7Gla_mkrR8L6t8vxiCPy0 "RDCU pour redémarrerJeu")
@@ -216,7 +216,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
 
 - [ ] ajouter de nouveaux cas de tests pour Redémarrer (Jest/SuperTest)
 
-  - créer un fichier `test/redemarrer.test.ts`
+  - créer un fichier `test/redemarrerJeu.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   
@@ -286,7 +286,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
         input.form-control.col-sm-4(name='nom' type='text')
     button.demarrer Démarrer
 
-  button#redemarrer Redémarrer
+  button#redemarrerJeu Redémarrer
   ```
 
 - [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
@@ -294,7 +294,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
   Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clique sur le bouton *Démarrer* (`$("button.demarrer").click(function () {...}`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
 
   ```JavaScript
-  redemarrer.addEventListener("click", function ()
+  redemarrerJeu.addEventListener("click", function ()
   {
       fetch("/api/v1/jeu/redemarrerJeu")
       .then(function()
@@ -307,9 +307,9 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
   Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*. 
 
 ### 5. Changement de page
-- [ ] Ajouter un second bouton qui se nommera "Redemarrer nouvelle page" et qui utilisera le id "button#redemarrerNouvellePage". Ce boutton devra redémarrer le jeux et afficher le contenu de la page de jeux en utilisant le fichier index2.pug
+- [ ] Ajouter un second bouton qui se nommera "Redemarrer nouvelle page" et qui utilisera le id "button#redemarrerJeuNouvellePage". Ce boutton devra redémarrer le jeux et afficher le contenu de la page de jeux en utilisant le fichier index2.pug
 - [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page index.puml. Ce boutton devra utiliser le id "button#home"
-- [ ] Ajouter le RDCU (diagramme de séquence) pour démontrer l'opération du controleur "redemarrerJeuxNouvellePage"
+- [ ] Ajouter le RDCU (diagramme de séquence) pour démontrer l'opération du controleur "redemarrerJeuNouvellePage"
 ### 6. pratiquez ce que vous avez appris!
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux, et la condition pour gagner est que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris changer le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller sans aide.
@@ -324,7 +324,7 @@ Assurez vous qu'aucun test n'est en échec et que la couverture de test est de 1
 
 ### 8. Remise du rapport en format PDF
 - [ ] Assurez vous de générer une version PDF de votre fichier `Squelette.md`
-  > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé le bon extension.
+  > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé le bon extensions.
 
 
 ### 9. Remettre (anglais *commit*) les changements.
@@ -337,3 +337,17 @@ Assurez vous qu'aucun test n'est en échec et que la couverture de test est de 1
 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter autant possible le facteur de bus de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
 
+### 10. Notion typescript pour les changement de page
+
+Main.js
+  $.get('/api/v1/jeu/xxxx', function(html,status){
+    document.open()
+    document.write(html)
+    document.close()
+  }
+
+
+jeuRouter.ts
+  public xxx(req:Request, res:ResResponse, nest: NextFunction){
+    res.render('index',...)  -> html
+  }
