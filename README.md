@@ -15,6 +15,11 @@ Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 - La programmation orientée objet (ici, c'est TypeScript)
 - Les test unitaires (ici, c'est Jest et SuperTest)
 
+### Dates de remises
+Notez que le calendrier des séances est différent pour chaque groupe-cours, mais les dates de remises suivent cette planification. 
+
+Remise du rapport et du code à minuit le jours de la séance de laboratoire #2
+
 ## Technologies vues dans cet exercice
 
 Cet exercice permet de comprendre de manière basique les technologies suivantes:
