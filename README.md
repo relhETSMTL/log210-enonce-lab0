@@ -5,7 +5,6 @@ Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de
 
 > C'est un travail individuel, dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe.
 
-> **La durée de ce laboratoire est de 2 séances.  Vous devez faire votre remise dans github avant le début de la 3iem séance.**
 
 ## Préalables
 
@@ -18,7 +17,7 @@ Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 ### Dates de remises
 Notez que le calendrier des séances est différent pour chaque groupe-cours, mais les dates de remises suivent cette planification. 
 
-Remise du rapport et du code à minuit le jours de la séance de laboratoire #2
+> **La durée de ce laboratoire est de 2 séances.  Vous devez faire votre remise dans github avant le début de la 3iem séance.**
 
 ## Technologies vues dans cet exercice
 
