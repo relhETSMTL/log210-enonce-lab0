@@ -79,7 +79,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
       "plantuml.render": "PlantUMLServer",
   ```
 
-  (Si on a les droits d'adminstrateur Windows) installer [GraphViz](http://www.graphviz.org/download/) pour utiliser une copie locale de PlantUML plutôt que le serveur et configurer `"plantuml.render": "Local"` selon la [documentation](https://github.com/qjebbs/vscode-plantuml#about-render).
+  (Si on a les droits d'administrateur Windows) installer [GraphViz](http://www.graphviz.org/download/) pour utiliser une copie locale de PlantUML plutôt que le serveur et configurer `"plantuml.render": "Local"` selon la [documentation](https://github.com/qjebbs/vscode-plantuml#about-render).
 
 - [ ] [installer GitHub Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop) sur votre machine
 
@@ -201,7 +201,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
   ![Diagramme de cas d'utilisation](docs/modeles/dcu/Diagramme%20de%20cas%20d'utilisation.svg)
   ```
 
-  L'avantage de cette méthode est que votre documentation local est immédiatement à jour.
+  L'avantage de cette méthode est que votre documentation locale est immédiatement à jour.
 
   </p></details>
 
@@ -216,7 +216,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
 
 - [ ] prendre connaissance des postconditions du contrat d'opération
 
-  > Les tentatives de chaque joueur sont remises à zéro.
+  > Toutes les instances de Joueur en cours ont été supprimées.
 
 - [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/modeles/rdcu-Jeu.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
 
@@ -237,7 +237,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
 
   - y utiliser `beforeAll` pour créer deux joueurs avant l'exécution des tests
 
-    Cette méthode s'exécutera avant tout les tests, pour satisfaire la précondition du cas d'utilisation (un joueur doit exister)
+    Cette méthode s'exécutera avant tous les tests, pour satisfaire la précondition du cas d'utilisation (un joueur doit exister)
 
   - y créer un test afin de tester le scénario principal (succès) avec `it` et le nommer adéquatement
 
@@ -247,7 +247,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
 
     Le test doit vérifier que les tentatives des deux joueurs ont été remises à zéro
 
-- [ ] valider que les tests ne passent pas (Jest/SuperTest)
+- [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
   
   `npm test` va indiquer `XX failing`
 
@@ -371,10 +371,10 @@ jeuRouter.ts
 ```
 ### 11. Calcul de la note
 Le calcul de la note du laboratoire se fait selon l'équation suivante:
-- ts: nombre total de test valides
-- td: nombre total de test valides avant le début du projet
-- tt: nombre total de test
-- tb: nombre de nouveau boutons fonctionnels (max 3) 
+- ts: nombre total de tests valides
+- td: nombre total de tests valides avant le début du projet
+- tt: nombre total de tests
+- tb: nombre de nouveaux boutons fonctionnels (max 3) 
 
 note finale = (ts - td + tb * 2) / (tt - td + 6) * 100
  
