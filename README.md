@@ -369,3 +369,12 @@ jeuRouter.ts
     res.render('index',...)  -> html
   }
 ```
+### 11. Calcul de la note
+Le calcul de la note du laboratoire se fait selon l'équation suivante:
+- ts: nombre total de test valides
+- td: nombre total de test valides avant le début du projet
+- tt: nombre total de test
+- tb: nombre de nouveau boutons fonctionnels (max 3) 
+
+note finale = (ts - td + tb * 2) / (tt - td + 6) * 100
+ 
