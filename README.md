@@ -83,7 +83,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] [installer GitHub Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop) sur votre machine
 
-- [ ] ~~[cloner le code de ce squelette](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) sur votre machine~~
+- [ ] [cloner le code de ce squelette](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) sur votre machine
 
   - :warning: Ne pas installer le squelette dans un dossier qui contient des espaces ou des accents
 
