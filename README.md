@@ -35,7 +35,7 @@ Cet exercice permet de comprendre de manière basique les technologies suivantes
 
 Le déploiement de la solution fonctionne comme le diagramme suivant:
 
-![Déploiement](https://www.plantuml.com/plantuml/svg/0/NP0nJyD038Nt-nLMftO84enCBL9LbG5LJIk6Xi4aRZb8V2UVar0X_ZjEQ1dmOFdytlCdtJmfYhPDxTA7vuY23IGzrsHTVFbFAKCJ0nDhFbfCl7EEGqKmUP3G9n9ex2LC4_XoOFMNWCC6JvIWfrUOHWaTCR8MNDbEgOargasR_MfMC2ayOeTvAJxg2s22rNxjlg-edAIZLk3PJZtPvkOzNN6UbUI89S4sj6h08JoC96uq71Onrhv4zO4BNdv6ePGAdkxEaNvvin5eDZSG3GoP-DERPjFB8RY7nMODssM-0_OTOGktxY9bLUWv6zDpuie-w0S0 "Déploiement")
+![Déploiement](https://www.plantuml.com/plantuml/svg/NP0_Q_D03CRt-nGYapFuXRTZfsG88Hs2YHCwn1rKMtMljNM7JdOQIhzx5JUXqEKGpv_d1xT8Yg93txdqxZcYO0z9pntPAxx-uzIXZu69jPmYPjuvnw4Xc6rnz2qg3GAz2S8qWqy70BybE1ROKe8JFKCM9Op4o5fnOvfI7pjKkuh3UbunAJpWY6KjFkeJO8BrOUE-RhIIPBoW7crgQyg_jtJ3ULQI5wm9Tc5G0rfvEadS53WkO-nyZUe3LxpwY48fLPpjpv5-UFC9Q35t8HeOSl7jg-RPTGZkOLbiOBSgzy1-91pWlxjQUHDEd4_j1N5ZV_GD "Déploiement")
 
 > :warning: Les bases de données et les cadriciels (Angular, React, etc.) sont des sujets traités dans d'autres cours des programmes de LOG et de GTI. Donc, vous ne pouvez pas utiliser ces technologies dans les laboratoires de LOG210.
 
