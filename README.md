@@ -341,16 +341,21 @@ Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 1
 - [ ] Assurez-vous de générer une version PDF de votre fichier `Squelette.md`
   > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
 
-### 9. Remettre (anglais *commit*) les changements.
+### 9. Faire face aux parasites et aux mollassons dans une équipe
+
+1. Lisez le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
+2. Écrivez une réponse dans le fichier `experience-parasites-mollassons.md` du dépôt.
+
+### 10. Remettre (anglais *commit*) les changements.
 
 - [ ] À l'aide de Zoom ou de tout autre outil d'enregistrement vidéo, enregistrez une démonstration du fonctionnement de l'interface utilisateur avec au moins 2 joueurs.  Sauvegarder le résultat dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
-- [ ] faire une remise de la solution du projet (GitHub)
+- [ ] faire une remise de la solution du projet (GitHub) incluant votre réponse au texte sur le travail en équipe
 
 **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre, car il y a des [liens pour la documentation des technologies différentes](#technologies-vues-dans-cet-exercice).
 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter le facteur de bus (voir les notes de cours pour l'explication) de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
 
-### 10. Notions TypeScript pour les changements de page
+### 11. Notions TypeScript pour les changements de page
 
 Main.js
 
@@ -369,12 +374,15 @@ jeuRouter.ts
     res.render('index',...)  -> html
   }
 ```
-### 11. Calcul de la note
+
+### 12. Calcul de la note
+
 Le calcul de la note du laboratoire se fait selon l'équation suivante:
+
+- te: 10 points si vous avez complété un texte d'environ 300 mots dans `experience-parasites-mollassons.md` (sinon 0 points)
 - ts: nombre total de tests valides
 - td: nombre total de tests valides avant le début du projet
 - tt: nombre total de tests
-- tb: nombre de nouveaux boutons fonctionnels (max 3) 
+- tb: nombre de nouveaux boutons fonctionnels (max 3)
 
-note finale = (ts - td + tb * 2) / (tt - td + 6) * 100
- 
+note finale = (te + ts - td + tb * 2) / (10 + tt - td + 6) * 100
