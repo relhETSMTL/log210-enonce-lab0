@@ -6,7 +6,7 @@ Le squelette est une application minimaliste qui permet de connecter plusieurs t
 En apprenant avec le squelette, vous pouvez aller plus vite, sans nécessairement tout comprendre au début.
 De plus, le squelette contient des technologies suffisantes pour réaliser votre projet en équipe, ce qui vous permet de vous concentrer sur la méthodologie d'analyse et de conception qui est le sujet principal de LOG210.
 
-> C'est un travail individuel, dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe.
+> C'est un travail individuel, dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe. ⚠️Puisque les points pour ce laboratoire sont dans le volet de travail de nature individuelle, **l'évaluation de ce travail va déterminer en partie si vous passez le double seuil.** Alors chaque point est très important!
 
 ## Préalables
 
@@ -14,7 +14,7 @@ Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 
 - Les dépôts de code source en git (ici, c'est GitHub)
 - La programmation orientée objet (ici, c'est TypeScript)
-- Les tests unitaires (ici, c'est Jest et SuperTest)
+- Les tests (ici, c'est Jest et SuperTest)
 
 ### Date de remise
 
@@ -325,16 +325,21 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
 - [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page index.puml. Ce bouton devra utiliser le id "button#home"
 - [ ] Ajouter la RDCU (diagramme de séquence) pour démontrer l'opération du contrôleur "redemarrerJeuNouvellePage"
 
-### 6. Pratiquez ce que vous avez appris!
+### 6. Pratiquer ce qui a été appris!
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller sans aide.
 
 ### 7. Vérifier la correction automatique
 
-Cet exercice sera noté quasi automatiquement lorsque vous pousserez votre code dans github.  Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser sont faites.
+Cet exercice sera noté quasi automatiquement lorsque vous pousserez votre code dans GitHub. 
+Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser sont faites.
 
 Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100%.
 > npm test
+
+**Important:**
+La seule rétroaction pour ce laboratoire est la commande `npm test`.
+Vous n'aurez pas de rétroaction individuelle après, alors si vous avez des tests qui ne passent pas ou des questions concernant les technologies, **c'est votre responsabilité de demander de l'aide de l'auxiliaire de laboratoire avant la remise.**
 
 ### 8. Remise du rapport en format PDF
 
@@ -346,7 +351,7 @@ Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 1
 1. Lisez le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
 2. Écrivez une réponse dans le fichier `docs/experience-parasites-mollassons.md` du dépôt.
 
-### 10. Remettre (anglais *commit*) les changements.
+### 10. Remettre (anglais *commit*) les changements
 
 - [ ] À l'aide de Zoom ou de tout autre outil d'enregistrement vidéo, enregistrez une démonstration du fonctionnement de l'interface utilisateur avec au moins 2 joueurs.  Sauvegarder le résultat dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
 - [ ] faire une remise de la solution du projet (GitHub) incluant votre réponse dans `docs/experience-parasites-mollassons.md`
@@ -379,7 +384,7 @@ jeuRouter.ts
 
 Le calcul de la note du laboratoire se fait selon l'équation suivante:
 
-- te: 10 points si vous avez complété un texte d'environ 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 points)
+- te: 10 points si vous avez complété un texte d'environ 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)
 - ts: nombre total de tests valides
 - td: nombre total de tests valides avant le début du projet
 - tt: nombre total de tests
