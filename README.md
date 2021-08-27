@@ -112,7 +112,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter les tests
 
-  - Dans le terminal, taper `npm test` pour exécuter les tests.
+  - Dans le terminal, taper `npm test` ou `npm testw` pour exécuter les tests.
 
     Normalement, on devrait voir les messages comme:
 
@@ -386,7 +386,7 @@ Le calcul de la note du laboratoire se fait selon l'équation suivante:
 
 - te: 10 points si vous avez complété un texte d'environ 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)
 - ts: nombre total de tests valides
-- td: nombre total de tests valides avant le début du projet
+- td: nombre total de tests valides avant le début du projet (Actuel: 33 tests)
 - tt: nombre total de tests
 - tb: nombre de nouveaux boutons fonctionnels (max 3)
 
