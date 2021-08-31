@@ -1,12 +1,10 @@
-import * as path from 'path';
-import * as express from 'express';
-import * as logger from 'morgan';
-import * as bodyParser from 'body-parser';
-import * as flash from 'node-twinkle';
-import * as ExpressSession from 'express-session';
+import express from 'express';
+import logger from 'morgan';
+import bodyParser from 'body-parser';
+import flash from 'node-twinkle';
+import ExpressSession from 'express-session';
 
 import { jeuRoutes } from './routes/JeuRouter';
-import { JeuDeDes } from './core/JeuDeDes';
 
 // Creates and configures an ExpressJS web server.
 class App {
