@@ -64,7 +64,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 ### 0. préparer votre machine pour ce tutoriel;
 
-- [ ] jeter un oeil sur la [documentation du squelette](docs/Squelette.md)
+- [ ] jeter un œil sur la [documentation du squelette](docs/Squelette.md)
 
 - [ ] [installer node.js](https://nodejs.org/en/download/) sur votre machine
 
@@ -72,8 +72,8 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] [installer l'extension PlantUML dans VSCode](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
 
-- [ ] configurer l'extension PlantUML pour utiliser plantuml.com comme serveur en ajoutant/modifiant les "User settings" en VSCode:  
-  
+- [ ] configurer l'extension PlantUML pour utiliser plantuml.com comme serveur en ajoutant/modifiant les "User settings" en VSCode:
+
   ```json
       "plantuml.server": "https://www.plantuml.com/plantuml",
       "plantuml.render": "PlantUMLServer",
@@ -103,29 +103,34 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
     ```text
     ...
-    [23:43:06] Finished 'jsonAssets' after 25 ms
-    [23:43:06] Finished 'cssAssets' after 45 ms
-    [23:43:06] Finished 'jsAssets' after 46 ms
-    [23:43:08] Finished 'scripts' after 1.62 s
-    [23:43:08] Finished 'build' after 1.62 s
+    [2:52:01 p.m.] Projects in this build: 
+        * tsconfig.json
+
+    [2:52:01 p.m.] Project 'tsconfig.json' is out of date because output file 'dist/app.js' does not exist
+
+    [2:52:01 p.m.] Building project 'C:/Users/Moi/Documents/GitHub/S20203-LOG210-Lab0/tsconfig.json'
+    ...
     ```
 
 - [ ] exécuter les tests
 
-  - Dans le terminal, taper `npm test` ou `npm testw` pour exécuter les tests.
+  - Dans le terminal, taper `npm run lab0-test` pour exécuter les tests du lab 0.
 
     Normalement, on devrait voir les messages comme:
 
     ```text
     ...
-    Test Suites: 13 failed, 6 passed, 19 total
-    Tests:       43 failed, 33 passed, 76 total
+    Test Suites: 13 failed, 13 total
+    Tests:       43 failed, 2 passed, 45 total
     Snapshots:   0 total
-    Time:        13.545 s
-    Ran all test suites.
+    Time:        6.337 s
+    Ran all test suites matching /lab0.test.ts/i.
     ```  
 
-    Veuillez noter que vous devez avoir une couverture de test de 100% pour obtenir tous vos points. Vous devrez donc corriger les deux issues avec App.ts et JeuRouter.ts
+    Certains tests valident le contenu de vos fichiers (la documentation) et d'autres valident les fonctionnalités (programmation).
+    Veuillez noter que vous devez avoir une couverture de test de 100% pour obtenir tous vos points. Vous devrez donc corriger les deux issues avec `app.ts` et `jeuRouter.ts`.
+    La rétroaction de ce laboratoire vient principalement de cette commande de test automatique.
+    Vous devez poser des questions aux auxiliaires d'enseignement si vous avez besoin d'aide.
 
 - [ ] exécuter le serveur sur localhost
 
@@ -133,7 +138,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter l'application avec un navigateur moderne à l'URL [http://localhost:3000](http://localhost:3000)
 
-> Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant.
+> Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant. Les auxiliaires d'enseignement auront accès à votre dépôt de code source et pourraient vous aider (surtout à distance) si votre code est synchronisé souvent avec le dépôt.
 
 ### 1. actualiser la documentation de la fonctionnalité;
 
@@ -157,7 +162,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   - visionner [cette vidéo](https://www.youtube.com/watch?v=xkwJ9GwgZJU) (*activer les sous-titres en français*) pour savoir comment créer et modifier un diagramme PlantUML
 
   - modifier `docs/modeles/dcu.puml` pour inclure un nouveau cas d'utilisation `(Redémarrer) as R #powderblue` et le lien avec l'acteur `J -- R` comme dans l'exemple partiel suivant:
-  
+
   ```text
   ...
   rectangle "Système" {
