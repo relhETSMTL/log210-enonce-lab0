@@ -1,9 +1,11 @@
 import 'jest-extended';
+import path from 'path';
 import { readFileSync } from 'fs';
 
 let content = ""
 beforeAll(async () => {
-  content = readFileSync('Squelette.md', 'utf-8');
+  const filename = path.join('docs', 'Squelette.md');
+  content = readFileSync(filename, 'utf-8');
 });
 
 describe('README identification', () => {

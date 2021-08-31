@@ -64,7 +64,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 ### 0. préparer votre machine pour ce tutoriel;
 
-- [ ] jeter un oeil sur la [documentation du squelette](Squelette.md)
+- [ ] jeter un oeil sur la [documentation du squelette](docs/Squelette.md)
 
 - [ ] [installer node.js](https://nodejs.org/en/download/) sur votre machine
 
@@ -137,11 +137,11 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 ### 1. actualiser la documentation de la fonctionnalité;
 
-La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](Squelette.md). Dans cette étape, vous devez:
+La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.md](docs/Squelette.md). Dans cette étape, vous devez:
 
-- [ ] dans le fichier `Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.
+- [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.
 
-- [ ] dans le fichier `Squelette.md` qui sert de documentation, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](Squelette.md#jouer-aux-dés):
+- [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/Squelette.md#jouer-aux-dés):
 
   ```markdown
   #### Redémarrer
@@ -175,8 +175,8 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
   <details>
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.puml`</summary><p>
 
-  *Question*: Comment faire en sorte que `Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
-  *Réponse*: Il faut modifier le markdown suivant dans `Squelette.md`:
+  *Question*: Comment faire en sorte que `docs/Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
+  *Réponse*: Il faut modifier le markdown suivant dans `docs/Squelette.md`:
 
   ```markdown
   ### Diagramme de cas d’utilisation
@@ -193,7 +193,7 @@ La documentation des fonctionnalités se trouve dans le fichier [Squelette.md](S
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.svg`</summary><p>
 
   *Question*: Comment faire en sorte que `Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
-  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `Squelette.md`:
+  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `docs/Squelette.md`:
 
   ```markdown
   ### Diagramme de cas d’utilisation
@@ -343,7 +343,7 @@ Vous n'aurez pas de rétroaction individuelle après, alors si vous avez des tes
 
 ### 8. Remise du rapport en format PDF
 
-- [ ] Assurez-vous de générer une version PDF de votre fichier `Squelette.md`
+- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md`
   > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
 
 ### 9. Faire face aux parasites et aux mollassons dans une équipe
