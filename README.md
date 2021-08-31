@@ -47,7 +47,7 @@ Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir
 
 ## Objectif de l'exercice
 
-Cet exercice va vous amener, à travers des étapes, à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.  Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
+Cet exercice va vous amener à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.  Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
 Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra passer par les étapes suivantes:
 
 - actualiser la documentation de la fonctionnalité (cas d'utilisation)
@@ -114,7 +114,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter les tests
 
-  - Dans le terminal, taper `npm run lab0-test` pour exécuter les tests du lab 0.
+  - Dans le terminal, taper `npm test` pour exécuter les tests du lab 0.
 
     Normalement, on devrait voir les messages comme:
 
@@ -269,7 +269,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   Retourner voir le diagramme qui a été créé précédemment
 
 - [ ] ajouter une nouvelle route, dans `src/routes/JeuRouter.ts` (Express)
-  
+
   - ajouter la fonction `redemarrerJeu`, juste avant la fonction `init()`
 
     Elle doit :
@@ -322,7 +322,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   });
   ```
 
-  Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*. 
+  Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*.
 
 ### 5. Changement de page
 
@@ -336,15 +336,16 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 ### 7. Vérifier la correction automatique
 
-Cet exercice sera noté quasi automatiquement lorsque vous pousserez votre code dans GitHub. 
-Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser sont faites.
+Cet exercice sera noté quasi automatiquement lorsque vous pousserez votre code dans GitHub.
+Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
 
 Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100%.
+
 > npm test
 
 **Important:**
 La seule rétroaction pour ce laboratoire est la commande `npm test`.
-Vous n'aurez pas de rétroaction individuelle après, alors si vous avez des tests qui ne passent pas ou des questions concernant les technologies, **c'est votre responsabilité de demander de l'aide de l'auxiliaire de laboratoire avant la remise.**
+Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si vous avez des tests qui ne passent pas ou des questions concernant les technologies, **c'est votre responsabilité de demander de l'aide de l'auxiliaire de laboratoire avant la remise.**
 
 ### 8. Remise du rapport en format PDF
 
