@@ -1,5 +1,5 @@
 import 'jest-extended';
-import { InvalidParameterError } from '../../src/core/errors/InvalidParameterError';
+import { InvalidParameterError } from '../../src/core/errors/invalidParameterError';
 import { Joueur } from '../../src/core/joueur';
 
 let joueur1 = new Joueur('yvan');
