@@ -39,7 +39,7 @@ jobs:
         run: npm ci
         
       - name: Run tests
-        run : npm run test
+        run : npm run test-squelette
 
       - name: Check for circular dependencies using Madge
         uses: gerrit0/circular-dependency-check@v1
