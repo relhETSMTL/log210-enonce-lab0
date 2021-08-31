@@ -3,11 +3,13 @@
     "target": "es6",
     "module": "commonjs",
     "outDir": "dist",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "incremental": true,
+    "typeRoots": ["./src/types", "node_modules/@types"]
   },
   "include": [
     "src/**/*.ts",
-    "./typings-custom/**/*.ts"
   ],
   "exclude": [
     "node_modules"

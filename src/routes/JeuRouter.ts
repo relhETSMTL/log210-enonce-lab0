@@ -1,20 +1,25 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import * as flash from 'node-twinkle';
+import { JeuDeDes } from '../core/jeuDeDes';
+import { InvalidParameterError } from '../core/errors/invalidParameterError';
 
-import { JeuDeDes } from '../core/JeuDeDes';
-import { InvalidParameterError } from '../core/errors/InvalidParameterError';
-
-// TODO: rethink the name for this "router" function, since it's not really an Express router (no longer being "use()"ed inside Express)
 export class JeuRouter {
-  router: Router;
-  jeu: JeuDeDes;  // contrôleur GRASP
+  private _router: Router;
+  private _controleurJeu: JeuDeDes;  // contrôleur GRASP
+
+  get controleurJeu() {
+    return this._controleurJeu;
+  }
+
+  get router() {
+    return this._router;
+  }
 
   /**
-   * Initialize the Router
+   * Initialiser le router
    */
   constructor() {
-    this.jeu = new JeuDeDes();  // init contrôleur GRASP
-    this.router = Router();
+    this._controleurJeu = new JeuDeDes();  // un routeur pointe vers au moins un contrôleur GRASP
+    this._router = Router();
     this.init();
   }
 
@@ -22,39 +27,27 @@ export class JeuRouter {
    * démarrer le jeu
    */
   public demarrerJeu(req: Request, res: Response, next: NextFunction) {
-    let nom = req.body.nom;
+    const nom = req.body.nom;
+
     try {
       // POST ne garantit pas que tous les paramètres de l'opération système sont présents
-      if (nom === undefined) {
+      if (!nom) {
         throw new InvalidParameterError('Le paramètre nom est absent');
       }
 
-      nom = nom.trim();
-
-      if (nom.length == 0) {
-        throw new InvalidParameterError('Le nom ne peut pas être vide');
-      }
-
       // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
-      let joueur = this.jeu.demarrerJeu(nom);
-      
-      (req as any).flash('Nouveau jeu pour ' + nom);
+      const joueur = this._controleurJeu.demarrerJeu(nom);
+      const joueurObj = JSON.parse(joueur);
+      req.flash('info', `Nouveau jeu pour ${nom}`);
       res.status(201)
         .send({
           message: 'Success',
           status: res.status,
-          nom: joueur.nom
+          joueur: joueurObj
         });
     } catch (error) {
-      var code = 500;
-
-      // Afficher les erreurs qui sont définies par l'API
-      if (error.code) {
-        (req as any).flash(error.message);
-        code = error.code;
-      }
-
-      res.status(code).json({ error: error.toString() });
+      console.error(error);
+      this._errorCode500(error, req, res);
     }
   }
 
@@ -62,63 +55,54 @@ export class JeuRouter {
    * jouer une fois aux dés
    */
   public jouer(req: Request, res: Response, next: NextFunction) {
-
-    // obtenir nom de la requête
-    let nom = req.params.nom;
-
+    const nom = req.params.nom;
     try {
       // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
-      let resultat = this.jeu.jouer(nom);
-      (req as any).flash('Résultat pour ' + nom + ': ' + resultat.v1 + ' + ' + resultat.v2 + ' = ' + resultat.somme);
+      const resultat = this._controleurJeu.jouer(nom);
+      const resultatObj = JSON.parse(resultat);
+      // flash un message selon le résultat
+      const key = resultatObj.somme == 7 ? 'win' : 'info';
+      req.flash(key,
+        `Résultat pour ${nom}: ${resultatObj.v1} + ${resultatObj.v2} = ${resultatObj.somme}`);
       res.status(200)
         .send({
           message: 'Success',
           status: res.status,
           resultat
         });
-
     } catch (error) {
-      var code = 500;
-
-      // Afficher les erreurs qui sont définies par l'API
-      if (error.code) {
-        (req as any).flash(error.message);
-        code = error.code;
-      }
-  
-      res.status(code).json({ error: error.toString() });
+      console.error(error);
+      this._errorCode500(error, req, res);
     }
   }
 
+  private _errorCode500(error: any, req: Request, res: Response<any, Record<string, any>>) {
+    req.flash('error', error.message);
+    res.status(error.code).json({ error: error.toString() });
+  }
+
+
   /**
-   * terminer 
+   * terminer
    */
   public terminerJeu(req: Request, res: Response, next: NextFunction) {
 
     // obtenir nom de la requête
-    let nom = req.params.nom;
+    const nom = req.params.nom;
 
     try {
       // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
-      let resultat = this.jeu.terminerJeu(nom);
-      (req as any).flash('Jeu terminé pour ' + nom);      
+      const resultat = this._controleurJeu.terminerJeu(nom);
+      req.flash('info', `Jeu terminé pour ${nom}`);
       res.status(200)
         .send({
           message: 'Success',
           status: res.status,
           resultat
         });
-
     } catch (error) {
-      var code = 500;
-
-      // Afficher les erreurs qui sont définies par l'API
-      if (error.code) {
-        (req as any).flash(error.message);
-        code = error.code;
-      }
-  
-      res.status(code).json({ error: error.toString() });
+      console.error(error);
+      this._errorCode500(error, req, res);
     }
   }
 
@@ -127,9 +111,9 @@ export class JeuRouter {
      * endpoints.
      */
   init() {
-    this.router.post('/demarrerJeu', this.demarrerJeu.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-    this.router.get('/jouer/:nom', this.jouer.bind(this));
-    this.router.get('/terminerJeu/:nom', this.terminerJeu.bind(this));
+    this._router.post('/demarrerJeu', this.demarrerJeu.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
+    this._router.get('/jouer/:nom', this.jouer.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
+    this._router.get('/terminerJeu/:nom', this.terminerJeu.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
   }
 
 }
