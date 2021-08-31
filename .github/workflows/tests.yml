@@ -16,12 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Use Node.js 15
         uses: actions/setup-node@v1
         with:
           node-version: 15
-          
+
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -34,12 +34,12 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Run tests
-        run : npm run squelette-test
+        run : npm run test-squelette
 
       - name: Check for circular dependencies using Madge
         uses: gerrit0/circular-dependency-check@v1
