@@ -120,15 +120,20 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
     ```text
     ...
-    Test Suites: 13 failed, 13 total
-    Tests:       43 failed, 2 passed, 45 total
+    Test Suites: 14 failed, 14 total
+    Tests:       44 failed, 2 passed, 46 total
     Snapshots:   0 total
-    Time:        6.337 s
+    Time:        5.925 s
     Ran all test suites matching /lab0.test.ts/i.
-    ```  
+    ```
 
-    Certains tests valident le contenu de vos fichiers (la documentation) et d'autres valident les fonctionnalités (programmation).
-    Veuillez noter que vous devez avoir une couverture de test de 100% pour obtenir tous vos points. Vous devrez donc corriger les deux issues avec `app.ts` et `jeuRouter.ts`.
+    Certains tests valident le contenu de vos fichiers (la documentation) et d'autres valident les fonctionnalités (la programmation).
+    Puisque vous commencez le lab 0, c'est normal d'avoir beaucoup de tests "failed".
+    Le but est de faire passer tous les tests au fur et à mesure d'apprendre des aspects technologiques du laboratoire.
+
+    Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points.
+    Vous devrez donc corriger deux issues avec `app.ts` et `jeuRouter.ts`.
+
     La rétroaction de ce laboratoire vient principalement de cette commande de test automatique.
     Vous devez poser des questions aux auxiliaires d'enseignement si vous avez besoin d'aide.
 
