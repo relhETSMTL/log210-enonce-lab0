@@ -47,7 +47,7 @@ Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir
 
 ## Objectif de l'exercice
 
-Cet exercice va vous amener à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.  Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
+Cet exercice va vous amener, à travers des étapes, à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.  Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
 Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra passer par les étapes suivantes:
 
 - actualiser la documentation de la fonctionnalité (cas d'utilisation)
@@ -309,7 +309,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
 
-  Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clic sur le bouton *Démarrer* (`$("button.demarrer").click(function () {...}`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
+  Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clic sur le bouton *Démarrer* (`demarrer.addEventListener("click", function(){...});`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
 
   ```JavaScript
   redemarrerJeu.addEventListener("click", function ()
