@@ -6,8 +6,12 @@
     "scripts": {
         "build": "tsc -b --verbose && shx cp -ru public dist/",
         "start": "node dist/index.js",
+        "start:watch": "nodemon",
         "watch": "jest --watch --coverage test",
         "test": "jest --env=node --colors --coverage test",
+        "lab0-test": "jest --env=node --colors lab0.test.ts",
+        "lab0-testj": "jest --env=node --json  --outputFile=report_test_stats.json lab0.test.ts",
+        "squelette-test": "jest --colors \"[^lab0].test.ts\"",
         "uml-classes-puml": "tplant -i src/App.ts -A -o App.puml",
         "uml-classes-svg": "tplant -i src/App.ts -A -o App.svg",
         "circular": "madge src/App.ts -c",
