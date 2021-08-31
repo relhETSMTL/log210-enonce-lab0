@@ -255,7 +255,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 ### 4. écrire le code source;
 
-- [ ] ajouter l'opération système `redemarrerJeu` dans le contrôleur GRASP `src/core/JeuDeDes.ts` (TypeScript)
+- [ ] ajouter l'opération système `redemarrerJeu` dans le contrôleur GRASP `src/core/jeuDeDes.ts` (TypeScript)
 
   Cette méthode correspond à l'opération système (unique) définie dans le diagramme de séquence système (DSS).
 

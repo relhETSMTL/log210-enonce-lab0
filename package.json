@@ -12,10 +12,10 @@
         "lab0-test": "jest --env=node --colors lab0.test.ts",
         "lab0-testj": "jest --env=node --json  --outputFile=report_test_stats.json lab0.test.ts",
         "squelette-test": "jest --colors \"[^lab0].test.ts\"",
-        "uml-classes-puml": "tplant -i src/App.ts -A -o App.puml",
-        "uml-classes-svg": "tplant -i src/App.ts -A -o App.svg",
-        "circular": "madge src/App.ts -c",
-        "madge": "madge src/App.ts -i madge.png; open madge.png"
+        "uml-classes-puml": "tplant -i src/app.ts -A -o App.puml",
+        "uml-classes-svg": "tplant -i src/app.ts -A -o App.svg",
+        "circular": "madge src/app.ts -c",
+        "madge": "madge src/app.ts -i madge.png; open madge.png"
     },
     "nodemonConfig": {
         "ignore": [
