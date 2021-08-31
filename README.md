@@ -20,7 +20,7 @@ Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 
 La date de remise du rapport et du code est **avant minuit le jour de la séance 02 de laboratoire.**
 Notez que le calendrier des séances est différent pour chaque groupe-cours.
-Vérifiez avec votre chargé.e de laboratoire.
+Vérifiez avec votre auxiliaire d'enseignement (chargé.e de laboratoire).
 
 ## Technologies vues dans cet exercice
 
@@ -56,7 +56,7 @@ Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra 
 - écrire le code source;
 - remettre (anglais *commit*) les changements.
 
-Les chargés de laboratoire seront disponibles pour vous aider si vous avez des questions.
+Les auxiliaires d'enseignement seront disponibles pour vous aider si vous avez des questions.
 
 ## Étapes
 
@@ -284,7 +284,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] faire un build (Node.js)
 
-  `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un chargé de laboratoire.
+  `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un auxiliaire d'enseignement.
 
 - [ ] vérifier que les tests passent (Node.js)
 
@@ -357,7 +357,7 @@ Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si
 1. Lisez le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
 2. Écrivez une réponse dans le fichier `docs/experience-parasites-mollassons.md` du dépôt.
 
-### 10. Remettre (anglais *commit*) les changements
+### 10. Remettre (anglais *commit*) tous les changements
 
 - [ ] À l'aide de Zoom ou de tout autre outil d'enregistrement vidéo, enregistrez une démonstration du fonctionnement de l'interface utilisateur avec au moins 2 joueurs.  Sauvegarder le résultat dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
 - [ ] faire une remise de la solution du projet (GitHub) incluant votre réponse dans `docs/experience-parasites-mollassons.md`
