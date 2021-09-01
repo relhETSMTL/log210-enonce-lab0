@@ -393,12 +393,12 @@ jeuRouter.ts
 
 ### 12. Calcul de la note
 
-Le calcul de la note du laboratoire se fait selon l'équation suivante:
+Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques, selon l'équation suivante:
 
-- te: 10 points si vous avez complété un texte d'environ 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)
-- ts: nombre total de tests valides
-- td: nombre total de tests déjà valides au début du projet (2 actuellement)
-- tt: nombre total de tests
-- tb: nombre de nouveaux boutons fonctionnels (max 3)
+- e: 10 points si vous avez complété un texte d'au moins 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)
+- b: nombre de nouveaux boutons fonctionnels (max 3)
+- v: nombre de tests valides ("passed")
+- d: nombre de tests déjà valides au début du projet (actuellement 2)
+- t: nombre total de tests
 
-note finale = (te + ts - td + tb * 2) / (10 + tt - td + 6) * 100
+![équation générée par codecogs.com](https://latex.codecogs.com/svg.latex?%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%20t%20-d%7D%20100)
