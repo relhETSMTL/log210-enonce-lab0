@@ -258,8 +258,8 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
     Le test doit vérifier que les tentatives des deux joueurs ont été remises à zéro
 
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
-  
-  `npm test` va indiquer `XX failing`
+
+  `npm test` va indiquer `XX failed`
 
   Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.
 
