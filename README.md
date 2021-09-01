@@ -120,16 +120,16 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
     ```text
     ...
-    Test Suites: 14 failed, 14 total
-    Tests:       44 failed, 2 passed, 46 total
+    Test Suites: 15 failed, 15 total
+    Tests:       46 failed, 2 passed, 48 total
     Snapshots:   0 total
-    Time:        5.925 s
+    Time:        6.253 s
     Ran all test suites matching /lab0.test.ts/i.
     ```
 
     Certains tests valident le contenu de vos fichiers (la documentation) et d'autres valident les fonctionnalités (la programmation).
     Puisque vous commencez le lab 0, c'est normal d'avoir beaucoup de tests "failed".
-    Le but est de faire passer tous les tests au fur et à mesure d'apprendre des aspects technologiques du laboratoire.
+    Le but est de faire passer tous les tests au fur et à mesure que vous apprenez des aspects technologiques du laboratoire.
 
     Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points.
     Vous devrez donc corriger deux issues avec `app.ts` et `jeuRouter.ts`.
@@ -354,7 +354,7 @@ Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si
 
 ### 8. Remise du rapport en format PDF
 
-- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md`
+- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md` nommé `docs/lab0.pdf`
   > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
 
 ### 9. Faire face aux parasites et aux mollassons dans une équipe
@@ -397,7 +397,7 @@ Le calcul de la note du laboratoire se fait selon l'équation suivante:
 
 - te: 10 points si vous avez complété un texte d'environ 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)
 - ts: nombre total de tests valides
-- td: nombre total de tests valides avant le début du projet (Actuel: 33 tests)
+- td: nombre total de tests déjà valides au début du projet (2 actuellement)
 - tt: nombre total de tests
 - tb: nombre de nouveaux boutons fonctionnels (max 3)
 
