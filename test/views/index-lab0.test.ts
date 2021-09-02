@@ -10,7 +10,8 @@ beforeAll(async () => {
 
 describe('views/index.pug', () => {
   it("should contain button.redemarrer Redémarrer", async () => {
-    expect(content).toInclude("button.redemarrer Redémarrer");
+    expect((content.indexOf("button#redemarrer Redémarrer") > -1) ||
+    (content.indexOf("button.redemarrer Redémarrer") > -1)).toBeTrue();
   });
 
 });

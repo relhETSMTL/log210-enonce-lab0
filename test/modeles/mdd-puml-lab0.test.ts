@@ -6,12 +6,11 @@ let content = ""
 beforeAll(async () => {
   const filename = path.join('docs', 'modeles', 'mdd.puml');
   content = readFileSync(filename, 'utf-8');
-  console.log(filename);
 });
 
 describe('docs/modeles/mdd.puml', () => {
-  it('should contain  JeuDeDes "1" -- "3" De : inclut >', async () => {
-    expect(content).toInclude('JeuDeDes "1" -- "3" De : inclut >');
+  it('devrait contenir les 3 dés', async () => {
+    expect(content).toInclude('JeuDeDés "1" -up- "3" Dé : inclut >');
   });
 });
 

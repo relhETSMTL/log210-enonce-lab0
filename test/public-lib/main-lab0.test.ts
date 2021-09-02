@@ -9,12 +9,15 @@ beforeAll(async () => {
 });
 
 describe('public/lib/main.js', () => {
-  it("should contain $('button.redemarrer').click(function () {", async () => {
-    expect(content).toInclude("$('button.redemarrer').click(function () {");
+  it("devrait utiliser fetch pour le bouton redémarrer", async () => {
+    expect(content).toInclude("redemarrer.addEventListener(\"click\", function () {");
+    expect(content).toInclude("fetch(\"/api/v1/jeu/redemarrerJeu\", {");
   });
-  it("should contain $.get('/api/v1/jeu/redemarrerJeu'", async () => {
-    expect(content).toInclude("$.get('/api/v1/jeu/redemarrerJeu'");
+  it("devrait utiliser fetch pour le bouton redémarrerJeuNouvellePage", async () => {
+    expect(content).toInclude("redemarrerJeuNouvellePage.addEventListener(\"click\", function () {");
+    expect(content).toInclude("fetch(\"/api/v1/jeu/redemarrerJeuNouvellePage\")");
   });
+
 });
 
 
