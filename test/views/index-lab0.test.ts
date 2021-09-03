@@ -9,8 +9,8 @@ beforeAll(async () => {
 });
 
 describe('views/index.pug', () => {
-  it("should contain button.redemarrer Redémarrer", async () => {
-    expect(content).toInclude("button.redemarrer Redémarrer");
+  it("should contain button#redemarrerJeuNouvellePage Redémarrer Nouvelle Page", async () => {
+    expect(content).toInclude("button#redemarrerJeuNouvellePage Redémarrer Nouvelle Page");
   });
 
 });

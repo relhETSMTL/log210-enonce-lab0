@@ -218,7 +218,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   > Toutes les instances de Joueur en cours ont été supprimées.
 
-- [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/modeles/rdcu-Jeu.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
+- [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/modeles/rdcu-redemarrerJeu.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
 
   Faire un diagramme en PlantUML qui ressemble à ceci:  
   ![RDCU pour redémarrerJeu](https://www.plantuml.com/plantuml/svg/0/RP31IWD138RlynIX5rkmBx38KkXwANXHzBINE9lMMMSoGoO3-aYz-mRxOiOAWk8bWVny-VzaLnL5MugklWOkA9YWwdiagnBy7sMY8xQenypAc0YUI2PaT1hKYFjX_mWbDm6XQJad524vK7C6Q_2X82kiEfiCD51T0LRmRjjxwBu8-W7M6yTP2IISNjJ4IZ4pxCrLbez8JKPUVszPpXMewiZnAZ_Ff23e0zFcj-MScq6r6_aEoys37SQdwyDbs5zIpCbvsFRMpSr7Gla_mkrR8L6t8vxiCPy0 "RDCU pour redémarrerJeu")
@@ -229,7 +229,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] ajouter de nouveaux cas de tests pour Redémarrer (Jest/SuperTest)
 
-  - créer un fichier `test/redemarrerJeu.test.ts`
+  - ouvrir le fichier `test/redemarrerJeu.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   
@@ -243,13 +243,9 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
     Le test doit appeler la route `GET /api/v1/jeu/redemarrerJeu`, qui correspond à l'opération système `redemarrerJeu` du DSS. Puisque l'opération n'a aucun retour, le test doit uniquement valider le succès de l'opération, c'est-à-dire, que le code HTTP (`status`) est 200 et que la réponse est du `JSON`.
 
-  - y créer un autre test pour valider la postcondition du contrat d'opération
-
-    Le test doit vérifier que les tentatives des deux joueurs ont été remises à zéro
-
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
   
-  `npm test` va indiquer `XX failing`
+  `npm test` va indiquer `XX failed`
 
   Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.
 
@@ -289,7 +285,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   > Facultatif : pour une explication de PUG (anciennement Jade) avec Express, il y a [cette vidéo](https://www.youtube.com/watch?v=DSp9ExFw3Ig).
 
-  Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrer Redémarrer` (:warning: *attention au niveau d'indentation*):
+  Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrerJeu Redémarrer` (:warning: *attention au niveau d'indentation*):
 
   ```PUG
   form#formNouveauJoueur.form-group(action='javascript:void(0);')
@@ -299,7 +295,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
         input.form-control.col-sm-4(name='nom' type='text')
     button.demarrer Démarrer
 
-  button#redemarrerJeu Redémarrer
+  button.redemarrerJeu Redémarrer
   ```
 
 - [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
@@ -307,17 +303,14 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clic sur le bouton *Démarrer* (`$("button.demarrer").click(function () {...}`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
 
   ```JavaScript
-  redemarrerJeu.addEventListener("click", function ()
-  {
-      fetch("/api/v1/jeu/redemarrerJeu")
-      .then(function()
-      {
-          location.reload();
-      });
+  $('button.redemarrerJeu').click(function () {
+    $.get('/api/v1/jeu/redemarrerJeu', function (data, status) {
+      window.location.reload();
+    });
   });
   ```
 
-  Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*. 
+  Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*.
 
 ### 5. Changement de page
 

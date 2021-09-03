@@ -10,11 +10,20 @@ beforeAll(async () => {
 
 describe('public/lib/main.js', () => {
   it("should contain $('button.redemarrer').click(function () {", async () => {
-    expect(content).toInclude("$('button.redemarrer').click(function () {");
+    // try-catch to do logical OR
+    try {
+      expect(content).toInclude("$('button.redemarrerJeu').click(function () {");
+    } catch {
+      expect(content).toInclude("$(\"button.redemarrerJeu\").click(function () {");
+    }
   });
+  // try-catch to do logical OR
   it("should contain $.get('/api/v1/jeu/redemarrerJeu'", async () => {
-    expect(content).toInclude("$.get('/api/v1/jeu/redemarrerJeu'");
+    try {
+      expect(content).toInclude("$.get('/api/v1/jeu/redemarrerJeu'");
+    } catch {
+      expect(content).toInclude("$.get(\"/api/v1/jeu/redemarrerJeu\"");
+    }
   });
 });
-
 

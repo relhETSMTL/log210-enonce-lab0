@@ -17,10 +17,6 @@ describe('src/core/jeuDeDes.ts', () => {
     expect(content).toInclude("this.joueurs.clear()");
   });
 
-  it("should contain this.jeu.redemarrerJeu()", async () => {
-    expect(content).toInclude("this.jeu.redemarrerJeu()");
-  });
-
   it("should contain this.d3 = new De()", async () => {
     expect(content).toInclude("this.d3 = new De()");
   });
