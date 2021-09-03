@@ -9,6 +9,7 @@
         "start:watch": "nodemon",
         "watch": "jest --watch --coverage test",
         "test": "jest --env=node --colors --coverage lab0.test.ts",
+        "test-un": "jest --env=node --colors --coverage",
         "test-lab0": "jest --env=node --colors --coverage lab0.test.ts",
         "testj-lab0": "jest --env=node --json  --outputFile=report_test_stats.json lab0.test.ts",
         "test-squelette": "jest --colors --coverage \"[^lab0].test.ts\"",
