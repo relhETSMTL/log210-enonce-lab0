@@ -299,17 +299,25 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   > Facultatif : pour une explication de PUG (anciennement Jade) avec Express, il y a [cette vidéo](https://www.youtube.com/watch?v=DSp9ExFw3Ig).
 
-  Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrer Redémarrer` (:warning: *attention au niveau d'indentation*):
+  Dans `views/index.pug` après le texte ici, ajouter la ligne `button#redemarrer Redémarrer` (:warning: *attention au niveau d'indentation*):
 
   ```PUG
-  form#formNouveauJoueur.form-group(action='javascript:void(0);')
-    dl
-      dt Nom du nouveau joueur
-      dd
-        input.form-control.col-sm-4(name='nom' type='text')
-    button.demarrer Démarrer
+      ul.entries
+        each joueur in joueurs
+          li.joueur
+            -var nom = joueur.nom;
+            strong(id=nom) #{nom}
+            = ' '
+            | tentatives: #{joueur.lancers}, réussites: #{joueur.lancersGagnes}
+            = ' '
+            button.lancer(id=nom) Lancer dés
+            = ' '
+            button.terminer(id=nom) Terminer
+        else
+          li
+            em Pas de joueurs encore.
 
-  button#redemarrerJeu Redémarrer
+      button#redemarrer Redémarrer
   ```
 
 - [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
@@ -317,7 +325,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clic sur le bouton *Démarrer* (`demarrer.addEventListener("click", function(){...});`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
 
   ```JavaScript
-  redemarrerJeu.addEventListener("click", function ()
+  document.getElementById("redemarrer").addEventListener("click", function ()
   {
       fetch("/api/v1/jeu/redemarrerJeu")
       .then(function()
@@ -331,7 +339,32 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 ### 5. Afficher classement sur nouvelle page
 
-- [ ] Ajouter un second bouton qui se nommera "Classement" et qui utilisera le id "button#classement". Ce bouton devra afficher le contenu utilisant le fichier `classement.pug`. Voir l'explication dans les commentaires de ce dernier pour ce qu'il faut faire.
+- [ ] Ajouter un second bouton qui se nommera "Classement" et qui utilisera le id "#classement" pour faire un `GET` sur `/api/v1/jeu/afficherClassement`. Cependant, ce bouton devra afficher le contenu utilisant le fichier `classement.pug`. Voici une solution pour l'EventListener à définir dans `main.js`:
+  ```javascript
+      this.document.getElementById("classement").addEventListener("click", function () {
+          fetch("/api/v1/jeu/afficherClassement")
+          .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              // Promesse : résultat se rend 
+              // dans "then" plus bas, 
+              // devenant "html"
+              return response.text();
+            })
+            .then(html => {
+              document.open();
+              document.write(html);
+              document.close();
+            })
+            .catch(error => {
+              console.error('There has been a problem with your fetch operation:', error);
+            });
+      });
+  ```
+
+  - [ ] Astuce: la logique dans le *route handler* pour `/api/v1/jeu/afficherClassement` est quasiment la même que pour la route `/` définie dans `src/app.ts`.
+  - [ ] Voir l'explication dans les commentaires de `classement.pug` pour savoir comment afficher le classement.
 - [ ] Dans cette page uniquement, ajouter un bouton "Accueil" pour retourner à la page `index.pug`. Ce bouton devra utiliser le id "button#home"
 - [ ] Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas l'état des objets du domaine.
 
@@ -358,7 +391,6 @@ Il y a deux volets de la correction automatique avec les tests automatiques:
 - Documentation: `npm test`
 - Fonctionnalités: `npm run test-squelette`
 
-
 Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100% pour la partie fonctionnalité.
 
 **Important:**
@@ -374,27 +406,7 @@ Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si
 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter le facteur de bus (voir les notes de cours pour l'explication) de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
 
-### 11. Notions TypeScript pour les changements de page
-
-Main.js
-
-```js
-  $.get('/api/v1/jeu/xxxx', function(html,status){
-    document.open()
-    document.write(html)
-    document.close()
-  }
-```
-
-jeuRouter.ts
-
-```ts
-  public xxx(req:Request, res:ResResponse, nest: NextFunction){
-    res.render('index',...)  -> html
-  }
-```
-
-### 12. Calcul de la note
+### 11. Calcul de la note
 
 Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques, selon l'équation suivante:
 
@@ -404,4 +416,4 @@ Le calcul de la note du laboratoire se fait à partir des résultats des tests a
 - d: nombre de tests déjà valides au début du projet (actuellement 2)
 - t: nombre total de tests
 
-![équation générée par codecogs.com](https://latex.codecogs.com/svg.latex?%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%20t%20-d%7D%20100)
+![équation générée par codecogs.com](https://latex.codecogs.com/svg.latex?%5Cbg_white%20%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%20t%20-d%7D%20100)
