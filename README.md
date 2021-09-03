@@ -243,6 +243,10 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
     Le test doit appeler la route `GET /api/v1/jeu/redemarrerJeu`, qui correspond à l'opération système `redemarrerJeu` du DSS. Puisque l'opération n'a aucun retour, le test doit uniquement valider le succès de l'opération, c'est-à-dire, que le code HTTP (`status`) est 200 et que la réponse est du `JSON`.
 
+  - y créer un autre test pour valider la postcondition du contrat d'opération
+
+    Le test doit vérifier qu'il n'y a plus de joueurs.
+
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
   
   `npm test` va indiquer `XX failed`
