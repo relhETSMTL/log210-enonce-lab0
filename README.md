@@ -239,7 +239,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] ajouter de nouveaux cas de tests pour Redémarrer (Jest/SuperTest)
 
-  - ouvrir le fichier `test/redemarrerJeu.test.ts`
+  - ouvrir le fichier `test/routes/jeuRouter-redemarrerJeu.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   
@@ -273,7 +273,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   Retourner voir le diagramme qui a été créé précédemment
 
-- [ ] ajouter une nouvelle route, dans `src/routes/JeuRouter.ts` (Express)
+- [ ] ajouter une nouvelle route, dans `src/routes/jeuRouter.ts` (Express)
 
   - ajouter la fonction `redemarrerJeu`, juste avant la fonction `init()`
 
@@ -291,9 +291,9 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un auxiliaire d'enseignement.
 
-- [ ] vérifier que les tests passent (Node.js)
+- [ ] vérifier que les tests de fonctionnalités passent (Node.js)
 
-  `npm test` devrait indiquer que tous les tests passent.
+  `npm run test-squelette` devrait indiquer que tous les tests passent.
 
 - [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
 
@@ -335,32 +335,35 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 - [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page index.puml. Ce bouton devra utiliser le id "button#home"
 - [ ] Ajouter la RDCU (diagramme de séquence) pour démontrer l'opération du contrôleur "redemarrerJeuNouvellePage"
 
-### 6. Pratiquer ce qui a été appris!
+### 6. Pratiquer ce qui a été appris
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller sans aide.
 
-### 7. Vérifier la correction automatique
-
-Cet exercice sera noté quasi automatiquement lorsque vous pousserez votre code dans GitHub.
-Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
-
-Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100%.
-
-> npm test
-
-**Important:**
-La seule rétroaction pour ce laboratoire est la commande `npm test`.
-Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si vous avez des tests qui ne passent pas ou des questions concernant les technologies, **c'est votre responsabilité de demander de l'aide de l'auxiliaire de laboratoire avant la remise.**
-
-### 8. Remise du rapport en format PDF
+### 7. Remise du rapport en format PDF
 
 - [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md` nommé `docs/lab0.pdf`
   > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
 
-### 9. Faire face aux parasites et aux mollassons dans une équipe
+### 8. Faire face aux parasites et aux mollassons dans une équipe
 
 1. Lisez le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
 2. Écrivez une réponse dans le fichier `docs/experience-parasites-mollassons.md` du dépôt.
+
+### 7. Vérifier la correction automatique
+
+Cet exercice sera noté quasi automatiquement lorsque vous transférez votre code dans GitHub Classrooms.
+Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
+Il y a deux volets de la correction automatique avec les tests automatiques:
+
+- Documentation: `npm test`
+- Fonctionnalités: `npm run test-squelette`
+
+
+Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100% pour la partie fonctionnalité.
+
+**Important:**
+La seule rétroaction pour ce laboratoire est à travers les commandes ci-dessus.
+Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si vous avez des tests qui ne passent pas ou des questions concernant les technologies, **c'est votre responsabilité de demander de l'aide de l'auxiliaire de laboratoire avant la remise.**
 
 ### 10. Remettre (anglais *commit*) tous les changements
 
