@@ -331,9 +331,9 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 ### 5. Afficher classement sur nouvelle page
 
-- [ ] Ajouter un second bouton qui se nommera "Classement" et qui utilisera le id "button#classement". Ce bouton devra afficher le contenu utilisant le fichier `classement.pug`
-- [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page `index.pug`. Ce bouton devra utiliser le id "button#home"
-- [ ] Ajouter la RDCU (diagramme de séquence) pour démontrer l'opération du contrôleur "afficherClassement"
+- [ ] Ajouter un second bouton qui se nommera "Classement" et qui utilisera le id "button#classement". Ce bouton devra afficher le contenu utilisant le fichier `classement.pug`. Voir l'explication dans les commentaires de ce dernier pour ce qu'il faut faire.
+- [ ] Dans cette page uniquement, ajouter un bouton "Accueil" pour retourner à la page `index.pug`. Ce bouton devra utiliser le id "button#home"
+- [ ] Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas l'état des objets du domaine.
 
 ### 6. Pratiquer ce qui a été appris
 
