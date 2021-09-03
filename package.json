@@ -13,8 +13,8 @@
         "test-lab0": "jest --env=node --colors --coverage lab0.test.ts",
         "testj-lab0": "jest --env=node --json  --outputFile=report_test_stats.json lab0.test.ts",
         "test-squelette": "jest --colors --coverage \"[^lab0].test.ts\"",
-        "uml-classes-puml": "tplant -i src/app.ts -A -o App.puml",
-        "uml-classes-svg": "tplant -i src/app.ts -A -o App.svg",
+        "uml-classes-puml": "tplant -i src/app.ts -A -o docs/modeles/App.puml",
+        "uml-classes-svg": "tplant -i src/app.ts -A -o docs/modeles/App.svg",
         "circular": "madge src/app.ts -c",
         "madge": "madge src/app.ts -i madge.png; open madge.png"
     },

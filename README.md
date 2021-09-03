@@ -337,7 +337,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*.
 
-### 5. Afficher classement sur nouvelle page
+### 5. Fonctionnalité: Afficher classement sur nouvelle page
 
 - [ ] Ajouter un second bouton qui se nommera "Classement" et qui utilisera le id "#classement" pour faire un `GET` sur `/api/v1/jeu/afficherClassement`. Cependant, ce bouton devra afficher le contenu utilisant le fichier `classement.pug`. Voici une solution pour l'EventListener à définir dans `main.js`:
   ```javascript
@@ -368,21 +368,27 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 - [ ] Dans cette page uniquement, ajouter un bouton "Accueil" pour retourner à la page `index.pug`. Ce bouton devra utiliser le id "button#home"
 - [ ] Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas l'état des objets du domaine.
 
-### 6. Pratiquer ce qui a été appris
+### 6. Documenter les classes logicielles
+
+- [ ] Générer un diagramme de classes pour la solution avec le script `npm run uml-classes-puml` qui utilise l'outil `tplant`. Par défaut, le diagramme est placé dans le répertoire `docs/modeles`. Chaque fois que vous modifiez votre code source, c'est une bonne idée d'actualiser ce diagramme avec ce script.
+- [ ] Visualiser le fichier généré `App.puml` dans VS Code avec l'extension de PlantUML. Comprendre le design du jeu de dés.
+- [ ] Intégrer ce diagramme dans votre rapport `Squelette.md` dans une section nommée **Diagramme de classes logicielles**.
+
+### 7. Pratiquer ce qui a été appris
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller sans aide.
 
-### 7. Remise du rapport en format PDF
+### 8. Remise du rapport en format PDF
 
 - [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md` nommé `docs/lab0.pdf`
   > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
 
-### 8. Faire face aux parasites et aux mollassons dans une équipe
+### 9. Faire face aux parasites et aux mollassons dans une équipe
 
 1. Lisez le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
 2. Écrivez une réponse dans le fichier `docs/experience-parasites-mollassons.md` du dépôt.
 
-### 7. Vérifier la correction automatique
+### 10. Vérifier la correction automatique
 
 Cet exercice sera noté quasi automatiquement lorsque vous transférez votre code dans GitHub Classrooms.
 Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
@@ -397,7 +403,7 @@ Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 1
 La seule rétroaction pour ce laboratoire est à travers les commandes ci-dessus.
 Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si vous avez des tests qui ne passent pas ou des questions concernant les technologies, **c'est votre responsabilité de demander de l'aide de l'auxiliaire de laboratoire avant la remise.**
 
-### 10. Remettre (anglais *commit*) tous les changements
+### 11. Remettre (anglais *commit*) tous les changements
 
 - [ ] À l'aide de Zoom ou de tout autre outil d'enregistrement vidéo, enregistrez une démonstration du fonctionnement de l'interface utilisateur avec au moins 2 joueurs.  Sauvegarder le résultat dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
 - [ ] faire une remise de la solution du projet (GitHub) incluant votre réponse dans `docs/experience-parasites-mollassons.md`
@@ -406,7 +412,7 @@ Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si
 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter le facteur de bus (voir les notes de cours pour l'explication) de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
 
-### 11. Calcul de la note
+## Calcul de la note
 
 Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques, selon l'équation suivante:
 
