@@ -180,7 +180,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   ```
 
   Vous devriez voir un diagramme comme ceci:  
-  ![dcu](https://www.plantuml.com/plantuml/svg/0/NOz1YiCm303lVeLeBxk7_g7dd9OKzgxQIjRKbeCiquRI_xJlwCUg19OjUp62cP7HlYgAjfnSea512qWSVnH25F8Q2xjwYZoXO8QgSo9x9Vgr-2CJ-XEET5Y59NnZHsEZbCR1brG4L92h8U9tAz20BUbGM1apmJT9G4Q7NgtfIgCcW1Kwjwn77ksZpM6k-hndsi3L0Nmibadj0k7vg9-h_WNRgPm3oJ4rMgIU36OK8LcD_f_GmMvdsU_KkvlR4mUxzmK0 "dcu")
+  ![diagramme de cas d'utilisation](https://www.plantuml.com/plantuml/svg/NSjDQiCm48RXlKunk9jsuJjuxLMneVkfD7Q5zMD68neJSf_a7BvO94F0P3CCVC_R9K6Mx9roD0b81BRpdu2nJ5fi32ejDgp8w279vgXSjheMfsL5lU1Cum5gUDeCJPYTJ358G4_mGsmme48jaQ6FcJ839kXL3J7CZg0PjoJxtLC3LmNmMLL1-G9cVwIlWt_3nnh_3V6lorJHG6Nqo4nyYE4DzD2s9NjzWxgfZeB9tZq1 "diagramme de cas d'utilisation")
 
   <details>
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.puml`</summary><p>
