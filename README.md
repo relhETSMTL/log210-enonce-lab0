@@ -329,11 +329,11 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*.
 
-### 5. Changement de page
+### 5. Afficher classement sur nouvelle page
 
-- [ ] Ajouter un second bouton qui se nommera "Redemarrer nouvelle page" et qui utilisera le id "button#redemarrerJeuNouvellePage". Ce bouton devra redémarrer le jeu et afficher le contenu de la page de jeux en utilisant le fichier index2.pug
-- [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page index.puml. Ce bouton devra utiliser le id "button#home"
-- [ ] Ajouter la RDCU (diagramme de séquence) pour démontrer l'opération du contrôleur "redemarrerJeuNouvellePage"
+- [ ] Ajouter un second bouton qui se nommera "Classement" et qui utilisera le id "button#classement". Ce bouton devra afficher le contenu utilisant le fichier `classement.pug`
+- [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page `index.pug`. Ce bouton devra utiliser le id "button#home"
+- [ ] Ajouter la RDCU (diagramme de séquence) pour démontrer l'opération du contrôleur "afficherClassement"
 
 ### 6. Pratiquer ce qui a été appris
 
