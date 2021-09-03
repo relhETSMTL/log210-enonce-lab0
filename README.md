@@ -416,4 +416,4 @@ Le calcul de la note du laboratoire se fait à partir des résultats des tests a
 - d: nombre de tests déjà valides au début du projet (actuellement 2)
 - t: nombre total de tests
 
-![équation générée par codecogs.com](https://latex.codecogs.com/svg.latex?%5Cbg_white%20%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%20t%20-d%7D%20100)
+<img src="https://latex.codecogs.com/png.latex?%5Cdpi%7B300%7D%20%5Cbg_white%20%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%20t%20-d%7D%20100" width="400">
