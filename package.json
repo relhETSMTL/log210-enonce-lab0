@@ -55,6 +55,7 @@
         "debug": "^4.3.1",
         "express": "^4.17.1",
         "express-session": "^1.16.2",
+        "gulp-sourcemaps": "^3.0.0",
         "morgan": "^1.9.1",
         "node-twinkle": "0.0.3",
         "pug": "^3.0.0"
