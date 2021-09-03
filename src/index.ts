@@ -1,5 +1,5 @@
+import debug from 'debug';
 import * as http from 'http';
-import * as debug from 'debug';
 
 import App from './App';
 
