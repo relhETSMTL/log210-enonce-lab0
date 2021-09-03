@@ -119,7 +119,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     ```text
     ...
     Test Suites: 13 failed, 6 passed, 19 total
-    Tests:       43 failed, 33 passed, 76 total
+    Tests:       42 failed, 33 passed, 75 total
     Snapshots:   0 total
     Time:        13.545 s
     Ran all test suites.
