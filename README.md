@@ -228,7 +228,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   > Toutes les instances de Joueur en cours ont été supprimées.
 
-- [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/modeles/rdcu-Jeu.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
+- [ ] ajouter une nouvelle réalisation de cas d'utilisation (RDCU) `docs/modeles/rdcu-redemarrerJeu.puml` pour l'opération système `redemarrerJeu()` (PlantUML)
 
   Faire un diagramme en PlantUML qui ressemble à ceci:  
   ![RDCU pour redémarrerJeu](https://www.plantuml.com/plantuml/svg/0/RP31IWD138RlynIX5rkmBx38KkXwANXHzBINE9lMMMSoGoO3-aYz-mRxOiOAWk8bWVny-VzaLnL5MugklWOkA9YWwdiagnBy7sMY8xQenypAc0YUI2PaT1hKYFjX_mWbDm6XQJad524vK7C6Q_2X82kiEfiCD51T0LRmRjjxwBu8-W7M6yTP2IISNjJ4IZ4pxCrLbez8JKPUVszPpXMewiZnAZ_Ff23e0zFcj-MScq6r6_aEoys37SQdwyDbs5zIpCbvsFRMpSr7Gla_mkrR8L6t8vxiCPy0 "RDCU pour redémarrerJeu")
@@ -239,7 +239,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] ajouter de nouveaux cas de tests pour Redémarrer (Jest/SuperTest)
 
-  - créer un fichier `test/redemarrerJeu.test.ts`
+  - ouvrir le fichier `test/redemarrerJeu.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   
@@ -255,7 +255,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   - y créer un autre test pour valider la postcondition du contrat d'opération
 
-    Le test doit vérifier que les tentatives des deux joueurs ont été remises à zéro
+    Le test doit vérifier qu'il n'y a plus de joueurs.
 
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
 
