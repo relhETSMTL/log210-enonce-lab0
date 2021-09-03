@@ -7,12 +7,13 @@ html
   body
 
     div.container
-      h1 Classement des joueurs par ratio de tentatives gagnées
+      h1 Classement des joueurs
+      //- ASTUCES: 
       //- Inspirez-vous de la liste des joueurs dans index.pug 
-      //- Sachez que vous devriez trier la liste par ratio, mais afficher aussi le nombre de tentatives et nombre de tentatives gagnées
-      //- il est possible de trier une liste dans PUG, p.ex. https://stackoverflow.com/a/44058939/1168342, alors il n'est pas nécessaire de calculer le ratio dans le serveur
+      //- C'est une bonne utilisation de Array.prototype.map() pour ajouter le ratio aux objets joueurs https://stackoverflow.com/a/44407980/1168342
+      //- Vous devriez trier la liste par ratio, puis afficher ce ratio, le nombre de tentatives et le nombre de tentatives gagnées
+      //- Il est possible de trier une liste dans PUG, p.ex. https://stackoverflow.com/a/44058939/1168342
+      //- Il n'est pas nécessaire de calculer le ratio ou trier des objets dans le serveur
+      //- Puisqu'il s'agit d'une "vue" sur les informations, il n'y a pas de logique d'affaires.
 
-    //- Bootstrap nécessite le chargement dans cet ordre
-    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
-    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+    //- ne pas recharger les Script, car le résultat de ce PUG est placé avec "document.write"
