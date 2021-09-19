@@ -414,12 +414,19 @@ Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si
 
 ## Calcul de la note
 
-Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques, selon l'équation suivante:
+Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques et une évaluation faite par l'auxiliaire d'enseignement:
 
-- e: 10 points si vous avez complété un texte d'au moins 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)
-- b: nombre de nouveaux boutons fonctionnels (max 3)
-- v: nombre de tests valides ("passed")
-- d: nombre de tests déjà valides au début du projet (actuellement 2)
-- t: nombre total de tests
+| variable | explication |
+|:-:|:-|
+| *e* | 10 points si vous avez complété un texte d'au moins 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)|
+|*b*<sup>*</sup>| nombre de nouveaux boutons fonctionnels (max 3)|
+| *c*<sup>*</sup>| 10 points si la page de classement fonctionne correctement (sinon 0 point) |
+| *C*<sup>*</sup>| 10 points si la couverture des tests est 100 % (sinon 0 point) |
+| *v* | nombre de tests valides ("passed")|
+| *d* | nombre de tests déjà valides au début du projet (actuellement 2)|
+| *t* | nombre total de tests |
+<!-- Pour ce qui est de la couverture de tests,  -->
 
-<img src="https://latex.codecogs.com/png.latex?%5Cdpi%7B300%7D%20%5Cbg_white%20%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%20t%20-d%7D%20100" width="400">
+<sup>*</sup>évaluation faite par l'auxiliaire d'enseignement
+
+<img src="https://latex.codecogs.com/png.latex?%5Cdpi%7B300%7D%20%5Cbg_white%20%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20c%20&plus;%20C%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%2010%20&plus;%2010%20&plus;%20t%20-d%7D%20100" width="400">
