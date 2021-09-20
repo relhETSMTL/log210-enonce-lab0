@@ -258,7 +258,6 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
     Le test doit vérifier qu'il n'y a plus de joueurs.
 
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
-
   `npm test` va indiquer `XX failed`
 
   Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.

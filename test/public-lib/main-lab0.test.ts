@@ -20,4 +20,3 @@ describe('public/lib/main.js', () => {
 
 });
 
-
