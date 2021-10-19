@@ -9,21 +9,14 @@ beforeAll(async () => {
 });
 
 describe('public/lib/main.js', () => {
-  it("should contain $('button.redemarrer').click(function () {", async () => {
-    // try-catch to do logical OR
-    try {
-      expect(content).toInclude("$('button.redemarrerJeu').click(function () {");
-    } catch {
-      expect(content).toInclude("$(\"button.redemarrerJeu\").click(function () {");
-    }
+  it("devrait utiliser fetch pour le bouton redémarrer", async () => {
+    expect(content).toInclude("redemarrer.addEventListener(\"click\", function () {");
+    expect(content).toInclude("fetch(\"/api/v1/jeu/redemarrerJeu\", {");
   });
-  // try-catch to do logical OR
-  it("should contain $.get('/api/v1/jeu/redemarrerJeu'", async () => {
-    try {
-      expect(content).toInclude("$.get('/api/v1/jeu/redemarrerJeu'");
-    } catch {
-      expect(content).toInclude("$.get(\"/api/v1/jeu/redemarrerJeu\"");
-    }
+  it("devrait utiliser fetch pour le bouton redémarrerJeuNouvellePage", async () => {
+    expect(content).toInclude("redemarrerJeuNouvellePage.addEventListener(\"click\", function () {");
+    expect(content).toInclude("fetch(\"/api/v1/jeu/redemarrerJeuNouvellePage\")");
   });
+
 });
 

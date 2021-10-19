@@ -4,8 +4,6 @@ import 'jest-extended';
 
 describe('redemarrerJeu.test.ts', () => {
   it("should implement test", async () => {
-    assert(false);    
-    });   
-}); 
-
-
+    throw new Error("Ce test n'a pas été défini")
+  });
+});

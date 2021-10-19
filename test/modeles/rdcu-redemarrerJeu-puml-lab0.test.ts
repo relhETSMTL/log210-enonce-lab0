@@ -18,8 +18,8 @@ describe('docs/modeles/rdcu-redemarrerJeu.puml', () => {
     expect(content).toInclude("joueurs:");
   });
 
-  it("should contain Map<String,Joueur>", async () => {
-    expect(content).toInclude("Map<String,Joueur>");
+  it("should contain Map<String, Joueur>", async () => {
+    expect(content).toInclude("Map<String, Joueur>");
   });
 
   it("should contain redemarrerJeu()", async () => {

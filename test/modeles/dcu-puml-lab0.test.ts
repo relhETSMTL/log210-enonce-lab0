@@ -19,5 +19,3 @@ describe('docs/modeles/dcu.puml', () => {
   });
 
 });
-
-

@@ -20,7 +20,7 @@ Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 
 La date de remise du rapport et du code est **avant minuit le jour de la séance 02 de laboratoire.**
 Notez que le calendrier des séances est différent pour chaque groupe-cours.
-Vérifiez avec votre chargé.e de laboratoire.
+Vérifiez avec votre auxiliaire d'enseignement (chargé.e de laboratoire).
 
 ## Technologies vues dans cet exercice
 
@@ -56,7 +56,7 @@ Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra 
 - écrire le code source;
 - remettre (anglais *commit*) les changements.
 
-Les chargés de laboratoire seront disponibles pour vous aider si vous avez des questions.
+Les auxiliaires d'enseignement seront disponibles pour vous aider si vous avez des questions.
 
 ## Étapes
 
@@ -64,7 +64,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 ### 0. préparer votre machine pour ce tutoriel;
 
-- [ ] jeter un oeil sur la [documentation du squelette](docs/Squelette.md)
+- [ ] jeter un œil sur la [documentation du squelette](docs/Squelette.md)
 
 - [ ] [installer node.js](https://nodejs.org/en/download/) sur votre machine
 
@@ -72,8 +72,8 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] [installer l'extension PlantUML dans VSCode](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
 
-- [ ] configurer l'extension PlantUML pour utiliser plantuml.com comme serveur en ajoutant/modifiant les "User settings" en VSCode:  
-  
+- [ ] configurer l'extension PlantUML pour utiliser plantuml.com comme serveur en ajoutant/modifiant les "User settings" en VSCode:
+
   ```json
       "plantuml.server": "https://www.plantuml.com/plantuml",
       "plantuml.render": "PlantUMLServer",
@@ -103,37 +103,48 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
     ```text
     ...
-    [23:43:06] Finished 'jsonAssets' after 25 ms
-    [23:43:06] Finished 'cssAssets' after 45 ms
-    [23:43:06] Finished 'jsAssets' after 46 ms
-    [23:43:08] Finished 'scripts' after 1.62 s
-    [23:43:08] Finished 'build' after 1.62 s
+    [2:52:01 p.m.] Projects in this build: 
+        * tsconfig.json
+
+    [2:52:01 p.m.] Project 'tsconfig.json' is out of date because output file 'dist/app.js' does not exist
+
+    [2:52:01 p.m.] Building project 'C:/Users/Moi/Documents/GitHub/S20203-LOG210-Lab0/tsconfig.json'
+    ...
     ```
 
 - [ ] exécuter les tests
 
-  - Dans le terminal, taper `npm test` ou `npm testw` pour exécuter les tests.
+  - Dans le terminal, taper `npm test` pour exécuter les tests du lab 0.
 
     Normalement, on devrait voir les messages comme:
 
     ```text
     ...
-    Test Suites: 13 failed, 6 passed, 19 total
-    Tests:       42 failed, 33 passed, 75 total
+    Test Suites: 15 failed, 15 total
+    Tests:       46 failed, 2 passed, 48 total
     Snapshots:   0 total
-    Time:        13.545 s
-    Ran all test suites.
-    ```  
+    Time:        6.253 s
+    Ran all test suites matching /lab0.test.ts/i.
+    ```
 
-    Veuillez noter que vous devez avoir une couverture de test de 100% pour obtenir tous vos points. Vous devrez donc corriger les deux issues avec App.ts et JeuRouter.ts
+    Certains tests valident le contenu de vos fichiers (la documentation) et d'autres valident les fonctionnalités (la programmation).
+    Puisque vous commencez le lab 0, c'est normal d'avoir beaucoup de tests "failed".
+    Le but est de faire passer tous les tests au fur et à mesure que vous apprenez des aspects technologiques du laboratoire.
+
+    Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points.
+    Vous devrez donc corriger deux issues avec `app.ts` et `jeuRouter.ts`.
+
+    La rétroaction de ce laboratoire vient principalement de cette commande de test automatique.
+    Vous devez poser des questions aux auxiliaires d'enseignement si vous avez besoin d'aide.
 
 - [ ] exécuter le serveur sur localhost
 
   - Dans le terminal, `npm start`
 
+<!-- markdown-link-check-disable-next-line -->
 - [ ] exécuter l'application avec un navigateur moderne à l'URL [http://localhost:3000](http://localhost:3000)
 
-> Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant.
+> Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant. Les auxiliaires d'enseignement auront accès à votre dépôt de code source et pourraient vous aider (surtout à distance) si votre code est synchronisé souvent avec le dépôt.
 
 ### 1. actualiser la documentation de la fonctionnalité;
 
@@ -157,7 +168,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   - visionner [cette vidéo](https://www.youtube.com/watch?v=xkwJ9GwgZJU) (*activer les sous-titres en français*) pour savoir comment créer et modifier un diagramme PlantUML
 
   - modifier `docs/modeles/dcu.puml` pour inclure un nouveau cas d'utilisation `(Redémarrer) as R #powderblue` et le lien avec l'acteur `J -- R` comme dans l'exemple partiel suivant:
-  
+
   ```text
   ...
   rectangle "Système" {
@@ -170,7 +181,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   ```
 
   Vous devriez voir un diagramme comme ceci:  
-  ![dcu](https://www.plantuml.com/plantuml/svg/0/NOz1YiCm303lVeLeBxk7_g7dd9OKzgxQIjRKbeCiquRI_xJlwCUg19OjUp62cP7HlYgAjfnSea512qWSVnH25F8Q2xjwYZoXO8QgSo9x9Vgr-2CJ-XEET5Y59NnZHsEZbCR1brG4L92h8U9tAz20BUbGM1apmJT9G4Q7NgtfIgCcW1Kwjwn77ksZpM6k-hndsi3L0Nmibadj0k7vg9-h_WNRgPm3oJ4rMgIU36OK8LcD_f_GmMvdsU_KkvlR4mUxzmK0 "dcu")
+  ![diagramme de cas d'utilisation](https://www.plantuml.com/plantuml/svg/NSjDQiCm48RXlKunk9jsuJjuxLMneVkfD7Q5zMD68neJSf_a7BvO94F0P3CCVC_R9K6Mx9roD0b81BRpdu2nJ5fi32ejDgp8w279vgXSjheMfsL5lU1Cum5gUDeCJPYTJ358G4_mGsmme48jaQ6FcJ839kXL3J7CZg0PjoJxtLC3LmNmMLL1-G9cVwIlWt_3nnh_3V6lorJHG6Nqo4nyYE4DzD2s9NjzWxgfZeB9tZq1 "diagramme de cas d'utilisation")
 
   <details>
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.puml`</summary><p>
@@ -229,7 +240,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] ajouter de nouveaux cas de tests pour Redémarrer (Jest/SuperTest)
 
-  - ouvrir le fichier `test/redemarrerJeu.test.ts`
+  - ouvrir le fichier `test/routes/jeuRouter-redemarrerJeu.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   
@@ -248,14 +259,13 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
     Le test doit vérifier qu'il n'y a plus de joueurs.
 
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
-  
   `npm test` va indiquer `XX failed`
 
   Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.
 
 ### 4. écrire le code source;
 
-- [ ] ajouter l'opération système `redemarrerJeu` dans le contrôleur GRASP `src/core/JeuDeDes.ts` (TypeScript)
+- [ ] ajouter l'opération système `redemarrerJeu` dans le contrôleur GRASP `src/core/jeuDeDes.ts` (TypeScript)
 
   Cette méthode correspond à l'opération système (unique) définie dans le diagramme de séquence système (DSS).
 
@@ -263,8 +273,8 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   Retourner voir le diagramme qui a été créé précédemment
 
-- [ ] ajouter une nouvelle route, dans `src/routes/JeuRouter.ts` (Express)
-  
+- [ ] ajouter une nouvelle route, dans `src/routes/jeuRouter.ts` (Express)
+
   - ajouter la fonction `redemarrerJeu`, juste avant la fonction `init()`
 
     Elle doit :
@@ -279,68 +289,98 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] faire un build (Node.js)
 
-  `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un chargé de laboratoire.
+  `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un auxiliaire d'enseignement.
 
-- [ ] vérifier que les tests passent (Node.js)
+- [ ] vérifier que les tests de fonctionnalités passent (Node.js)
 
-  `npm test` devrait indiquer que tous les tests passent.
+  `npm run test-squelette` devrait indiquer que tous les tests passent.
 
 - [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
 
   > Facultatif : pour une explication de PUG (anciennement Jade) avec Express, il y a [cette vidéo](https://www.youtube.com/watch?v=DSp9ExFw3Ig).
 
-  Dans `views/index.pug` après le texte ici, ajouter la ligne `button.redemarrerJeu Redémarrer` (:warning: *attention au niveau d'indentation*):
+  Dans `views/index.pug` après le texte ici, ajouter la ligne `button#redemarrer Redémarrer` (:warning: *attention au niveau d'indentation*):
 
   ```PUG
-  form#formNouveauJoueur.form-group(action='javascript:void(0);')
-    dl
-      dt Nom du nouveau joueur
-      dd
-        input.form-control.col-sm-4(name='nom' type='text')
-    button.demarrer Démarrer
+      ul.entries
+        each joueur in joueurs
+          li.joueur
+            -var nom = joueur.nom;
+            strong(id=nom) #{nom}
+            = ' '
+            | tentatives: #{joueur.lancers}, réussites: #{joueur.lancersGagnes}
+            = ' '
+            button.lancer(id=nom) Lancer dés
+            = ' '
+            button.terminer(id=nom) Terminer
+        else
+          li
+            em Pas de joueurs encore.
 
-  button.redemarrerJeu Redémarrer
+      button#redemarrer Redémarrer
   ```
 
 - [ ] ajouter le JavaScript pour le bouton afin d'invoquer le nouveau service
 
-  Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clic sur le bouton *Démarrer* (`$("button.demarrer").click(function () {...}`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
+  Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clic sur le bouton *Démarrer* (`demarrer.addEventListener("click", function(){...});`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
 
   ```JavaScript
-  $('button.redemarrerJeu').click(function () {
-    $.get('/api/v1/jeu/redemarrerJeu', function (data, status) {
-      window.location.reload();
-    });
+  document.getElementById("redemarrer").addEventListener("click", function ()
+  {
+      fetch("/api/v1/jeu/redemarrerJeu")
+      .then(function()
+      {
+          location.reload();
+      });
   });
   ```
 
   Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*.
 
-### 5. Changement de page
+### 5. Fonctionnalité: Afficher classement sur nouvelle page
 
-- [ ] Ajouter un second bouton qui se nommera "Redemarrer nouvelle page" et qui utilisera le id "button#redemarrerJeuNouvellePage". Ce bouton devra redémarrer le jeu et afficher le contenu de la page de jeux en utilisant le fichier index2.pug
-- [ ] Dans cette page uniquement, ajouter un bouton pour retourner à la page index.puml. Ce bouton devra utiliser le id "button#home"
-- [ ] Ajouter la RDCU (diagramme de séquence) pour démontrer l'opération du contrôleur "redemarrerJeuNouvellePage"
+- [ ] Ajouter un second bouton qui se nommera "Classement" et qui utilisera le id "#classement" pour faire un `GET` sur `/api/v1/jeu/afficherClassement`. Cependant, ce bouton devra afficher le contenu utilisant le fichier `classement.pug`. Voici une solution pour l'EventListener à définir dans `main.js`:
+  ```javascript
+      this.document.getElementById("classement").addEventListener("click", function () {
+          fetch("/api/v1/jeu/afficherClassement")
+          .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              // Promesse : résultat se rend 
+              // dans "then" plus bas, 
+              // devenant "html"
+              return response.text();
+            })
+            .then(html => {
+              document.open();
+              document.write(html);
+              document.close();
+            })
+            .catch(error => {
+              console.error('There has been a problem with your fetch operation:', error);
+            });
+      });
+  ```
 
-### 6. Pratiquer ce qui a été appris!
+  - [ ] Astuce: la logique dans le *route handler* pour `/api/v1/jeu/afficherClassement` est quasiment la même que pour la route `/` définie dans `src/app.ts`.
+  - [ ] Voir l'explication dans les commentaires de `classement.pug` pour savoir comment afficher le classement.
+- [ ] Dans cette page uniquement, ajouter un bouton "Accueil" pour retourner à la page `index.pug`. Ce bouton devra utiliser le id "button#home"
+- [ ] Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas l'état des objets du domaine.
+
+### 6. Documenter les classes logicielles
+
+- [ ] Générer un diagramme de classes pour la solution avec le script `npm run uml-classes-puml` qui utilise l'outil `tplant`. Par défaut, le diagramme est placé dans le répertoire `docs/modeles`. Chaque fois que vous modifiez votre code source, c'est une bonne idée d'actualiser ce diagramme avec ce script.
+- [ ] Visualiser le fichier généré `App.puml` dans VS Code avec l'extension de PlantUML. Comprendre le design du jeu de dés.
+- [ ] Intégrer ce diagramme dans votre rapport `Squelette.md` dans une section nommée **Diagramme de classes logicielles**.
+
+### 7. Pratiquer ce qui a été appris
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller sans aide.
 
-### 7. Vérifier la correction automatique
-
-Cet exercice sera noté quasi automatiquement lorsque vous pousserez votre code dans GitHub. 
-Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser sont faites.
-
-Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100%.
-> npm test
-
-**Important:**
-La seule rétroaction pour ce laboratoire est la commande `npm test`.
-Vous n'aurez pas de rétroaction individuelle après, alors si vous avez des tests qui ne passent pas ou des questions concernant les technologies, **c'est votre responsabilité de demander de l'aide de l'auxiliaire de laboratoire avant la remise.**
-
 ### 8. Remise du rapport en format PDF
 
-- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md`
+- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md` nommé `docs/lab0.pdf`
   > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
 
 ### 9. Faire face aux parasites et aux mollassons dans une équipe
@@ -348,7 +388,22 @@ Vous n'aurez pas de rétroaction individuelle après, alors si vous avez des tes
 1. Lisez le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
 2. Écrivez une réponse dans le fichier `docs/experience-parasites-mollassons.md` du dépôt.
 
-### 10. Remettre (anglais *commit*) les changements
+### 10. Vérifier la correction automatique
+
+Cet exercice sera noté quasi automatiquement lorsque vous transférez votre code dans GitHub Classrooms.
+Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
+Il y a deux volets de la correction automatique avec les tests automatiques:
+
+- Documentation: `npm test`
+- Fonctionnalités: `npm run test-squelette`
+
+Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100% pour la partie fonctionnalité.
+
+**Important:**
+La seule rétroaction pour ce laboratoire est à travers les commandes ci-dessus.
+Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si vous avez des tests qui ne passent pas ou des questions concernant les technologies, **c'est votre responsabilité de demander de l'aide de l'auxiliaire de laboratoire avant la remise.**
+
+### 11. Remettre (anglais *commit*) tous les changements
 
 - [ ] À l'aide de Zoom ou de tout autre outil d'enregistrement vidéo, enregistrez une démonstration du fonctionnement de l'interface utilisateur avec au moins 2 joueurs.  Sauvegarder le résultat dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
 - [ ] faire une remise de la solution du projet (GitHub) incluant votre réponse dans `docs/experience-parasites-mollassons.md`
@@ -357,34 +412,21 @@ Vous n'aurez pas de rétroaction individuelle après, alors si vous avez des tes
 
   > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter le facteur de bus (voir les notes de cours pour l'explication) de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
 
-### 11. Notions TypeScript pour les changements de page
+## Calcul de la note
 
-Main.js
+Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques et une évaluation faite par l'auxiliaire d'enseignement:
 
-```js
-  $.get('/api/v1/jeu/xxxx', function(html,status){
-    document.open()
-    document.write(html)
-    document.close()
-  }
-```
+| variable | explication |
+|:-:|:-|
+| *e* | 10 points si vous avez complété un texte d'au moins 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)|
+|*b*<sup>*</sup>| nombre de nouveaux boutons fonctionnels (max 3)|
+| *c*<sup>*</sup>| 10 points si la page de classement fonctionne correctement (sinon 0 point) |
+| *C*<sup>*</sup>| 10 points si la couverture des tests est 100 % (sinon 0 point) |
+| *v* | nombre de tests valides ("passed")|
+| *d* | nombre de tests déjà valides au début du projet (actuellement 2)|
+| *t* | nombre total de tests |
+<!-- Pour ce qui est de la couverture de tests,  -->
 
-jeuRouter.ts
+<sup>*</sup>évaluation faite par l'auxiliaire d'enseignement
 
-```ts
-  public xxx(req:Request, res:ResResponse, nest: NextFunction){
-    res.render('index',...)  -> html
-  }
-```
-
-### 12. Calcul de la note
-
-Le calcul de la note du laboratoire se fait selon l'équation suivante:
-
-- te: 10 points si vous avez complété un texte d'environ 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)
-- ts: nombre total de tests valides
-- td: nombre total de tests valides avant le début du projet (Actuel: 33 tests)
-- tt: nombre total de tests
-- tb: nombre de nouveaux boutons fonctionnels (max 3)
-
-note finale = (te + ts - td + tb * 2) / (10 + tt - td + 6) * 100
+<img src="https://latex.codecogs.com/png.latex?%5Cdpi%7B300%7D%20%5Cbg_white%20%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20c%20&plus;%20C%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%2010%20&plus;%2010%20&plus;%20t%20-d%7D%20100" width="400">
