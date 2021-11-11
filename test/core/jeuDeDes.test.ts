@@ -1,46 +1,34 @@
 import 'jest-extended';
-import app from '../../src/App';
-import { readFileSync } from 'fs';
-var path = require('path');
+import { JeuDeDes } from '../../src/core/jeuDeDes';
 
+describe('JeuDeDesTest', () => {
+  let jdd: JeuDeDes;
+  beforeEach(async () => {
+    jdd = new JeuDeDes();
+  });
 
-let content = ""
-beforeAll(async () => {
-  let filename=path.join('src','core','jeuDeDes.ts')
-  content = readFileSync(filename, 'utf-8');
+  it(`devrait n'avoir aucun joueur au début`, async () => {
+    expect(jdd.joueurs).toEqual("[]")
+  })
+
+  it('devrait retourner une valeur entre 2 et 12', () => {
+    for (let i = 0; i < 200; i++) {
+      expect(jdd.brasser()).toBeWithin(2, 13);
+    }
+  })
+
+  it('devrait retourner finalement toutes les valeurs entre 2 et 12', () => {
+    const resultats = new Set();
+    for (let i = 0; i < 200; i++) {
+      resultats.add(jdd.brasser())
+    }
+    expect(resultats.size).toBe(11);
+    for (let i = 1; i < 12; i++) {
+      expect(resultats.has(i + 1)).toBeTrue();
+    }
+    // cas particuliers
+    expect(resultats.has(1)).toBeFalse();
+    expect(resultats.has(13)).toBeFalse();
+  })
+
 });
-
-describe('src/core/jeuDeDes.ts', () => {
-    it("should contain redemarrerJeu() {", async () => {
-        expect(content).toInclude("redemarrerJeu() {");
-    }); 
-  
-    it("should contain this.joueurs.clear()", async () => {
-        expect(content).toInclude("this.joueurs.clear()");
-    });  
-
-    it("should contain this.jeu.redemarrerJeu()", async () => {
-      expect(content).toInclude("this.jeu.redemarrerJeu()");
-    });  
- 
-    it("should contain this.d3 = new De()", async () => {
-      expect(content).toInclude("this.d3 = new De()");
-    });
-    it("should contain this.d3.brasser()", async () => {
-      expect(content).toInclude("this.d3.brasser()");
-    });
-    it("should contain let v3 = this.d3.valeur", async () => {
-      expect(content).toInclude("let v3 = this.d3.valeur");
-    });
-    it("should contain let somme = v1 + v2 + v3", async () => {
-      expect(content).toInclude("let somme = v1 + v2 + v3");
-    });
-    it("should contain <= 10", async () => {
-      expect(content).toInclude("<= 10");
-    });
-    it("should contain v3: v3", async () => {
-      expect(content).toInclude("v3: v3");
-    });
-}); 
-
-
