@@ -9,7 +9,7 @@
     "typeRoots": ["./src/types", "node_modules/@types"]
   },
   "include": [
-    "src/**/*.ts",
+    "src/**/*.ts", "global.d.ts"
   ],
   "exclude": [
     "node_modules"
