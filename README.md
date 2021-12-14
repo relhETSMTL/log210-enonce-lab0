@@ -426,7 +426,7 @@ Le calcul de la note du laboratoire se fait à partir des résultats des tests a
 | *d* | nombre de tests déjà valides au début du projet (actuellement 2)|
 | *t* | nombre total de tests |
 <!-- Pour ce qui est de la couverture de tests,  -->
-
+   
 <sup>*</sup>évaluation faite par l'auxiliaire d'enseignement
 
 <img src="https://latex.codecogs.com/png.latex?%5Cdpi%7B300%7D%20%5Cbg_white%20%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20c%20&plus;%20C%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%2010%20&plus;%2010%20&plus;%20t%20-d%7D%20100" width="400">
