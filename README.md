@@ -1,18 +1,18 @@
 # LOG210 - Lab 0 - Tutoriel sur les technologies
 
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210.
-Pour atteindre ce but, on vous propose d'ajouter une fonctionnalité au **Jeu de Dés**, un squelette de code que vous trouverez dans ce dépôt et que votre vrai projet de LOG210 doit suivre.
-Le squelette est une application minimaliste qui permet de connecter plusieurs technologies (interface utilisateur, serveur web avec couches logicielles, etc.).
+On vous propose d'ajouter une fonctionnalité au **Jeu de Dés**, un squelette de code que votre vrai projet de LOG210 doit suivre.
+Le squelette est une application minimaliste permettant d'intégrer plusieurs technologies (interface utilisateur, serveur web avec couches logicielles, etc.).
 En apprenant avec le squelette, vous pouvez aller plus vite, sans nécessairement tout comprendre au début.
-De plus, le squelette contient des technologies suffisantes pour réaliser votre projet en équipe, ce qui vous permet de vous concentrer sur la méthodologie d'analyse et de conception qui est le sujet principal de LOG210.
+La conception du squelette permet de vous concentrer sur la méthodologie d'analyse et de conception qui est le sujet principal de LOG210.
 
-> C'est un travail individuel, dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe. ⚠️Puisque les points pour ce laboratoire sont dans le volet de travail de nature individuelle, **l'évaluation de ce travail va déterminer en partie si vous passez le double seuil.** Alors chaque point est très important!
+> Ce travail est individuel, soumis dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe. ⚠️Puisque les points pour ce laboratoire sont dans le volet de travail de nature individuelle, **l'évaluation de ce travail va déterminer en partie si vous passez le seuil pour la note minimale pour l'ensemble des éléments évalués individuellement.** Alors chaque point est très important!
 
 ## Préalables
 
 Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 
-- Les dépôts de code source en git (ici, c'est GitHub)
+- Les dépôts de code source en *git* (ici, c'est GitHub)
 - La programmation orientée objet (ici, c'est TypeScript)
 - Les tests (ici, c'est Jest et SuperTest)
 
@@ -24,7 +24,7 @@ Vérifiez avec votre auxiliaire d'enseignement (chargé.e de laboratoire).
 
 ## Technologies vues dans cet exercice
 
-Cet exercice permet de comprendre de manière basique les technologies suivantes:
+Cet exercice permet de comprendre les bases des technologies suivantes:
 
 - [Node.js](https://nodejs.org/en/docs/guides/)
   - [TypeScript](https://www.typescriptlang.org/docs/home.html)
@@ -35,7 +35,7 @@ Cet exercice permet de comprendre de manière basique les technologies suivantes
 
 Le déploiement de la solution fonctionne comme le diagramme suivant:
 
-![Déploiement](https://www.plantuml.com/plantuml/svg/NP0_Q_D03CRt-nGYapFuXRTZfsG88Hs2YHCwn1rKMtMljNM7JdOQIhzx5JUXqEKGpv_d1xT8Yg93txdqxZcYO0z9pntPAxx-uzIXZu69jPmYPjuvnw4Xc6rnz2qg3GAz2S8qWqy70BybE1ROKe8JFKCM9Op4o5fnOvfI7pjKkuh3UbunAJpWY6KjFkeJO8BrOUE-RhIIPBoW7crgQyg_jtJ3ULQI5wm9Tc5G0rfvEadS53WkO-nyZUe3LxpwY48fLPpjpv5-UFC9Q35t8HeOSl7jg-RPTGZkOLbiOBSgzy1-91pWlxjQUHDEd4_j1N5ZV_GD "Déploiement")
+![Déploiement](https://www.plantuml.com/plantuml/svg/NP71JW8n48RlVOe99sp29dhq10T2u408kyG3UAYx0rPsfqtRhHBZ0_aSlfZJicfY3qtdd-dyyxLJ7vGBVTSAVzPabLCT-71faNUdwt-PsdJM458eSmadxuGWqo2CrYhgamhOE-XOS8GZK1vOXdS1l7xlmdwZJkZX5PzWR9s9I8h2WHhM0dQsvIuUfDpi5bBU70W3h5HKPUsq3O-fwMAt51_9E60AaI8xp2bgPuYmInuy4clDrsV4rbYRHHQaNFDmnOkNKY0ra5hy49JeOXh_WUSQgZ92qWS6JG7TKTK8MzC7faZvT4GdSi5-PcshQnMqeGD9EN-p3Zsx7MWiPNMnUCLWi4p2vIAXC15C9kEX5zp3RBE4xRoiW7H4rSEj65AJV2UZEtrw3c08MatdR5-X3nvKn9f9LnmmPjBv2QKiUukkkef_xFnuKFIsI3zr3LeyXY9J2p7bGlxbRm00 "Déploiement")
 
 > :warning: Les bases de données et les cadriciels (Angular, React, etc.) sont des sujets traités dans d'autres cours des programmes de LOG et de GTI. Donc, vous ne pouvez pas utiliser ces technologies dans les laboratoires de LOG210.
 
