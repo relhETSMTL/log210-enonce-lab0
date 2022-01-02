@@ -2,11 +2,11 @@
 
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210.
 On vous propose d'ajouter une fonctionnalité au **Jeu de Dés**, un squelette de code que votre vrai projet de LOG210 doit suivre.
-Le squelette est une application minimaliste permettant d'intégrer plusieurs technologies (interface utilisateur, serveur web avec couches logicielles, etc.).
+Le squelette est une application minimaliste permettant d'intégrer correctement plusieurs technologies (interface utilisateur, serveur web avec couches logicielles, etc.).
 En apprenant avec le squelette, vous pouvez aller plus vite, sans nécessairement tout comprendre au début.
-La conception du squelette permet de vous concentrer sur la méthodologie d'analyse et de conception qui est le sujet principal de LOG210.
+Vous pouvez vous concentrer sur la méthodologie d'analyse et de conception qui est le sujet principal de LOG210.
 
-> Ce travail est individuel, soumis dans un dépôt privé, pour que chaque personne dans le cours puisse apprendre et contribuer efficacement dans son équipe. ⚠️Puisque les points pour ce laboratoire sont dans le volet de travail de nature individuelle, **l'évaluation de ce travail va déterminer en partie si vous passez le seuil pour la note minimale pour l'ensemble des éléments évalués individuellement.** Alors chaque point est très important!
+> Ce travail est individuel, soumis dans un dépôt privé, pour que chaque personne puisse comprendre et contribuer efficacement dans son équipe. ⚠️Les points pour ce laboratoire sont dans le volet de travail de nature individuelle. **L'évaluation de ce travail déterminera en partie si vous passez le seuil pour la note minimale pour l'ensemble des éléments évalués individuellement.** Alors chaque point est très important!
 
 ## Préalables
 
@@ -31,11 +31,11 @@ Cet exercice permet de comprendre les bases des technologies suivantes:
   - [Express](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction)
   - [Jest](https://jestjs.io/docs/en/api)
   - [SuperTest](https://github.com/visionmedia/supertest)
-- [PUG](https://pugjs.org/api/getting-started.html) (anciennement Jade)
+- [Pug](https://pugjs.org/api/getting-started.html) (anciennement Jade)
 
 Le déploiement de la solution fonctionne comme le diagramme suivant:
 
-![Déploiement](https://www.plantuml.com/plantuml/svg/NP71JW8n48RlVOe99sp29dhq10T2u408kyG3UAYx0rPsfqtRhHBZ0_aSlfZJicfY3qtdd-dyyxLJ7vGBVTSAVzPabLCT-71faNUdwt-PsdJM458eSmadxuGWqo2CrYhgamhOE-XOS8GZK1vOXdS1l7xlmdwZJkZX5PzWR9s9I8h2WHhM0dQsvIuUfDpi5bBU70W3h5HKPUsq3O-fwMAt51_9E60AaI8xp2bgPuYmInuy4clDrsV4rbYRHHQaNFDmnOkNKY0ra5hy49JeOXh_WUSQgZ92qWS6JG7TKTK8MzC7faZvT4GdSi5-PcshQnMqeGD9EN-p3Zsx7MWiPNMnUCLWi4p2vIAXC15C9kEX5zp3RBE4xRoiW7H4rSEj65AJV2UZEtrw3c08MatdR5-X3nvKn9f9LnmmPjBv2QKiUukkkef_xFnuKFIsI3zr3LeyXY9J2p7bGlxbRm00 "Déploiement")
+![Déploiement](https://www.plantuml.com/plantuml/svg/NP6nZjim38PtFGMHAHKG0-tOAHc28Xc284xH8UwWseohngO4YLOR57sWFiUzs56A3uUxHH1__kBF3rf7De6dSL3nPicRO4Q8V1zGpc3RTvtMZTuH4jV58irFIf7h41O7asnl6AS0emY1S04cWiZmLm70wrku74sF4NxZ3rZwu1AI8Mwe4urnz8DXkMbzd7gjFpI437kJJDq6w_bx7lhbwqxzoy6CkKHAah2bP8CZmZ5do4gYTK__4mxE-oAAeFL1bgj-HQqLKWTvn0j1ZI7bzR_9NhEh86HzPh346AwcHJYvYOL2-kMAGHN3PUFzO5l3rb53Mc__-81HqXfQQds-UtnW25WX4RlAA484gzLodWMVONFSmMbRdu5iGZF1HpMtLkLDGG-s_ydW20PBjn9_niWHJC9MIFTIQ5rqPAdhoMF8ZZViI0cgoLVvfnx5W5Uk2hLQYqy--Ha0 "Déploiement")
 
 > :warning: Les bases de données et les cadriciels (Angular, React, etc.) sont des sujets traités dans d'autres cours des programmes de LOG et de GTI. Donc, vous ne pouvez pas utiliser ces technologies dans les laboratoires de LOG210.
 
@@ -47,7 +47,8 @@ Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir
 
 ## Objectif de l'exercice
 
-Cet exercice va vous amener à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.  Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
+Cet exercice vous amènera à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.
+Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
 Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra passer par les étapes suivantes:
 
 - actualiser la documentation de la fonctionnalité (cas d'utilisation)
@@ -56,7 +57,7 @@ Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra 
 - écrire le code source;
 - remettre (anglais *commit*) les changements.
 
-Les auxiliaires d'enseignement seront disponibles pour vous aider si vous avez des questions.
+Les auxiliaires d'enseignement pourront vous aider si vous avez des questions.
 
 ## Étapes
 
@@ -79,11 +80,11 @@ Vous pouvez cocher chaque étape dans la liste suivante:
       "plantuml.render": "PlantUMLServer",
   ```
 
-  (Si on a les droits d'administrateur Windows) installer [GraphViz](http://www.graphviz.org/download/) pour utiliser une copie locale de PlantUML plutôt que le serveur et configurer `"plantuml.render": "Local"` selon la [documentation](https://github.com/qjebbs/vscode-plantuml#about-render).
+  (Si vous avez les droits d'administrateur Windows) installer [GraphViz](http://www.graphviz.org/download/) pour utiliser un serveur local de PlantUML plutôt que le serveur sur Internet et configurer `"plantuml.render": "Local"` selon la [documentation](https://github.com/qjebbs/vscode-plantuml#about-render).
 
 - [ ] [installer GitHub Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop) sur votre machine
 
-- [ ] [cloner le code de ce squelette](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) sur votre machine
+- [ ] [cloner](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) le dépôt de code de ce squelette sur votre machine
 
   - :warning: Ne pas installer le squelette dans un dossier qui contient des espaces ou des accents
 
@@ -108,7 +109,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
     [2:52:01 p.m.] Project 'tsconfig.json' is out of date because output file 'dist/app.js' does not exist
 
-    [2:52:01 p.m.] Building project 'C:/Users/Moi/Documents/GitHub/S20203-LOG210-Lab0/tsconfig.json'
+    [2:52:01 p.m.] Building project 'C:/Users/Moi/Documents/GitHub/log210-enonce-lab0/tsconfig.json'
     ...
     ```
 
