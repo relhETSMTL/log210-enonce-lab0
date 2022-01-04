@@ -133,7 +133,8 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     Le but est de faire passer tous les tests au fur et à mesure que vous apprenez des aspects technologiques du laboratoire.
 
     Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points.
-    Vous devrez donc corriger deux issues avec `app.ts` et `jeuRouter.ts`.
+    **TODO: nouvelle version de app.ts a du code pour les routes de page statique, difficile d'avoir une couverture de 100 %.**
+    Vous devrez donc corriger deux problèmes avec `app.ts` et `jeuRouter.ts`.
 
     La rétroaction de ce laboratoire vient principalement de cette commande de test automatique.
     Vous devez poser des questions aux auxiliaires d'enseignement si vous avez besoin d'aide.
@@ -145,6 +146,22 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 <!-- markdown-link-check-disable-next-line -->
 - [ ] exécuter l'application avec un navigateur moderne à l'URL [http://localhost:3000](http://localhost:3000)
 
+- [ ] regarder la structure des pages statiques dans `views/` ainsi que la barre de navigation (`views/includes/navbar.pug`) qui est [incluse](https://pugjs.org/language/includes.html) dans les pages statiques (`views/index.pug`,`views/stats.pug`).
+
+  - la barre, qui utilise Bootstrap, est personnalisée selon les valeurs dans un objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html).
+
+    ```typescript
+    user = { nom: 'Pierre Trudeau', hasPrivileges: true, isAnonymous: false };
+    ```
+
+    Cet objet sera un mécanisme de gérer les vues, par exemple, si `objet.isAnonymous` est vrai, `navbar.pug` n'affiche pas de lien, car l'utilisateur n'est pas connu (et donc doit se connecter pour avoir plus d'informations).
+    > Dans cet exercice, vous n'avez pas à gérer les connexions, mais sachez que le squelette supporte cette dimension. Ça sera utile pour votre projet en équipe.
+  - la technologie Bootstrap est chargée dans une entête (`views/includes/head.pug`) qui, elle, est incluse dans chaque page statique. Sachez que les versions de Bootstrap ont évoluées assez rapidement et il faut faire attention à la version si vous trouvez un exemple intéressant que vous voulez réutilisez. La documentation de Bootstrap est excellente, donc vérifiez toujours avec ça.
+  - les pages statiques définies avec Pug permettent de créer facilement une interface humain-machine, mais il doit y avoir des routes définies dans `src/app.ts` pour que les fichiers `.pug` soient bien rendus au navigateur.
+  - repérer dans le fichier `src/app.ts` la définition des *route handlers* pour les pages statiques, p. ex. `/` vers `views/index.pug` et `/stats` vers `views/stats.pug`. Cela est important pour étendre le squelette dans le cadre du projet en équipe. Il y a aussi des pages statiques pour aider avec la gestion des connexions (`views/signin.pug` et `views/signout.pug`) qui sont intégrées également dans le squelette (routes et barre de navigation).
+  - noter que la syntaxe des fichiers Pug est sensible à l'indentation (comme en Python). Si vous trouvez un exemple de code Pug à intégrer dans votre projet, l'éditeur VSCode va (par défaut) utiliser une indentation de 4 espaces, tandis que beaucoup d'exemples sur internet utilise 2 espaces.
+<!-- Note -- on évite de mettre les exemples concrets de code du squelette dans le tutoriel, car ça évolue et c'est difficile à synchroniser. Malheureusement le tutoriel est moins explicite à cause de ça. -->
+
 > Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant. Les auxiliaires d'enseignement auront accès à votre dépôt de code source et pourraient vous aider (surtout à distance) si votre code est synchronisé souvent avec le dépôt.
 
 ### 1. actualiser la documentation de la fonctionnalité;
@@ -153,7 +170,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.
 
-- [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/Squelette.md#jouer-aux-dés):
+- [ ] dans le fichier `docs/Squelette.md`, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/Squelette.md#jouer-aux-dés):
 
   ```markdown
   #### Redémarrer
@@ -191,7 +208,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   *Réponse*: Il faut modifier le markdown suivant dans `docs/Squelette.md`:
 
   ```markdown
-  ### Diagramme de cas d’utilisation
+  ### Diagramme de cas d'utilisation
 
   ![Diagramme de cas d'utilisation](http://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/modeles/dcu.puml)
   ```
@@ -208,7 +225,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `docs/Squelette.md`:
 
   ```markdown
-  ### Diagramme de cas d’utilisation
+  ### Diagramme de cas d'utilisation
 
   ![Diagramme de cas d'utilisation](docs/modeles/dcu/Diagramme%20de%20cas%20d'utilisation.svg)
   ```
@@ -239,7 +256,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 ### 3. écrire des tests pour la fonctionnalité
 
-- [ ] ajouter de nouveaux cas de tests pour Redémarrer (Jest/SuperTest)
+- [ ] ajouter de nouveaux cas de test pour Redémarrer (Jest/SuperTest)
 
   - ouvrir le fichier `test/routes/jeuRouter-redemarrerJeu.test.ts`
 
@@ -340,33 +357,34 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 ### 5. Fonctionnalité: Afficher classement sur nouvelle page
 
-- [ ] Ajouter un second bouton qui se nommera "Classement" et qui utilisera le id "#classement" pour faire un `GET` sur `/api/v1/jeu/afficherClassement`. Cependant, ce bouton devra afficher le contenu utilisant le fichier `classement.pug`. Voici une solution pour l'EventListener à définir dans `main.js`:
+Il existe un lien dans la barre de navigation «Classement» pour la page `/stats`. Cependant, cette page n'affiche pas la colonne Ratio, car l'information n'est pas encore calculée.
+
+- [ ] Modifier le *route handler* dans `src/app.ts` et le gabarit `view/stats.pug` pour que le ratio se calcule et s'affiche. La classe `src/core/Joueur.ts` ne contient pas de propriété `ratio`, mais on peut la calculer dans le *route handler*. Il faut passer un nouveau tableau de joueurs, mais les objets doivent contenir une propriété `ratio` qui est le nombre de succès divisé par le nombre de tentatives. [Astuce sur stackoverflow](https://stackoverflow.com/a/44407980/1168342).
   ```javascript
-      this.document.getElementById("classement").addEventListener("click", function () {
-          fetch("/api/v1/jeu/afficherClassement")
-          .then(response => {
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
-              }
-              // Promesse : résultat se rend 
-              // dans "then" plus bas, 
-              // devenant "html"
-              return response.text();
-            })
-            .then(html => {
-              document.open();
-              document.write(html);
-              document.close();
-            })
-            .catch(error => {
-              console.error('There has been a problem with your fetch operation:', error);
-            });
-      });
+  const joueurs: Array<Joueur> = JSON.parse(jeuRoutes.controleurJeu.joueurs);
+  const joueursAvecRatio = /* à compléter en ajoutant joueur.ratio */;
+  res.render('stats',
+    // passer objet au gabarit (template) Pug
+    {
+      title: `${titreBase}`,
+      user: user,
+      // créer nouveau tableau de joueurs qui est trié par ratio
+      joueurs: joueurAvecRatio /* à modifier */
   ```
 
-  - [ ] Astuce: la logique dans le *route handler* pour `/api/v1/jeu/afficherClassement` est quasiment la même que pour la route `/` définie dans `src/app.ts`.
-  - [ ] Voir l'explication dans les commentaires de `classement.pug` pour savoir comment afficher le classement.
-- [ ] Dans cette page uniquement, ajouter un bouton "Accueil" pour retourner à la page `index.pug`. Ce bouton devra utiliser le id "button#home"
+  Pour afficher le ratio, il faut modifier le gabarit `views/stats.pug` (la ligne à modifier est en commentaire):
+
+  ```jade
+    each joueur in joueurs
+      tr
+        td #{joueur.nom}
+        td(style="text-align: right") #{joueur.lancers}
+        td(style="text-align: right") #{joueur.lancersGagnes}
+        //- td(style="text-align: right; font-family: monospace") #{joueur.ratio.toFixed(8)}
+  ```
+
+- [ ] Trier le tableau de `joueursAvecRatio` pour que le classement s'affiche en ordre décroissant par ratio. [Astuce sur stackoverflow](https://stackoverflow.com/a/21689268/1168342).
+
 - [ ] Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas l'état des objets du domaine.
 
 ### 6. Documenter les classes logicielles
