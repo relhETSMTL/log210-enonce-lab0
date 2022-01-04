@@ -1,3 +1,8 @@
+<!-- 
+  Le lab0 dépend du squelette. Il faut actualiser le squelette en premier (le cas échéant) et en faire un merge.
+  Voir https://stackoverflow.com/a/56577320/1168342 pour les détails. Ça marche bien.
+  -->
+
 # LOG210 - Lab 0 - Tutoriel sur les technologies
 
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210.
