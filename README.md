@@ -138,7 +138,6 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     Le but est de faire passer tous les tests au fur et à mesure que vous apprenez des aspects technologiques du laboratoire.
 
     Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points.
-    **TODO: nouvelle version de app.ts a du code pour les routes de page statique, difficile d'avoir une couverture de 100 %.**
     Vous devrez donc corriger deux problèmes avec `app.ts` et `jeuRouter.ts`.
 
     La rétroaction de ce laboratoire vient principalement de cette commande de test automatique.
