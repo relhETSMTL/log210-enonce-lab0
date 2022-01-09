@@ -89,13 +89,13 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] [installer GitHub Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop) sur votre machine
 
-- [ ] [cloner](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) le dépôt de code de ce squelette sur votre machine
+- [ ] [cloner](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) le dépôt de code de ce laboratoire sur votre machine
 
-  - :warning: Ne pas installer le squelette dans un dossier qui contient des espaces ou des accents
+  - :warning: Ne pas cloner le code dans un chemin qui contient des espaces ou des accents.
 
 - [ ] faire un build du code
 
-  - Ouvrir le projet en VSCode en cliquant sur le bouton **Open in Visual Studio Code**
+  - Ouvrir le dossier du projet en VSCode **File > Open Foler...**
 
   - Dans VSCode, ouvrir un terminal dans le menu **Terminal > New Terminal**
 
@@ -127,9 +127,9 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     ```text
     ...
     Test Suites: 15 failed, 15 total
-    Tests:       46 failed, 2 passed, 48 total
+    Tests:       46 failed, 1 passed, 47 total
     Snapshots:   0 total
-    Time:        6.253 s
+    Time:        11.755 s
     Ran all test suites matching /lab0.test.ts/i.
     ```
 
@@ -138,10 +138,11 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     Le but est de faire passer tous les tests au fur et à mesure que vous apprenez des aspects technologiques du laboratoire.
 
     Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points.
-    Vous devrez donc corriger deux problèmes avec `app.ts` et `jeuRouter.ts`.
+    Vous devrez donc corriger des problèmes avec `app.ts` et `jeuRouter.ts`.
 
-    La rétroaction de ce laboratoire vient principalement de cette commande de test automatique.
-    Vous devez poser des questions aux auxiliaires d'enseignement si vous avez besoin d'aide.
+    La rétroaction de ce laboratoire ne viendra pas d'un auxiliaire d'enseignement, car c'est un travail individuel.
+    Ce sont des tests automatiques qui vont diagnostiquer les problèmes pour vous.
+    **Si vous avez une difficulté que vous n'arrivez pas à résoudre, vous devez poser des questions aux auxiliaires d'enseignement.**
 
 - [ ] exécuter le serveur sur localhost
 
@@ -149,8 +150,12 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 <!-- markdown-link-check-disable-next-line -->
 - [ ] exécuter l'application avec un navigateur moderne à l'URL [http://localhost:3000](http://localhost:3000)
+  - [ ] démarrer une partie avec un joueur
+  - [ ] essayer le bouton pour jouer
+  - [ ] regarder la page Classement
+  - [ ] revenir à la page d'accueil pour voir le jeu
 
-- [ ] regarder la structure des pages statiques dans `views/` ainsi que la barre de navigation (`views/includes/navbar.pug`) qui est [incluse](https://pugjs.org/language/includes.html) dans les pages statiques (`views/index.pug`,`views/stats.pug`).
+- [ ] regarder dans VSCode la structure des pages statiques dans `views/` ainsi que la barre de navigation (`views/includes/navbar.pug`) qui est [incluse](https://pugjs.org/language/includes.html) dans les pages statiques (`views/index.pug`,`views/stats.pug`).
 
   - la barre, qui utilise Bootstrap, est personnalisée selon les valeurs dans un objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html).
 
