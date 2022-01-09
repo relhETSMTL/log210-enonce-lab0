@@ -156,15 +156,29 @@ Vous pouvez cocher chaque étape dans la liste suivante:
   - [ ] revenir à la page d'accueil pour voir le jeu
 
 - [ ] regarder dans VSCode la structure des pages statiques dans `views/` ainsi que la barre de navigation (`views/includes/navbar.pug`) qui est [incluse](https://pugjs.org/language/includes.html) dans les pages statiques (`views/index.pug`,`views/stats.pug`).
+- [ ] regarder comment dans `src/app.ts` un gabarit `views/index.pug` Pug est utilisé:
 
-  - la barre, qui utilise Bootstrap, est personnalisée selon les valeurs dans un objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html).
+  ```typescript
+    // Route pour jouer (index)
+    router.get('/', (req, res, next) => {
+      res.render('index',
+        // passer objet au gabarit (template) Pug
+        {
+          title: `${titreBase}`,
+          user: user,
+          joueurs: JSON.parse(jeuRoutes.controleurJeu.joueurs)
+        });
+    });
+  ```
+
+  - La [barre de navigation est définie dans Bootstrap](https://getbootstrap.com/docs/4.1/components/navbar/). Elle est personnalisée selon les valeurs dans l'objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html). Cet objet est initialisé plus haut dans `src/app.ts`:
 
     ```typescript
     // Extrait de src/app.ts
     user = { nom: 'Pierre Trudeau', hasPrivileges: true, isAnonymous: false };
     ```
 
-    Cet objet sera un mécanisme de gérer les vues, par exemple, si `objet.isAnonymous` est vrai, `navbar.pug` n'affiche pas de lien, car l'utilisateur n'est pas connu (et donc doit se connecter pour avoir plus d'informations).
+    Cet objet sera un mécanisme de gérer les vues. Par exemple, si `objet.isAnonymous` est vrai, `navbar.pug` n'affiche pas de lien, car l'utilisateur n'est pas connu et donc doit se connecter pour avoir plus d'accès.
     > Dans cet exercice, vous n'avez pas à gérer les connexions, mais sachez que le squelette supporte cette dimension. Ça sera utile pour votre projet en équipe.
   - la technologie Bootstrap est chargée dans une entête (`views/includes/head.pug`) qui, elle, est incluse dans chaque page statique. Sachez que les versions de Bootstrap ont évoluées assez rapidement et il faut faire attention à la version si vous trouvez un exemple intéressant que vous voulez réutilisez. La documentation de Bootstrap est excellente, donc vérifiez toujours avec ça.
   - les pages statiques définies avec Pug permettent de créer facilement une interface humain-machine, mais il doit y avoir des routes définies dans `src/app.ts` pour que les fichiers `.pug` soient bien rendus au navigateur.
@@ -370,7 +384,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 Il existe un lien dans la barre de navigation «Classement» pour la page `/stats`. Cependant, cette page n'affiche pas la colonne Ratio, car l'information n'est pas encore calculée.
 
 - [ ] Modifier le *route handler* dans `src/app.ts` et le gabarit `view/stats.pug` pour que le ratio se calcule et s'affiche. La classe `src/core/Joueur.ts` ne contient pas de propriété `ratio`, mais on peut la calculer dans le *route handler*. Il faut passer un nouveau tableau de joueurs, mais les objets doivent contenir une propriété `ratio` qui est le nombre de succès divisé par le nombre de tentatives. [Astuce sur stackoverflow](https://stackoverflow.com/a/44407980/1168342).
-  ```javascript
+  ```typescript
   const joueurs: Array<Joueur> = JSON.parse(jeuRoutes.controleurJeu.joueurs);
   const joueursAvecRatio = /* à compléter en ajoutant joueur.ratio */;
   res.render('stats',
