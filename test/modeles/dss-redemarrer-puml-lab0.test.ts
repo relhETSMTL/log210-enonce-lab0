@@ -14,11 +14,11 @@ describe('docs/modeles/dss-redemarrerJeu.puml', () => {
   });
 
   it("should contain Système", async () => {
-    expect(content).toInclude("Systeme");
+    expect(content).toInclude("Système");
   });
 
   it("should contain redemarrerJeu()", async () => {
-    expect(content).toInclude("redemarrerJeu()");
+    expect(content).toInclude("redémarrerJeu()");
   });
 
 });
