@@ -156,7 +156,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
   - [ ] revenir à la page d'accueil pour voir le jeu
 
 - [ ] regarder dans VSCode la structure des pages statiques dans `views/` ainsi que la barre de navigation (`views/includes/navbar.pug`) qui est [incluse](https://pugjs.org/language/includes.html) dans les pages statiques (`views/index.pug`,`views/stats.pug`).
-- [ ] regarder comment dans `src/app.ts` un gabarit `views/index.pug` Pug est utilisé:
+- [ ] regarder comment dans `src/app.ts` un gabarit Pug `views/index.pug` est utilisé:
 
   ```typescript
     // Route pour jouer (index)
@@ -171,7 +171,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     });
   ```
 
-  - La [barre de navigation est définie dans Bootstrap](https://getbootstrap.com/docs/4.1/components/navbar/). Elle est personnalisée selon les valeurs dans l'objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html). Cet objet est initialisé plus haut dans `src/app.ts`:
+  - La [barre de navigation `views/includes/navbar.pug` vient de Bootstrap](https://getbootstrap.com/docs/4.1/components/navbar/). Elle est personnalisée selon les valeurs dans l'objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html). Cet objet est initialisé plus haut dans `src/app.ts`:
 
     ```typescript
     // Extrait de src/app.ts
