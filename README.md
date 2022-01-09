@@ -160,6 +160,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
   - la barre, qui utilise Bootstrap, est personnalisée selon les valeurs dans un objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html).
 
     ```typescript
+    // Extrait de src/app.ts
     user = { nom: 'Pierre Trudeau', hasPrivileges: true, isAnonymous: false };
     ```
 
