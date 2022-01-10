@@ -144,6 +144,90 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     Ce sont des tests automatiques qui vont diagnostiquer les problèmes pour vous.
     **Si vous avez une difficulté que vous n'arrivez pas à résoudre, vous devez poser des questions aux auxiliaires d'enseignement.**
 
+  - Pour voir la liste des tests pour le lab0, taper `npm test -- --listTests`
+  - Pour exécuter un test individuel, p. ex. `identification-lab0.test.ts` -- très utile pour ne pas avoir trop d'informations avec tous les tests -- taper `jest --colors identification-lab0.test.ts` (il n'est pas nécessaire de spécifier tout le chemin du fichier):
+
+    ```
+    $ jest --colors identification-lab0.test.ts
+    FAIL test/squelette/identification-lab0.test.ts
+      README identification
+        × devrait trouver votre nom (2 ms)
+        × devrait trouver votre courriel  
+        × devrait trouver Votre code moodle
+        × devrait trouver votre compte github
+
+      ● README identification › devrait trouver votre nom
+
+        expect(received).toBeFalsy()
+
+        Received: true
+
+          11 | describe('README identification', () => {
+          12 |   it('devrait trouver votre nom', () => {
+        > 13 |     expect(content.includes("Entrer votre nom")).toBeFalsy();
+            |                                                  ^
+          14 |   });
+          15 |
+          16 |   it('devrait trouver votre courriel', () => {
+
+          at Object.<anonymous> (test/squelette/identification-lab0.test.ts:13:50)
+
+      ● README identification › devrait trouver votre courriel
+
+        expect(received).toBeFalsy()
+
+        Received: true
+
+          15 |
+          16 |   it('devrait trouver votre courriel', () => {
+        > 17 |     expect(content.includes("Entrer votre courriel")).toBeFalsy();
+            |                                                       ^
+          18 |   });
+          19 |
+          20 |   it('devrait trouver Votre code moodle', () => {
+
+          at Object.<anonymous> (test/squelette/identification-lab0.test.ts:17:55)
+
+      ● README identification › devrait trouver Votre code moodle
+
+        expect(received).toBeFalsy()
+
+        Received: true
+
+          19 |
+          20 |   it('devrait trouver Votre code moodle', () => {
+        > 21 |     expect(content.includes("Entrer votre code moodle obtenu à partir de Signets")).toBeFalsy();
+            |                                                                                     ^
+          22 |   });
+          23 |
+          24 |   it("devrait trouver votre compte github", () => {
+
+          at Object.<anonymous> (test/squelette/identification-lab0.test.ts:21:85)
+
+      ● README identification › devrait trouver votre compte github
+
+        expect(received).toBeFalsy()
+
+        Received: true
+
+          23 |
+          24 |   it("devrait trouver votre compte github", () => {
+        > 25 |     expect(content.includes("Entrer l'identifiant de votre compte github")).toBeFalsy();
+            |                                                                             ^
+          26 |   });
+          27 | });
+          28 |
+
+          at Object.<anonymous> (test/squelette/identification-lab0.test.ts:25:77)
+
+    Test Suites: 1 failed, 1 total
+    Tests:       4 failed, 4 total
+    Snapshots:   0 total
+    Time:        1.34 s, estimated 2 s
+    ```
+
+    Les croix (`× devrait trouver votre nom (2 ms)`) signifient qu'un test echoue, tandis qu'un test réussi s'affiche avec une coche `√`.
+
 - [ ] exécuter le serveur sur localhost
 
   - Dans le terminal, `npm start`
@@ -257,6 +341,8 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   L'avantage de cette méthode est que votre documentation locale est immédiatement à jour.
 
   </p></details>
+
+- [ ] vérifier le travail avec le test. [TODO]
 
 ### 2. actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
 
