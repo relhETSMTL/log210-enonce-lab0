@@ -524,7 +524,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 
 ### 7. Pratiquer ce qui a été appris
 
-- [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller sans aide.
+- [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller, en vous référant à des étapes plus haut.
 
 ### 8. Remise du rapport en format PDF
 
@@ -532,6 +532,9 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
   > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
 
 ### 9. Faire face aux parasites et aux mollassons dans une équipe
+
+Il peut arrive qu'une équipe soit composée des personnes qui travaillent beaucoup moins que les autres.
+Pour vous sensibiliser aux problèmes typiques et vous outiller à agir rapidement en cas de difficultés, il y a un texte à lire et à intérioriser.
 
 1. Lisez le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
 2. Écrivez une réponse dans le fichier `docs/experience-parasites-mollassons.md` du dépôt.
