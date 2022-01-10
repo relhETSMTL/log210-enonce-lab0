@@ -499,7 +499,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
       title: `${titreBase}`,
       user: user,
       // créer nouveau tableau de joueurs qui est trié par ratio
-      joueurs: joueurAvecRatio /* à modifier */
+      joueurs: joueursAvecRatio /* à modifier */
   ```
 
   Pour afficher le ratio, il faut modifier le gabarit `views/stats.pug` (la ligne à modifier est en commentaire):
@@ -515,7 +515,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 
 - [ ] Trier le tableau de `joueursAvecRatio` pour que le classement s'affiche en ordre décroissant par ratio. [Astuce sur stackoverflow](https://stackoverflow.com/a/21689268/1168342).
 
-- [ ] Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas l'état des objets du domaine.
+  > Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas l'état des objets du domaine.
 
 ### 6. Documenter les classes logicielles
 
