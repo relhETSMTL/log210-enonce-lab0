@@ -4,7 +4,7 @@ const path = require('path');
 
 const indexPugFilename = path.join('views', 'index.pug')
 const contentIndex = readFileSync(indexPugFilename, 'utf-8');
-const classementPugFilename = path.join('views', 'classement.pug')
+const classementPugFilename = path.join('views', 'stats.pug')
 const contentClassement = readFileSync(classementPugFilename, 'utf-8');
 
 describe('views/index.pug', () => {
@@ -12,16 +12,13 @@ describe('views/index.pug', () => {
     expect(contentIndex.includes("button#redemarrer Redémarrer")).toBeTruthy();
   });
 
-  it("should contain button#classement Classement", () => {
-    expect(contentIndex.includes("button#classement Classement")).toBeTruthy();
-  });
-
 });
 
-describe('views/classement.pug', () => {
+describe('views/stats.pug', () => {
 
-  it("should contain button.home Accueil", () => {
-    expect(contentClassement.includes("button#home Accueil")).toBeTruthy();
+  it("devrait ne pas avoir la colonne ration en commentaire ", () => {
+    expect(contentClassement.includes(`//- td(style="text-align: right; font-family: monospace") #{joueur.ratio.toFixed(8)}`)).toBeFalsy();
+    expect(contentClassement.includes(`  td(style="text-align: right; font-family: monospace") #{joueur.ratio.toFixed(8)}`)).toBeTruthy();
   });
 
 });
