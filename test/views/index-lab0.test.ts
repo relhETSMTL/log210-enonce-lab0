@@ -8,20 +8,20 @@ const classementPugFilename = path.join('views', 'classement.pug')
 const contentClassement = readFileSync(classementPugFilename, 'utf-8');
 
 describe('views/index.pug', () => {
-  it("should contain button#redemarrer Redémarrer", async () => {
-    expect(contentIndex).toInclude("button#redemarrer Redémarrer");
+  it("should contain button#redemarrer Redémarrer", () => {
+    expect(contentIndex.includes("button#redemarrer Redémarrer")).toBeTruthy();
   });
 
-  it("should contain button#classement Classement", async () => {
-    expect(contentIndex).toInclude("button#classement Classement");
+  it("should contain button#classement Classement", () => {
+    expect(contentIndex.includes("button#classement Classement")).toBeTruthy();
   });
 
 });
 
 describe('views/classement.pug', () => {
 
-  it("should contain button.home Accueil", async () => {
-    expect(contentClassement).toInclude("button#home Accueil");
+  it("should contain button.home Accueil", () => {
+    expect(contentClassement.includes("button#home Accueil")).toBeTruthy();
   });
 
 });

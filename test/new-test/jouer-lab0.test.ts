@@ -9,7 +9,7 @@ beforeAll(async () => {
 });
 
 describe('test/routes/jeuRouter-jouer.test.ts', () => {
-  it("should contain expect(response.body.resultat.v3).toBeWithin(1, 7)", async () => {
-    expect(content).toInclude("expect(resultat.v3).toBeWithin(1, 7)");
+  it("should contain expect(response.body.resultat.v3).toBeWithin(1, 7)", () => {
+    expect(content.includes("expect(resultat.v3).toBeWithin(1, 7)")).toBeTruthy();
   });
 });

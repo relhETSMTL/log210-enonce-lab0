@@ -9,13 +9,13 @@ beforeAll(async () => {
 });
 
 describe('public/lib/main.js', () => {
-  it("devrait utiliser fetch pour le bouton redémarrer", async () => {
-    expect(content).toInclude("redemarrer.addEventListener(\"click\", function () {");
-    expect(content).toInclude("fetch(\"/api/v1/jeu/redemarrerJeu\", {");
+  it("devrait utiliser fetch pour le bouton redémarrer", () => {
+    expect(content.includes("redemarrer.addEventListener(\"click\", function () {")).toBeTruthy();
+    expect(content.includes("fetch(\"/api/v1/jeu/redemarrerJeu\", {")).toBeTruthy();
   });
-  it("devrait utiliser fetch pour le bouton redémarrerJeuNouvellePage", async () => {
-    expect(content).toInclude("redemarrerJeuNouvellePage.addEventListener(\"click\", function () {");
-    expect(content).toInclude("fetch(\"/api/v1/jeu/redemarrerJeuNouvellePage\")");
+  it("devrait utiliser fetch pour le bouton redémarrerJeuNouvellePage", () => {
+    expect(content.includes("redemarrerJeuNouvellePage.addEventListener(\"click\", function () {")).toBeTruthy();
+    expect(content.includes("fetch(\"/api/v1/jeu/redemarrerJeuNouvellePage\")")).toBeTruthy();
   });
 
 });

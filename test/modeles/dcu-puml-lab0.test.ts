@@ -10,12 +10,12 @@ beforeAll(async () => {
 });
 
 describe('docs/modeles/dcu.puml', () => {
-  it("should contain (Redémarrer) as R #powderblue", async () => {
-    expect(content).toInclude("(Redémarrer) as R #powderblue");
+  it("should contain (Redémarrer) as R #powderblue", () => {
+    expect(content.includes("(Redémarrer) as R #powderblue")).toBeTruthy();
   });
 
-  it("should contain J -- R", async () => {
-    expect(content).toInclude("J -- R");
+  it("should contain J -- R", () => {
+    expect(content.includes("J -- R")).toBeTruthy();
   });
 
 });

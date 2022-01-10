@@ -9,16 +9,16 @@ beforeAll(async () => {
 });
 
 describe('docs/modeles/dss-redemarrerJeu.puml', () => {
-  it("should contain Joueur", async () => {
-    expect(content).toInclude("Joueur");
+  it("should contain Joueur", () => {
+    expect(content.includes("Joueur")).toBeTruthy();
   });
 
-  it("should contain Système", async () => {
-    expect(content).toInclude("Système");
+  it("should contain Système", () => {
+    expect(content.includes("Système")).toBeTruthy();
   });
 
-  it("should contain redemarrerJeu()", async () => {
-    expect(content).toInclude("redémarrerJeu()");
+  it("should contain redemarrerJeu()", () => {
+    expect(content.includes("redémarrerJeu()")).toBeTruthy();
   });
 
 });
