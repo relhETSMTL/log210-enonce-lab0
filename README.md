@@ -437,7 +437,9 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un auxiliaire d'enseignement.
 
-- [ ] vérifier que les tests de fonctionnalités passent (Node.js)
+- [ ] vérifier que les tests pour démarrerJeu passent: `jest --colors jeuRouter-redemarrerJeu.test.ts`. (Node.js)
+
+- [ ] vérifier que TOUS les tests de fonctionnalités passent (Node.js)
 
   `npm run test-squelette` devrait indiquer que tous les tests passent.
 
