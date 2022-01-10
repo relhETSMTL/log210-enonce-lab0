@@ -473,8 +473,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   Dans `public/lib/main.js` on trouve le code pour les boutons. Après la logique pour traiter le clic sur le bouton *Démarrer* (`demarrer.addEventListener("click", function(){...});`, ajouter une nouvelle logique pour le bouton *Redémarrer* qui fait un `GET` sur `/api/v1/jeu/redemarrerJeu`:
 
   ```JavaScript
-  document.getElementById("redemarrer").addEventListener("click", function ()
-  {
+  document.getElementById("redemarrer").addEventListener("click", function () {
       fetch("/api/v1/jeu/redemarrerJeu")
       .then(function()
       {
