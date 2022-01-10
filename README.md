@@ -226,7 +226,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     Time:        1.34 s, estimated 2 s
     ```
 
-    Les croix (`× devrait trouver votre nom (2 ms)`) signifient qu'un test echoue, tandis qu'un test réussi s'affiche avec une coche `√`.
+    Une croix (rouge), p. ex. `× devrait trouver votre nom` signifie qu'un test échoue, tandis qu'un test réussi s'affiche avec une coche `√` (verte).
 
 - [ ] exécuter le serveur sur localhost
 
@@ -342,7 +342,22 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   </p></details>
 
-- [ ] vérifier le travail avec le test. [TODO]
+- [ ] vérifier le travail avec le test, `jest --colors dcu-puml-lab0.test.ts`:
+
+  ```
+  PASS  test/modeles/dcu-puml-lab0.test.ts
+    docs/modeles/dcu.puml
+      √ should contain (Redémarrer) as R #powderblue (1 ms)
+      √ should contain J -- R (1 ms)
+
+  Test Suites: 1 passed, 1 total
+  Tests:       2 passed, 2 total
+  Snapshots:   0 total
+  Time:        1.375 s
+  Ran all test suites matching /dcu-puml-lab0.test.ts/i.
+  ```
+
+  Repérer et valider le(s) test(s) individuellement à la fin de chaque étape.
 
 ### 2. actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
 
