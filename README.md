@@ -276,7 +276,8 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.md](docs/Squelette.md). Dans cette étape, vous devez:
 
-- [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.
+- [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.  
+  Vérifier le travail avec le test, `jest --colors dcu-puml-lab0.test.ts`
 
 - [ ] dans le fichier `docs/Squelette.md`, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/Squelette.md#jouer-aux-dés):
 
@@ -342,7 +343,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   </p></details>
 
-- [ ] vérifier le travail avec le test, `jest --colors dcu-puml-lab0.test.ts`:
+  Vérifier le travail avec le test, `jest --colors dcu-puml-lab0.test.ts`:
 
   ```
   PASS  test/modeles/dcu-puml-lab0.test.ts
@@ -377,6 +378,8 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   Faire un diagramme en PlantUML qui ressemble à ceci:  
   ![RDCU pour redémarrerJeu](https://www.plantuml.com/plantuml/svg/0/RP31IWD138RlynIX5rkmBx38KkXwANXHzBINE9lMMMSoGoO3-aYz-mRxOiOAWk8bWVny-VzaLnL5MugklWOkA9YWwdiagnBy7sMY8xQenypAc0YUI2PaT1hKYFjX_mWbDm6XQJad524vK7C6Q_2X82kiEfiCD51T0LRmRjjxwBu8-W7M6yTP2IISNjJ4IZ4pxCrLbez8JKPUVszPpXMewiZnAZ_Ff23e0zFcj-MScq6r6_aEoys37SQdwyDbs5zIpCbvsFRMpSr7Gla_mkrR8L6t8vxiCPy0 "RDCU pour redémarrerJeu")
 
+  Valider avec les test `test/modeles/rdcu-redemarrerJeu-puml-lab0.test.ts` et `test/modeles/dss-redemarrer-puml-lab0.test.ts`.
+
 > À partir de maintenant, consultez le code existant pour vous aider à compléter les étapes
 
 ### 3. écrire des tests pour la fonctionnalité
@@ -397,24 +400,24 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
     Le test doit appeler la route `GET /api/v1/jeu/redemarrerJeu`, qui correspond à l'opération système `redemarrerJeu` du DSS. Puisque l'opération n'a aucun retour, le test doit uniquement valider le succès de l'opération, c'est-à-dire, que le code HTTP (`status`) est 200 et que la réponse est du `JSON`.
 
-  - y créer un autre test pour valider la postcondition du contrat d'opération
+  - y créer un autre test pour valider la postcondition du contrat d'opération.
 
     Le test doit vérifier qu'il n'y a plus de joueurs.
 
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
-  `npm test` va indiquer `XX failed`
+  `jest --colors jeuRouter-redemarrerJeu.test.ts` va indiquer `n failed`
 
   Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.
 
-### 4. écrire le code source;
+### 4. écrire la fonctionnalité
 
 - [ ] ajouter l'opération système `redemarrerJeu` dans le contrôleur GRASP `src/core/jeuDeDes.ts` (TypeScript)
 
   Cette méthode correspond à l'opération système (unique) définie dans le diagramme de séquence système (DSS).
 
-- [ ] coder la RDCU de `redemarrerJeu` (TypeScript)
+- [ ] coder l'opération `redemarrerJeu` selon la RDCU (TypeScript)
 
-  Retourner voir le diagramme qui a été créé précédemment
+  Pour la logique du code, consulter le diagramme de séquence (RDCU) créé à l'étape précédente.
 
 - [ ] ajouter une nouvelle route, dans `src/routes/jeuRouter.ts` (Express)
 
