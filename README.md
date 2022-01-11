@@ -518,7 +518,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 
 ### 6. Documenter les classes logicielles
 
-- [ ] Générer un diagramme de classes pour la solution avec le script `npm run uml-classes-puml` qui utilise l'outil `tplant`. Par défaut, le diagramme est placé dans le répertoire `docs/modeles`. Chaque fois que vous modifiez votre code source, c'est une bonne idée d'actualiser ce diagramme avec ce script.
+- [ ] Générer un diagramme de classes pour la solution avec le script `npm run uml-classes-puml` qui utilise l'outil `tplant`. Par défaut, le diagramme `App.puml` est placé dans le répertoire `docs/modeles`. Chaque fois que vous modifiez votre code source, c'est une bonne idée d'actualiser ce diagramme avec ce script.
 - [ ] Visualiser le fichier généré `App.puml` dans VS Code avec l'extension de PlantUML. Comprendre le design du jeu de dés.
 - [ ] Intégrer ce diagramme dans votre rapport `Squelette.md` dans une section nommée **Diagramme de classes logicielles**.
 
@@ -529,7 +529,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 ### 8. Remise du rapport en format PDF
 
 - [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md` nommé `docs/lab0.pdf`
-  > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
+  > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions. Il se peut que vous ayez à installer d'autres modules (un _exporter_ pour Chromium). Il se peut que le fichier soit créé dans un répertoire `out/docs/` aussi avec le nom `Squelette.pdf`.
 
 ### 9. Faire face aux parasites et aux mollassons dans une équipe
 
