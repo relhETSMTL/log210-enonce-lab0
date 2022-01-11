@@ -525,6 +525,8 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 ### 7. Pratiquer ce qui a été appris
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller, en vous référant à des étapes plus haut.
+> ⚠️Les tests de base du squelette devront être modifiés. 
+> Autrement dit, des tests dans `npm run test-squelette` ne seront plus bons, car vous changez la fonctionnalité du jeu.
 
 ### 8. Remise du rapport en format PDF
 
