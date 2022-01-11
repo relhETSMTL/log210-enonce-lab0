@@ -9,6 +9,9 @@ const config: Config.InitialOptions = {
   testEnvironment: 'node',
   //  verbose: true,
   setupFilesAfterEnv: ["jest-extended/all"],
+  collectCoverageFrom: ["src/**/*.ts"],
+  coveragePathIgnorePatterns: ["index.ts","express-flash-plus.d.ts"],
+
   globals: {
     'ts-jest': {
       diagnostics: true,
@@ -17,15 +20,3 @@ const config: Config.InitialOptions = {
   }
 };
 export default config;
-
-
-// module.exports = {
-//     transform: {
-//         "^.+\\.tsx?$": "ts-jest",
-//     },
-//     testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-//     testPathIgnorePatterns: ["/dist/", "/lib/", "/node_modules/"],
-//     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-// //    collectCoverage: true,
-//     setupFilesAfterEnv: ["jest-extended"],
-// };

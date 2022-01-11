@@ -9,31 +9,31 @@ beforeAll(async () => {
 });
 
 describe('src/core/jeuDeDes.ts', () => {
-  it("should contain redemarrerJeu() {", async () => {
-    expect(content).toInclude("redemarrerJeu() {");
+  it("should contain redemarrerJeu() {", () => {
+    expect(content.includes("redemarrerJeu() {")).toBeTruthy();
   });
 
-  it("should contain this._joueurs.clear()", async () => {
-    expect(content).toInclude("this._joueurs.clear()");
+  it("should contain this._joueurs.clear()", () => {
+    expect(content.includes("this._joueurs.clear()")).toBeTruthy();
   });
 
-  it("should contain this._d3 = new De()", async () => {
-    expect(content).toInclude("this._d3 = new De()");
+  it("should contain this._d3 = new De()", () => {
+    expect(content.includes("this._d3 = new De()")).toBeTruthy();
   });
-  it("should contain this._d3.brasser()", async () => {
-    expect(content).toInclude("this._d3.brasser()");
+  it("should contain this._d3.brasser()", () => {
+    expect(content.includes("this._d3.brasser()")).toBeTruthy();
   });
-  it("should contain const v3 = this._d3.valeur", async () => {
-    expect(content).toInclude("const v3 = this._d3.valeur");
+  it("should contain const v3 = this._d3.valeur", () => {
+    expect(content.includes("const v3 = this._d3.valeur")).toBeTruthy();
   });
-  it("should contain const somme = v1 + v2 + v3", async () => {
-    expect(content).toInclude("const somme = v1 + v2 + v3");
+  it("should contain const somme = v1 + v2 + v3", () => {
+    expect(content.includes("const somme = v1 + v2 + v3")).toBeTruthy();
   });
-  it("should contain <= 10", async () => {
-    expect(content).toInclude("<= 10");
+  it("should contain <= 10", () => {
+    expect(content.includes("<= 10")).toBeTruthy();
   });
-  it("should contain v3: this._d3.valeur", async () => {
-    expect(content).toInclude("v3: this._d3.valeur");
+  it("should contain v3: this._d3.valeur", () => {
+    expect(content.includes("v3: this._d3.valeur")).toBeTruthy();
   });
 });
 

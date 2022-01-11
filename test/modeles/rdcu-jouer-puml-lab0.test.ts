@@ -10,26 +10,26 @@ beforeAll(async () => {
 });
 
 describe('docs/modeles/rdcu-jouer.puml', () => {
-  it('should contain participant "d3:De" as d3 ', async () => {
-    expect(content).toInclude('participant "d3:De" as d3');
+  it('should contain participant "d3:De" as d3 ', () => {
+    expect(content.includes('participant "d3:De" as d3')).toBeTruthy();
   });
-  it('should contain  participant "d3:De" as d3', async () => {
-    expect(content).toInclude('participant "d3:De" as d3');
+  it('should contain  participant "d3:De" as d3', () => {
+    expect(content.includes('participant "d3:De" as d3')).toBeTruthy();
   });
-  it('should contain  c->d3 : brasser() plus GRASP', async () => {
-    expect(content).toInclude('c->d3 : brasser()');
+  it('should contain  c->d3 : brasser() plus GRASP', () => {
+    expect(content.includes('c->d3 : brasser()')).toBeTruthy();
   });
-  // it('should contain note right : selon Expert;', async () => {
-  //   expect(content).toInclude('note right : selon Expert');
+  // it('should contain note right : selon Expert;', () => {
+  //   expect(content.includes('note right : selon Expert')).toBeTruthy();
   // });
-  it('should contain c->d3 : v3 = valeur', async () => {
-    expect(content).toInclude('c->d3 : v3 = valeur');
+  it('should contain c->d3 : v3 = valeur', () => {
+    expect(content.includes('c->d3 : v3 = valeur')).toBeTruthy();
   });
-  // it('should contain note right : selon Expert', async () => {
-  //   expect(content).toInclude('note right : selon Expert');
+  // it('should contain note right : selon Expert', () => {
+  //   expect(content.includes('note right : selon Expert')).toBeTruthy();
   // });
-  it('should contain opt v1 + v2 + v3 <= 10', async () => {
-    expect(content).toInclude('opt v1 + v2 + v3 <= 10');
+  it('should contain opt v1 + v2 + v3 <= 10', () => {
+    expect(content.includes('opt v1 + v2 + v3 <= 10')).toBeTruthy();
   });
 });
 

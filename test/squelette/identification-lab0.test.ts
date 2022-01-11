@@ -9,19 +9,19 @@ beforeAll(async () => {
 });
 
 describe('README identification', () => {
-  it('devrait trouver votre nom', async () => {
-    expect(content).not.toInclude("Entrer votre nom");
+  it('devrait trouver votre nom', () => {
+    expect(content.includes("Entrer votre nom")).toBeFalsy();
   });
 
-  it('devrait trouver votre courriel', async () => {
-    expect(content).not.toInclude("Entrer votre courriel");
+  it('devrait trouver votre courriel', () => {
+    expect(content.includes("Entrer votre courriel")).toBeFalsy();
   });
 
-  it('devrait trouver Votre code moodle', async () => {
-    expect(content).not.toInclude("Entrer votre code moodle obtenu à partir de Signets");
+  it('devrait trouver Votre code moodle', () => {
+    expect(content.includes("Entrer votre code moodle obtenu à partir de Signets")).toBeFalsy();
   });
 
-  it("devrait trouver votre compte github", async () => {
-    expect(content).not.toInclude("Entrer l'identifiant de votre compte github");
+  it("devrait trouver votre compte github", () => {
+    expect(content.includes("Entrer l'identifiant de votre compte github")).toBeFalsy();
   });
 });

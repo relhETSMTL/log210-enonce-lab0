@@ -9,7 +9,7 @@ beforeAll(async () => {
 });
 
 describe('docs/experience-parasites-mollassons.md', () => {
-    it("devrait contenir au moins 300 mots (sans les 115 dans les directives)", async () => {
+    it("devrait contenir au moins 300 mots (sans les 115 dans les directives)", () => {
         expect(wordCount(content)).toBeGreaterThanOrEqual(300 + 115);
     });
 });

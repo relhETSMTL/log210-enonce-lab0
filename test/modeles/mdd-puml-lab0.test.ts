@@ -9,8 +9,8 @@ beforeAll(async () => {
 });
 
 describe('docs/modeles/mdd.puml', () => {
-  it('devrait contenir les 3 dés', async () => {
-    expect(content).toInclude('JeuDeDés "1" -up- "3" Dé : inclut >');
+  it('devrait contenir les 3 dés', () => {
+    expect(content.includes('JeuDeDés "1" -up- "3" Dé : inclut >')).toBeTruthy();
   });
 });
 

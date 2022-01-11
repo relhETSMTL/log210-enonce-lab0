@@ -9,20 +9,20 @@ beforeAll(async () => {
 });
 
 describe('src/routes/jeuRouter.ts', () => {
-  it("should contain this._router.get('/redemarrerJeu', this.redemarrerJeu.bind(this))", async () => {
-    expect(content).toInclude("this._router.get('/redemarrerJeu', this.redemarrerJeu.bind(this))");
+  it("should contain this._router.get('/redemarrerJeu', this.redemarrerJeu.bind(this))", () => {
+    expect(content.includes("this._router.get('/redemarrerJeu', this.redemarrerJeu.bind(this))")).toBeTruthy();
   });
 
-  it("should contain redemarrerJeu(req: Request, res: Response, next: NextFunction) {", async () => {
-    expect(content).toInclude("redemarrerJeu(req: Request, res: Response, next: NextFunction) {");
+  it("should contain redemarrerJeu(req: Request, res: Response, next: NextFunction) {", () => {
+    expect(content.includes("redemarrerJeu(req: Request, res: Response, next: NextFunction) {")).toBeTruthy();
   });
 
-  it("should contain this._controleurJeu.redemarrerJeu()", async () => {
-    expect(content).toInclude("this._controleurJeu.redemarrerJeu()");
+  it("should contain this._controleurJeu.redemarrerJeu()", () => {
+    expect(content.includes("this._controleurJeu.redemarrerJeu()")).toBeTruthy();
   });
 
-  it("should contain resultat.v3", async () => {
-    expect(content).toInclude("resultatObj.v3");
+  it("should contain resultat.v3", () => {
+    expect(content.includes("resultatObj.v3")).toBeTruthy();
   });
 });
 
