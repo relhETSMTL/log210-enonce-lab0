@@ -126,10 +126,10 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
     ```text
     ...
-    Test Suites: 15 failed, 15 total
+    Test Suites: 16 failed, 16 total
     Tests:       46 failed, 1 passed, 47 total
     Snapshots:   0 total
-    Time:        11.755 s
+    Time:        9.908 s
     Ran all test suites matching /lab0.test.ts/i.
     ```
 
@@ -572,14 +572,14 @@ Le calcul de la note du laboratoire se fait à partir des résultats des tests a
 | variable | explication |
 |:-:|:-|
 | *e* | 10 points si vous avez complété un texte d'au moins 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)|
-|*b*<sup>*</sup>| nombre de nouveaux boutons fonctionnels (max 3)|
+|*b*<sup>*</sup>| nombre de nouveaux boutons fonctionnels (max 1)|
 | *c*<sup>*</sup>| 10 points si la page de classement fonctionne correctement (sinon 0 point) |
 | *C*<sup>*</sup>| 10 points si la couverture des tests est 100 % (sinon 0 point) |
 | *v* | nombre de tests valides ("passed")|
-| *d* | nombre de tests déjà valides au début du projet (actuellement 2)|
+| *d* | nombre de tests déjà valides au début du projet|
 | *t* | nombre total de tests |
 <!-- Pour ce qui est de la couverture de tests,  -->
    
 <sup>*</sup>évaluation faite par l'auxiliaire d'enseignement
 
-<img src="https://latex.codecogs.com/png.latex?%5Cdpi%7B300%7D%20%5Cbg_white%20%5Ctextrm%7BNote%20finale%7D%20%3D%20%5Cfrac%7Be%20&plus;%202b%20&plus;%20c%20&plus;%20C%20&plus;%20v%20-%20d%7D%7B10%20&plus;%206%20&plus;%2010%20&plus;%2010%20&plus;%20t%20-d%7D%20100" width="400">
+<img src="https://latex.codecogs.com/png.image?\dpi{300}%20\bg_white\textup{Note%20finale}=\frac{e+6b+c+C+v-d}{10+6+10+10+t-d}100" width="400">
