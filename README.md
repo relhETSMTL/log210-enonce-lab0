@@ -582,4 +582,5 @@ Le calcul de la note du laboratoire se fait à partir des résultats des tests a
    
 <sup>*</sup>évaluation faite par l'auxiliaire d'enseignement
 
+<!-- Source de l'image: \textup{Note finale}=\frac{e+6b+c+C+v-d}{10+6+10+10+t-d}100 -->
 <img src="https://latex.codecogs.com/png.image?\dpi{300}%20\bg_white\textup{Note%20finale}=\frac{e+6b+c+C+v-d}{10+6+10+10+t-d}100" width="400">
