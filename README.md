@@ -574,7 +574,7 @@ Le calcul de la note du laboratoire se fait à partir des résultats des tests a
 | *e* | 10 points si vous avez complété un texte d'au moins 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)|
 |*b*<sup>*</sup>| nombre de nouveaux boutons fonctionnels (max 1)|
 | *c*<sup>*</sup>| 10 points si la page de classement fonctionne correctement (sinon 0 point) |
-| *C*<sup>*</sup>| 10 points si la couverture des tests est 100 % (sinon 0 point) |
+| *C*<sup>*</sup>| 10 points multipliés par la couverture de test de toute les branches |
 | *v* | nombre de tests valides ("passed")|
 | *d* | nombre de tests déjà valides au début du projet|
 | *t* | nombre total de tests |
