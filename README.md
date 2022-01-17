@@ -23,7 +23,7 @@ Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 
 ### Date de remise
 
-La date de remise du rapport et du code est **avant minuit le jour de la séance 02 de laboratoire.**
+La date de remise du rapport et du code est **avant la séance 03 de laboratoire.** 
 Notez que le calendrier des séances est différent pour chaque groupe-cours.
 Vérifiez avec votre auxiliaire d'enseignement (chargé.e de laboratoire).
 
