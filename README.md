@@ -23,7 +23,7 @@ Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 
 ### Date de remise
 
-La date de remise du rapport et du code est **avant la séance 03 de laboratoire.** 
+La date de remise du rapport et du code est **avant la séance 03 de laboratoire.**
 Notez que le calendrier des séances est différent pour chaque groupe-cours.
 Vérifiez avec votre auxiliaire d'enseignement (chargé.e de laboratoire).
 
@@ -145,10 +145,10 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     **Si vous avez une difficulté que vous n'arrivez pas à résoudre, vous devez poser des questions aux auxiliaires d'enseignement.**
 
   - Pour voir la liste des tests pour le lab0, taper `npm test -- --listTests`
-  - Pour exécuter un test individuel, p. ex. `identification-lab0.test.ts` -- très utile pour ne pas avoir trop d'informations avec tous les tests -- taper `jest --colors identification-lab0.test.ts` (il n'est pas nécessaire de spécifier tout le chemin du fichier):
+  - Pour exécuter un test individuel, p. ex. `identification-lab0.test.ts` -- très utile pour ne pas avoir trop d'informations avec tous les tests -- taper `npx jest --colors identification-lab0.test.ts` (il n'est pas nécessaire de spécifier tout le chemin du fichier):
 
     ```
-    $ jest --colors identification-lab0.test.ts
+    $ npx jest --colors identification-lab0.test.ts
     FAIL test/squelette/identification-lab0.test.ts
       README identification
         × devrait trouver votre nom (2 ms)
@@ -277,7 +277,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.md](docs/Squelette.md). Dans cette étape, vous devez:
 
 - [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.  
-  Vérifier le travail avec le test, `jest --colors dcu-puml-lab0.test.ts`
+  Vérifier le travail avec le test, `npx jest --colors dcu-puml-lab0.test.ts`
 
 - [ ] dans le fichier `docs/Squelette.md`, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/Squelette.md#jouer-aux-dés):
 
@@ -343,7 +343,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   </p></details>
 
-  Vérifier le travail avec le test, `jest --colors dcu-puml-lab0.test.ts`:
+  Vérifier le travail avec le test, `npx jest --colors dcu-puml-lab0.test.ts`:
 
   ```
   PASS  test/modeles/dcu-puml-lab0.test.ts
@@ -386,7 +386,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] ajouter de nouveaux cas de test pour Redémarrer (Jest/SuperTest)
 
-  - ouvrir le fichier `test/routes/jeuRouter-redemarrerJeu.test.ts`
+  - ouvrir le fichier `test/routes/jeuRouter-redemarrerJeu-lab0.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   
@@ -405,7 +405,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
     Le test doit vérifier qu'il n'y a plus de joueurs.
 
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
-  `jest --colors jeuRouter-redemarrerJeu.test.ts` va indiquer `n failed`
+  `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts` va indiquer `n failed`
 
   Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.
 
@@ -437,7 +437,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un auxiliaire d'enseignement.
 
-- [ ] vérifier que les tests pour démarrerJeu passent: `jest --colors jeuRouter-redemarrerJeu.test.ts`. (Node.js)
+- [ ] vérifier que les tests pour redémarrerJeu passent: `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts`. (Node.js)
 
 - [ ] vérifier que TOUS les tests de fonctionnalités passent (Node.js)
 
