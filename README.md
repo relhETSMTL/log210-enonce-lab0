@@ -127,7 +127,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     ```text
     ...
     Test Suites: 16 failed, 16 total
-    Tests:       46 failed, 1 passed, 47 total
+    Tests:       45 failed, 1 passed, 46 total
     Snapshots:   0 total
     Time:        9.908 s
     Ran all test suites matching /lab0.test.ts/i.
