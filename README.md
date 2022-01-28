@@ -120,7 +120,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter les tests
 
-  - Dans le terminal, taper `npm test` pour exécuter les tests du lab 0.
+  - Dans le terminal, taper `npx jest --colors lab0.test.ts` pour exécuter les tests du lab 0.
 
     Normalement, on devrait voir les messages comme:
 
@@ -143,7 +143,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     Ce sont des tests automatiques qui vont diagnostiquer les problèmes pour vous.
     **Si vous avez une difficulté que vous n'arrivez pas à résoudre, vous devez poser des questions aux auxiliaires d'enseignement.**
 
-  - Pour voir la liste des tests pour le lab0, taper `npm test -- --listTests`
+  - Pour voir la liste des tests pour le lab0, taper `npx jest --listTests lab0.test.ts`
   - Pour exécuter un test individuel, p. ex. `identification-lab0.test.ts` -- très utile pour ne pas avoir trop d'informations avec tous les tests -- taper `npx jest --colors identification-lab0.test.ts` (il n'est pas nécessaire de spécifier tout le chemin du fichier):
 
     ```
@@ -440,7 +440,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] vérifier que TOUS les tests de fonctionnalités passent (Node.js)
 
-  `npm run test-squelette` devrait indiquer que tous les tests passent.
+  `npx jest --colors --coverage "[^lab0].test.ts"` devrait indiquer que tous les tests passent.
 
 - [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
 
@@ -524,7 +524,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 ### 7. Pratiquer ce qui a été appris
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller, en vous référant à des étapes plus haut.
-> ⚠️Les tests de base du squelette lancés par `npm run test-squelette` ne seront plus bons, car ils valident les fonctionnalités du jeu avec **deux** dés.
+> ⚠️Les tests de base du squelette lancés par `npx jest --colors --coverage "[^lab0].test.ts"` ne seront plus bons, car ils valident les fonctionnalités du jeu avec **deux** dés.
 > Il faut les modifier pour la nouvelle fonctionnalité avec trois dés.
 > Certains de ces tests sont plus difficiles à faire passer, notamment ceux dans `test/core/jeuDeDes.test.ts` qui valident les valeurs retournées par la méthode `brasser()`.
 > En fait, la [probabilité d'avoir certaines valeurs (ex. 3 et 18) avec trois dés](https://fr.wikipedia.org/wiki/Probabilit%C3%A9s_des_d%C3%A9s) est faible (ex. 1/216 ≈ 0.5 %).
@@ -551,8 +551,8 @@ Cet exercice sera noté quasi automatiquement lorsque vous transférez votre cod
 Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
 Il y a deux volets de la correction automatique avec les tests automatiques:
 
-- Documentation: `npm test`
-- Fonctionnalités: `npm run test-squelette`
+- Documentation: `npx jest --colors lab0.test.ts` (exécuter tous les tests ayant `lab0.test.ts` dans le nom)
+- Fonctionnalités: `npx jest --colors --coverage "[^lab0].test.ts"` (exécuter tous les tests **n'ayant pas** `lab0.test.ts` dans le nom et mesurer la couverture)
 
 Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100% pour la partie fonctionnalité.
 
