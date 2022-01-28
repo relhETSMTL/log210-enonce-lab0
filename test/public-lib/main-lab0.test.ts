@@ -10,8 +10,8 @@ beforeAll(async () => {
 
 describe('public/lib/main.js', () => {
   it("devrait utiliser fetch pour le bouton redémarrer", () => {
-    expect(content.includes("redemarrer.addEventListener(\"click\", function () {")).toBeTruthy();
-    expect(content.includes("fetch(\"/api/v1/jeu/redemarrerJeu\", {")).toBeTruthy();
+    expect(content.includes(`document.getElementById("redemarrer").addEventListener("click", function () {`)).toBeTruthy();
+    expect(content.includes(`fetch("/api/v1/jeu/redemarrerJeu")`)).toBeTruthy();
   });
 
 });
