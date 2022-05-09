@@ -13,5 +13,6 @@ describe('public/lib/main.js', () => {
     expect(content.includes(`document.getElementById("redemarrer").addEventListener("click", function () {`)).toBeTruthy();
     expect(content.includes(`fetch("/api/v1/jeu/redemarrerJeu")`)).toBeTruthy();
   });
+
 });
 

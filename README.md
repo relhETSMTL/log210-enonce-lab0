@@ -120,14 +120,14 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter les tests
 
-  - Dans le terminal, taper `npm test` pour exécuter les tests du lab 0.
+  - Dans le terminal, taper `npx jest --colors lab0.test.ts` pour exécuter les tests du lab 0.
 
     Normalement, on devrait voir les messages comme:
 
     ```text
     ...
     Test Suites: 16 failed, 16 total
-    Tests:       46 failed, 1 passed, 47 total
+    Tests:       45 failed, 1 passed, 46 total
     Snapshots:   0 total
     Time:        9.908 s
     Ran all test suites matching /lab0.test.ts/i.
@@ -138,13 +138,12 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     Le but est de faire passer tous les tests au fur et à mesure que vous apprenez des aspects technologiques du laboratoire.
 
     Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points.
-    Vous devrez donc corriger des problèmes avec `app.ts` et `jeuRouter.ts`.
 
     La rétroaction de ce laboratoire ne viendra pas d'un auxiliaire d'enseignement, car c'est un travail individuel.
     Ce sont des tests automatiques qui vont diagnostiquer les problèmes pour vous.
     **Si vous avez une difficulté que vous n'arrivez pas à résoudre, vous devez poser des questions aux auxiliaires d'enseignement.**
 
-  - Pour voir la liste des tests pour le lab0, taper `npm test -- --listTests`
+  - Pour voir la liste des tests pour le lab0, taper `npx jest --listTests lab0.test.ts`
   - Pour exécuter un test individuel, p. ex. `identification-lab0.test.ts` -- très utile pour ne pas avoir trop d'informations avec tous les tests -- taper `npx jest --colors identification-lab0.test.ts` (il n'est pas nécessaire de spécifier tout le chemin du fichier):
 
     ```
@@ -441,7 +440,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] vérifier que TOUS les tests de fonctionnalités passent (Node.js)
 
-  `npm run test-squelette` devrait indiquer que tous les tests passent.
+  `npx jest --colors --coverage "[^lab0].test.ts"` devrait indiquer que tous les tests passent.
 
 - [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
 
@@ -525,8 +524,13 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 ### 7. Pratiquer ce qui a été appris
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller, en vous référant à des étapes plus haut.
-> ⚠️Les tests de base du squelette devront être modifiés. 
-> Autrement dit, des tests dans `npm run test-squelette` ne seront plus bons, car vous changez la fonctionnalité du jeu.
+> ⚠️Les tests de base du squelette lancés par `npx jest --colors --coverage "[^lab0].test.ts"` ne seront plus bons, car ils valident les fonctionnalités du jeu avec **deux** dés.
+> Il faut les modifier pour la nouvelle fonctionnalité avec trois dés.
+> Certains de ces tests sont plus difficiles à faire passer, notamment ceux dans `test/core/jeuDeDes.test.ts` qui valident les valeurs retournées par la méthode `brasser()`.
+> En fait, la [probabilité d'avoir certaines valeurs (ex. 3 et 18) avec trois dés](https://fr.wikipedia.org/wiki/Probabilit%C3%A9s_des_d%C3%A9s) est faible (ex. 1/216 ≈ 0.5 %).
+> Il faut donc faire plus d'essais (jusqu'à 2000?) pour obtenir toutes les valeurs dans le test.
+> Faire autant d'essaies dans un test n'est pas idéal puisque ça prend du temps.
+> Il serait plus efficient si on utilisait des [mocks](https://fr.wikipedia.org/wiki/Mock_(programmation_orient%C3%A9e_objet)), mais cela est hors du cadre du cours.
 
 ### 8. Remise du rapport en format PDF
 
@@ -547,8 +551,8 @@ Cet exercice sera noté quasi automatiquement lorsque vous transférez votre cod
 Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
 Il y a deux volets de la correction automatique avec les tests automatiques:
 
-- Documentation: `npm test`
-- Fonctionnalités: `npm run test-squelette`
+- Documentation: `npx jest --colors lab0.test.ts` (exécuter tous les tests ayant `lab0.test.ts` dans le nom)
+- Fonctionnalités: `npx jest --colors --coverage "[^lab0].test.ts"` (exécuter tous les tests **n'ayant pas** `lab0.test.ts` dans le nom et mesurer la couverture)
 
 Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100% pour la partie fonctionnalité.
 
