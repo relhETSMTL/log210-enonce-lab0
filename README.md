@@ -48,7 +48,7 @@ Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir
 
 - [VisualStudio Code](https://code.visualstudio.com/docs/getstarted/introvideos)
 - [PlantUML](http://plantuml.com/fr/guide) (pour les modèles UML)
-- [GitHub Markdown](https://guides.github.com/features/mastering-markdown/) (pour la documentation)
+- [GitHub Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) (pour la documentation)
 
 ## Objectif de l'exercice
 
@@ -87,9 +87,9 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
   (Si vous avez les droits d'administrateur Windows) installer [GraphViz](http://www.graphviz.org/download/) pour utiliser un serveur local de PlantUML plutôt que le serveur sur Internet et configurer `"plantuml.render": "Local"` selon la [documentation](https://github.com/qjebbs/vscode-plantuml#about-render).
 
-- [ ] [installer GitHub Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop) sur votre machine
+- [ ] [installer GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop) sur votre machine
 
-- [ ] [cloner](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) le dépôt de code de ce laboratoire sur votre machine
+- [ ] [cloner](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) le dépôt de code de ce laboratoire sur votre machine
 
   - :warning: Ne pas cloner le code dans un chemin qui contient des espaces ou des accents.
 
