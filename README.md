@@ -55,7 +55,7 @@ Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir
 
 ## Objectif de l'exercice
 
-Cet exercice vous amènera à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.
+Cet exercice vous amènera à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de dés**.
 Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
 Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra passer par les étapes suivantes:
 
@@ -136,11 +136,9 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     Ran all test suites matching /lab0.test.ts/i.
     ```
 
-    Certains tests valident le contenu de vos fichiers (la documentation) et d'autres valident les fonctionnalités (la programmation).
-    Puisque vous commencez le lab 0, c'est normal d'avoir beaucoup de tests "failed".
+    Certains tests valident le contenu des fichiers rajoutés pour ce laboratoire (la documentation, la nouvelle fonctionnalité) et d'autres valident les fonctionnalités de base du squelette (dont certains vous aurez à modifier).
+    Puisque vous venez de commencer le lab 0, c'est normal d'avoir beaucoup de tests "failed".
     Le but est de faire passer tous les tests au fur et à mesure que vous apprenez des aspects technologiques du laboratoire.
-
-    <!-- Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points. -->
 
     La rétroaction de ce laboratoire ne viendra pas d'un auxiliaire d'enseignement, car c'est un travail individuel.
     Ce sont des tests automatiques qui vont diagnostiquer les problèmes pour vous.
@@ -266,13 +264,13 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
     Cet objet sera un mécanisme de gérer les vues. Par exemple, si `objet.isAnonymous` est vrai, `navbar.pug` n'affiche pas de lien, car l'utilisateur n'est pas connu et donc doit se connecter pour avoir plus d'accès.
     > Dans cet exercice, vous n'avez pas à gérer les connexions, mais sachez que le squelette supporte cette dimension. Ça sera utile pour votre projet en équipe.
-  - la technologie Bootstrap est chargée dans un en-tête (`views/includes/head.pug`) qui, lui, est inclus dans chaque page statique. Sachez que les versions de Bootstrap ont évoluées assez rapidement et il faut faire attention à la version si vous trouvez un exemple intéressant que vous voulez réutilisez. La documentation de Bootstrap est excellente, donc vérifiez toujours avec ça.
+  - la technologie Bootstrap est chargée dans un en-tête (`views/includes/head.pug`) qui, lui, est inclus dans chaque page statique. Sachez que les versions de Bootstrap ont évolué assez rapidement et il faut faire attention à la version si vous trouvez un exemple intéressant que vous voulez réutiliser. La documentation de Bootstrap est excellente, donc vérifiez toujours avec ça.
   - les pages statiques définies avec Pug permettent de créer facilement une interface humain-machine, mais il doit y avoir des routes définies dans `src/app.ts` pour que les fichiers `.pug` soient bien rendus au navigateur.
   - repérer dans le fichier `src/app.ts` la définition des *route handlers* pour les pages statiques, p. ex. `/` vers `views/index.pug` et `/stats` vers `views/stats.pug`. Cela est important pour étendre le squelette dans le cadre du projet en équipe. Il y a aussi des pages statiques pour aider avec la gestion des connexions (`views/signin.pug` et `views/signout.pug`) qui sont intégrées également dans le squelette (routes et barre de navigation).
-  - noter que la syntaxe des fichiers Pug est sensible à l'indentation (comme en Python). Si vous trouvez un exemple de code Pug à intégrer dans votre projet, l'éditeur VSCode va (par défaut) utiliser une indentation de 4 espaces, tandis que beaucoup d'exemples sur internet utilisent 2 espaces.
+  - noter que la syntaxe des fichiers Pug est sensible à l'indentation (comme en Python). Si vous trouvez un exemple de code Pug à intégrer dans votre projet, l'éditeur VSCode va (par défaut) utiliser une indentation de 4 espaces, tandis que beaucoup d'exemples sur Internet utilisent 2 espaces.
 <!-- Note -- on évite de mettre les exemples concrets de code du squelette dans le tutoriel, car ça évolue et c'est difficile à synchroniser. Malheureusement le tutoriel est moins explicite à cause de ça. -->
 
-### 1. actualiser la documentation de la fonctionnalité;
+### 1. Actualiser la documentation de la fonctionnalité
 
 > Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant. Les auxiliaires d'enseignement auront accès à votre dépôt de code source et pourraient vous aider (surtout à distance) si votre code est synchronisé souvent avec le dépôt.
 
@@ -362,7 +360,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   Repérer et valider le(s) test(s) individuellement à la fin de chaque étape.
 
-### 2. actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
+### 2. Actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
 
 > Les modèles de conception guident l'implémentation. Vous aurez à revenir à cette section durant ce tutoriel.
 
@@ -384,7 +382,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 > À partir de maintenant, consultez le code existant pour vous aider à compléter les étapes
 
-### 3. écrire des tests pour la fonctionnalité
+### 3. Écrire des tests pour la fonctionnalité
 
 - [ ] ajouter de nouveaux cas de test pour Redémarrer (Jest/SuperTest)
 
@@ -409,9 +407,9 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
   `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts` va indiquer `n failed`
 
-  Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.
+  Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique de *Développement piloté par les tests*.
 
-### 4. écrire la fonctionnalité
+### 4. Écrire la fonctionnalité
 
 - [ ] ajouter l'opération système `redemarrerJeu` dans le contrôleur GRASP `src/core/jeuDeDes.ts` (TypeScript)
 
@@ -439,9 +437,9 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un auxiliaire d'enseignement.
 
-- [ ] vérifier que les tests pour redémarrerJeu passent: `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts`. (Node.js)
+- [ ] vérifier que les tests pour la nouvelle fonctionnalité redémarrerJeu passent: `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts`. (Node.js)
 
-- [ ] vérifier que TOUS les tests de fonctionnalités passent (Node.js)
+- [ ] vérifier que TOUS les tests des fonctionnalités de base passent (Node.js)
 
   `npx jest --colors --coverage "[^lab0].test.ts"` devrait indiquer que tous les tests passent.
 
@@ -486,7 +484,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
   Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*.
 
-### 5. Fonctionnalité: Afficher classement sur nouvelle page
+### 5. Afficher le classement sur nouvelle page
 
 Il existe un lien dans la barre de navigation «Classement» pour la page `/stats`. Cependant, cette page n'affiche pas la colonne Ratio, car l'information n'est pas encore calculée.
 
@@ -542,7 +540,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
   > Il se peut que vous ayez à installer d'autres modules (un _exporter_ pour Chromium). 
   > Il se peut que le fichier soit créé dans un répertoire `out/docs/` aussi avec le nom `Squelette.pdf`.
 
-### 9. Faire face aux parasites et aux mollassons dans une équipe
+### 9. Apprendre à faire face aux parasites et aux mollassons dans une équipe
 
 Il peut arriver qu'une équipe soit composée des personnes qui travaillent beaucoup moins que les autres.
 Pour vous sensibiliser aux problèmes typiques et vous outiller à agir rapidement en cas de difficultés, il y a un texte à lire et à intérioriser.
@@ -556,8 +554,8 @@ Cet exercice sera noté quasi automatiquement lorsque vous transférez votre cod
 Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
 Il y a deux volets de la correction automatique avec les tests:
 
-- Documentation: `npx jest --colors lab0.test.ts` (exécuter tous les tests ayant `lab0.test.ts` dans le nom)
-- Fonctionnalités: `npx jest --colors --coverage "[^lab0].test.ts"` (exécuter tous les tests **n'ayant pas** `lab0.test.ts` dans le nom et mesurer la couverture)
+- Documentation et fonctionnalités rajoutées: `npx jest --colors lab0.test.ts` (exécuter tous les tests ayant `lab0.test.ts` dans le nom)
+- Fonctionnalités de base du squelette: `npx jest --colors --coverage "[^lab0].test.ts"` (exécuter tous les tests **n'ayant pas** `lab0.test.ts` dans le nom et mesurer la couverture)
 
 Assurez-vous qu'aucun test n'est en échec et que la couverture de test (`branches`) est de 100% pour la commande `npx jest --colors --coverage`.
 
