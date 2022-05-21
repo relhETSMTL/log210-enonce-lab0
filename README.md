@@ -576,7 +576,7 @@ Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si
 
 ## Calcul de la note
 
-Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques et une évaluation faite par l'auxiliaire d'enseignement:
+Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques roulés avec la commande `npx jest --coverage` (au début du projet et à la fin du projet) et une évaluation faite par l'auxiliaire d'enseignement:
 
 | variable | explication |
 |:-:|:-|
