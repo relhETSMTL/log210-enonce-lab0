@@ -5,14 +5,16 @@ import 'jest-extended';
 import { Joueur } from '../../src/core/joueur';
 import { JeuDeDes } from '../../src/core/jeuDeDes';
 import app from '../../src/app';
+import { jeuRoutes } from "../../src/routes/jeuRouter";  // jeuRouter-getJoueurs.test.ts
 
 const request = supertest(app);
 
-describe('redemarrerJeu.test.ts', () => {
-  it("should implement test", async () => {
-    throw new Error("Ce test n'a pas été défini")
-  });
-});
+// Cet code etait comme skelette
+// describe('redemarrerJeu.test.ts', () => {
+//   it("should implement test", async () => {
+//     throw new Error("Ce test n'a pas été défini")
+//   });
+// });
 
 // Creation des joueurs
 let joueur1
@@ -41,11 +43,11 @@ describe ('GET /api/v1/jeu/redemarrerJeu',  () => {
     expect(response.status).toBe(200);  // response correcte
     expect(response.type).toBe("application/json"); // response retourne a json
 
-    let controller: JeuDeDes;
-    controller = new JeuDeDes();
-    controller.joueurs
-    // const resultat = JSON.parse(response.body.resultat);
-    // methode joueurs()
+    // Code de jeuRouter-getJoueurs.test.ts
+    const joueursJSON = jeuRoutes.controleurJeu.joueurs;
+    const joueursArray = JSON.parse(joueursJSON);
+    expect(joueursArray.length).toBe(0);
+
   });
 
 
