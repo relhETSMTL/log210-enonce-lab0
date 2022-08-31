@@ -5,6 +5,8 @@ import flash from 'express-flash-plus';
 
 import { jeuRoutes } from './routes/jeuRouter';
 
+import {Joueur} from './core/joueur';
+
 // Creates and configures an ExpressJS web server.
 class App {
 
@@ -61,13 +63,29 @@ class App {
 
     // Route pour classement (stats)
     router.get('/stats', (req, res, next) => {
+      const joueurs: Array<Joueur> = JSON.parse(jeuRoutes.controleurJeu.joueurs);
+
+      // Computes the ratio correctly
+      const joueursAvecRatio = joueurs.map(obj => ({ ...obj, ratio: obj.lancersGagnes/obj.lancers })); 
+      
+      const joueursTriesRatio = joueursAvecRatio.sort((n1,n2) => n2.ratio - n1.ratio);
+
+      // Gives the default 0 as the ratio value. Works correctly.
+      // const joueursAvecRatio = joueurs.map(obj => ({ ...obj, ratio:0 })); 
+
+      // joueursAvecRatio = joueursAvecRatio.sort((n1,n2) => n1 - n2);
+      // Results.map(obj => ({ ...obj, Active: 'false' })) Stack overflow astuce
       res.render('stats',
         // passer objet au gabarit (template) Pug
         {
           title: `${titreBase}`,
           user: user,
           // créer nouveau tableau de joueurs qui est trié par ratio
-          joueurs: JSON.parse(jeuRoutes.controleurJeu.joueurs)
+          // joueurs: JSON.parse(jeuRoutes.controleurJeu.joueurs) // original
+          // numericArray.sort((n1,n2) => n1 - n2);
+          // joueurs: joueursAvecRatio
+
+          joueurs: joueursTriesRatio
         });
     });
 
