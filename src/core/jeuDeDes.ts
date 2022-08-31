@@ -33,6 +33,13 @@ export class JeuDeDes {
         return JSON.stringify(joueur);
     }
 
+    /**
+     * operation de redemarrer jeu, doit appeler le methode clear du map joueurs
+     */
+    public redemarrerJeu() { // : void {  
+        this._joueurs.clear();
+    }
+
     public jouer(nom: string): string {
         const joueur = this._joueurs.get(nom);
         if (!joueur) {

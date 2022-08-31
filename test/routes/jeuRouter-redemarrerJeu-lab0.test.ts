@@ -31,7 +31,7 @@ describe ('GET /api/v1/jeu/redemarrerJeu',  () => {
   // scenario principal
   it('scénario principal', async () => {
     const response = await request.get('/api/v1/jeu/redemarrerJeu');
-    const resultat = JSON.parse(response.body.resultat);
+    // const resultat = JSON.parse(response.body.resultat); // pas necessaire, aucun valeur de retour
     expect(response.status).toBe(200);  // status
     expect(response.type).toBe("application/json"); // type de response
   });
